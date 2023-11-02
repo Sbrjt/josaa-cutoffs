@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/0.3.2/js/sql.js"></script>
+</head>
+
+<body>
+    <script src="script.js"></script>
+
+    <h1>Placeholder Form</h1>
+    <div class='wrapper'>
+
+        <div>
+            <label for='rank'>Rank</label>
+            <input type='text' id='rank'>
+        </div>
+
+        <div>
+            <label for='category'>Category</label>
+            <select id='category'>
+                <option value='option1'>Option 1</option>
+                <option value='option2'>Option 2</option>
+                <option value='option3'>Option 3</option>
+            </select>
+        </div>
+
+        <div>
+            <label for='branch'>Branch</label>
+            <select id='branch'>
+                <option value='branch1'>Branch 1</option>
+                <option value='branch2'>Branch 2</option>
+                <option value='branch3'>Branch 3</option>
+            </select>
+        </div>
+
+        <div>
+            <label for='state'>State</label>
+            <select id='state'>
+                <option value=''>Select</option>
+                <option value='andaman-and-nicobar-islands'>Andaman and Nicobar Islands</option>
+                <option value='andhra-pradesh'>Andhra Pradesh</option>
+                <option value='arunachal-pradesh'>Arunachal Pradesh</option>
+                <option value='assam'>Assam</option>
+                <option value='bihar'>Bihar</option>
+                <option value='chhattisgarh'>Chhattisgarh</option>
+                <option value='delhi'>Delhi</option>
+                <option value='goa'>Goa</option>
+                <option value='gujarat'>Gujarat</option>
+                <option value='haryana'>Haryana</option>
+                <option value='himachal-pradesh'>Himachal Pradesh</option>
+                <option value='jammu-and-kashmir'>Jammu and Kashmir</option>
+                <option value='jharkhand'>Jharkhand</option>
+                <option value='karnataka'>Karnataka</option>
+                <option value='kerala'>Kerala</option>
+                <option value='ladakh'>Ladakh</option>
+                <option value='lakshadweep'>Lakshadweep</option>
+                <option value='madhya-pradesh'>Madhya Pradesh</option>
+                <option value='maharashtra'>Maharashtra</option>
+                <option value='manipur'>Manipur</option>
+                <option value='meghalaya'>Meghalaya</option>
+                <option value='mizoram'>Mizoram</option>
+                <option value='nagaland'>Nagaland</option>
+                <option value='odisha'>Odisha</option>
+                <option value='puducherry'>Puducherry</option>
+                <option value='punjab'>Punjab</option>
+                <option value='rajasthan'>Rajasthan</option>
+                <option value='sikkim'>Sikkim</option>
+                <option value='tamil-nadu'>Tamil Nadu</option>
+                <option value='telangana'>Telangana</option>
+                <option value='tripura'>Tripura</option>
+                <option value='uttar-pradesh'>Uttar Pradesh</option>
+                <option value='uttarakhand'>Uttarakhand</option>
+                <option value='west-bengal'>West Bengal</option>
+            </select>
+
+        </div>
+
+        <div>
+            <label for='gender'>Gender</label>
+            <div class='radio'>
+                <input type='radio' id='neutral' name='gender' value='neutral' checked>
+                <label for="neutral">Neutral</label>
+                <input type='radio' id='female' name='gender' value='female'>
+                <label for="female">Female</label>
+            </div>
+        </div>
+
+        <div>
+            <label for='college'>College</label>
+
+            <div class='check'>
+
+                <input type="checkbox" id="iit" name="college" value="iit" checked>
+                <label for="iit">IIT</label>
+
+                <input type="checkbox" id="nit" name="college" value="nit" checked>
+                <label for="nit">NIT</label>
+
+                <input type="checkbox" id="iiit" name="college" value="iiit" checked>
+                <label for="iiit">IIIT</label>
+
+                <input type="checkbox" id="gfti" name="college" value="gfti" checked>
+                <label for="gfti">GFTI</label>
+
+            </div>
+        </div>
+
+        <div class='button' onclick='load()'>
+            <button>Submit</button>
+        </div>
+    </div>
+
+    <table id='table'>
+        <tr>
+            <th>Institute</th>
+            <th>Branch</th>
+            <th>Quota</th>
+            <th>Seat Type</th>
+            <th>Gender</th>
+            <th>Opening Rank</th>
+            <th>Closing Rank</th>
+        </tr>
+    </table>
+</body>
+
+</html>
