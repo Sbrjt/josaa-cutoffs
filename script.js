@@ -21,7 +21,7 @@ async function load() {
 	const query = `select * from data
 	where gender = '${gender}' and
     closing < ${rank}
-    order by closing
+    order by closing desc
     limit 10`
 
 	// loading database (db)
@@ -34,7 +34,7 @@ async function load() {
 
 	// iterating through result and inserting cells to table
 	for (let i = 0; i < result.length; i++) {
-		let row = table.insertRow(i + 1)
+		let row = table.insertRow()
 		for (let j = 0; j < 7; j++) {
 			row.insertCell(j).innerHTML = result[i][j]
 		}
