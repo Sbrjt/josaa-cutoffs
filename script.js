@@ -1,8 +1,6 @@
 async function load() {
 	// clear table
-	while (table.rows.length > 1) {
-		table.deleteRow(1)
-	}
+	table.innerHTML = ''
 
 	// variables
 	const rank = document.getElementById('rank').value
