@@ -32,7 +32,7 @@ async function load() {
 
 	// iterating through result and inserting cells to table
 	for (let i = 0; i < result.length; i++) {
-		let row = table.insertRow()
+		let row = table.insertRow(i)
 		for (let j = 0; j < 7; j++) {
 			row.insertCell(j).innerHTML = result[i][j]
 		}
