@@ -18,8 +18,8 @@ async function load() {
 	// sql query
 	const query = `select * from data
 	where gender = '${gender}' and
-    closing < ${rank}
-    order by closing desc
+    closing > ${rank}
+    order by closing
     limit 10`
 
 	// loading database (db)
