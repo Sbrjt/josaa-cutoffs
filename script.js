@@ -1,4 +1,13 @@
-async function load() {
+const button = document.getElementById('button')
+const table = document.getElementById('table')
+
+async function loadDb() {
+	const response = await fetch('data.db')
+	const buffer = await response.arrayBuffer()
+	db = new SQL.Database(new Uint8Array(buffer))
+}
+
+async function showTable() {
 	// clear table
 	table.innerHTML = ''
 
@@ -22,11 +31,6 @@ async function load() {
     order by closing
     limit 10`
 
-	// loading database (db)
-	const response = await fetch('data.db')
-	const buffer = await response.arrayBuffer()
-	const db = new SQL.Database(new Uint8Array(buffer))
-
 	// fetched data in 2D array
 	const result = db.exec(query)[0].values
 
@@ -38,3 +42,6 @@ async function load() {
 		}
 	}
 }
+
+button.addEventListener('click', showTable)
+document.addEventListener('DOMContentLoaded', loadDb)
