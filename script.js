@@ -4,13 +4,10 @@ const table = document.getElementById('table')
 async function loadDb() {
 	const response = await fetch('data.db')
 	const buffer = await response.arrayBuffer()
-	db = new SQL.Database(new Uint8Array(buffer))
+	db = new SQL.Database(new Uint8Array(buffer)) // global var db
 }
 
 async function showTable() {
-	// clear table
-	table.innerHTML = ''
-
 	// variables
 	const rank = document.getElementById('rank').value
 	const branch = document.getElementById('branch').value
@@ -33,6 +30,9 @@ async function showTable() {
 
 	// fetched data in 2D array
 	const result = db.exec(query)[0].values
+
+	// clear table
+	table.innerHTML = ''
 
 	// iterating through result and inserting cells to table
 	for (let i = 0; i < result.length; i++) {
