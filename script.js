@@ -10,10 +10,29 @@ async function loadDb() {
 async function showTable() {
 	// variables
 	const rank = document.getElementById('rank').value
-	const branch = document.getElementById('branch').value
 	const category = document.getElementById('category').value
 	const state = document.getElementById('state').value
 	const gender = neutral.checked ? 'Neutral' : 'Female'
+
+	let branch = ''
+	for (const i of document.getElementById('branch').selectedOptions) {
+		branch += `'${i.value}', `
+	}
+	branch = branch.slice(0, -2)
+	console.log(branch)
+
+	// const selectedOptions = document.querySelectorAll(
+	// 	'#multipleSelect option:checked'
+	// )
+	// const selectedValues = Array.from(selectedOptions).map(
+	// 	(option) => option.value
+	// )
+	// let branch = ''
+	// for (const i of document.getElementsByName('branch')) {
+	// 	if (i.checked) {
+	// 		branch += `'${i.value}',`
+	// 	}
+	// }
 	const college = []
 	for (const i of document.getElementsByName('college')) {
 		if (i.checked) {
@@ -23,8 +42,10 @@ async function showTable() {
 
 	// sql query
 	const query = `select * from data
-	where gender = '${gender}' and
-    closing > ${rank}
+	where seat = '${category}' and
+	gender = '${gender}' and
+    closing > ${rank} and
+	branch in (${branch})
     order by closing
     limit 10`
 
