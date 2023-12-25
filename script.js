@@ -21,18 +21,6 @@ async function showTable() {
 	branch = branch.slice(0, -2)
 	console.log(branch)
 
-	// const selectedOptions = document.querySelectorAll(
-	// 	'#multipleSelect option:checked'
-	// )
-	// const selectedValues = Array.from(selectedOptions).map(
-	// 	(option) => option.value
-	// )
-	// let branch = ''
-	// for (const i of document.getElementsByName('branch')) {
-	// 	if (i.checked) {
-	// 		branch += `'${i.value}',`
-	// 	}
-	// }
 	const college = []
 	for (const i of document.getElementsByName('college')) {
 		if (i.checked) {
@@ -47,7 +35,7 @@ async function showTable() {
     closing > ${rank} and
 	branch in (${branch})
     order by closing
-    limit 10`
+	limit 20`
 
 	// fetched data in 2D array
 	const result = db.exec(query)[0].values
