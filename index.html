@@ -7,7 +7,7 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/sql.js/0.3.2/js/sql.js'></script>
 
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css' />
     <link rel='stylesheet'
         href='https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css'>
 
@@ -18,8 +18,6 @@
         }
     </style>
 </head>
-
-<!-- jdj -->
 
 <body class='bg-light'>
     <!-- Heading -->
@@ -58,7 +56,7 @@
             <div class='row justify-content-around align-items-center p-sm-3 px-2 py-2'>
                 <label class='col my-auto py-2 form-label ' for='branch'>Branch</label><br>
                 <div class='col-sm-8'><select class='selectpicker form-control' data-live-search='true'
-                        data-actions-box='true' data-selected-text-format="count" id='branch' multiple>
+                        data-actions-box='true' data-selected-text-format='count' id='branch' multiple>
                         <option value='Civil Engineering (4 Years, Bachelor of Technology)' selected>Civil Engineering
                             (4 Years, Bachelor of Technology)</option>
                         <option
@@ -781,36 +779,58 @@
 
     <!-- Footer -->
     <div class='container-fluid'>
-        <footer class="bg-black text-secondary row justify-content-between py-sm-0 px-sm-5 p-5 ">
-            <div class='col-sm-auto my-auto text-center text-sm-start'>
+        <footer class='bg-black text-secondary row justify-content-between py-md-0 px-md-5 py-5 '>
+            <!-- Hosted with Github -->
+            <div class='col-md-auto my-auto text-center text-md-start'>
                 <p class='my-auto'>Hosted with ❤️ on <a
                         class='link-underline-warning  link-offset-3-hover link-underline-opacity-0 link-underline-opacity-50-hover'
-                        href="
-            https://github.com/Sbrjt/josaa">
+                        href='
+            https://github.com/Sbrjt/josaa'>
                         GitHub</a></p>
             </div>
-            <div class='col-sm-auto h5 px-sm-0 p-5 text-center my-auto'>
-                <a href="https://pages.github.com/" class='link-secondary px-sm-4 px-2'>
-                    <svg style="height: 1em;" fill="currentColor" viewBox="0 0 16 16">
+            <!-- Icons -->
+            <div class='col-md-auto h5 px-md-0 p-5 text-center my-auto'>
+                <a href='https://pages.github.com/' class='link-secondary px-md-4 px-2'>
+                    <svg style='height: 1em;' fill='currentColor' viewBox='0 0 16 16'>
                         <path
-                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+                            d='M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8' />
                     </svg></a>
-                <a href="https://getbootstrap.com/" class='link-secondary px-sm-4 px-2'>
-                    <svg style="height: 1em;" viewBox="0 0 118 94">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0h34.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"
-                            fill="currentColor"></path>
+                <a href='https://getbootstrap.com/' class='link-secondary px-md-4 px-2'>
+                    <svg style='height: 1em;' viewBox='0 0 118 94'>
+                        <path fill-rule='evenodd' clip-rule='evenodd'
+                            d='M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0h34.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z'
+                            fill='currentColor'></path>
                     </svg></a>
-                <a class="px-sm-4 px-2" href="https://developer.snapappointments.com/bootstrap-select/">
-                    <img src="https://avatars.githubusercontent.com/u/3484250?s=200&amp;v=4"
-                        style="height: 1em; filter: grayscale(1) brightness(55%)">
+                <a href='https://www.sqlite.org/index.html' class='link-secondary px-md-4 px-2'>
+                    <svg style='height: 1em;filter: grayscale() brightness()' fill='currentColor'
+                        viewBox='0 0 6.554 6.555'>
+                        <defs>
+                            <linearGradient x1='2.983' y1='.53' x2='2.983' y2='4.744' id='A'
+                                gradientUnits='userSpaceOnUse'>
+                                <stop stop-color='#97d9f6' offset='0%' />
+                                <stop stop-color='#0f80cc' offset='92.024%' />
+                                <stop stop-color='#0f80cc' offset='100%' />
+                            </linearGradient>
+                        </defs>
+                        <path
+                            d='M4.96.29H.847c-.276 0-.5.226-.5.5v4.536c0 .276.226.5.5.5h2.71c-.03-1.348.43-3.964 1.404-5.54z' />
+                        <path
+                            d='M4.81.437H.847c-.196 0-.355.16-.355.355v4.205c.898-.345 2.245-.642 3.177-.628A28.93 28.93 0 0 1 4.811.437z' />
+                        <path
+                            d='M5.92.142c-.282-.25-.623-.15-.96.148l-.15.146c-.576.61-1.1 1.742-1.276 2.607a2.38 2.38 0 0 1 .148.426l.022.1.022.102s-.005-.02-.026-.08l-.014-.04a.461.461 0 0 0-.009-.022c-.038-.087-.14-.272-.187-.352a8.789 8.789 0 0 0-.103.321c.132.242.212.656.212.656s-.007-.027-.04-.12c-.03-.083-.176-.34-.21-.4-.06.22-.083.368-.062.404.04.07.08.2.115.324a7.52 7.52 0 0 1 .132.666l.005.062a6.11 6.11 0 0 0 .015.75c.026.313.075.582.137.726l.042-.023c-.09-.284-.128-.655-.112-1.084.025-.655.175-1.445.454-2.268C4.548 1.938 5.2.94 5.798.464c-.545.492-1.282 2.084-1.502 2.673-.247.66-.422 1.28-.528 1.873.182-.556.77-.796.77-.796s.29-.356.626-.865l-.645.172-.208.092s.53-.323.987-.47c.627-.987 1.31-2.39.622-3.002'
+                            fill='#003b57' />
+                    </svg></a>
+                <a class='px-md-4 px-2' href='https://developer.snapappointments.com/bootstrap-select/'>
+                    <img src='https://avatars.githubusercontent.com/u/3484250?s=200&amp;v=4'
+                        style='height: 1em; filter: grayscale(1) brightness(55%)'>
                 </a>
             </div>
-            <div class='col-sm-auto h5 my-auto text-center'>
-                <a href="#" class='link-secondary'>
-                    <svg style="height: 1em;" fill="currentColor" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z" />
+            <!-- Page up -->
+            <div class='col-md-auto h5 my-auto text-center'>
+                <a href='#' class='link-secondary'>
+                    <svg style='height: 1em;' fill='currentColor' viewBox='0 0 16 16'>
+                        <path fill-rule='evenodd'
+                            d='M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z' />
                     </svg>
                 </a>
             </div>
