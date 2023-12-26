@@ -16,6 +16,42 @@
         .bootstrap-select .dropdown-menu .dropdown-item {
             white-space: normal;
         }
+
+        body::before {
+            content: 'XS';
+            color: red;
+            position: fixed;
+        }
+
+        @media (min-width: 576px) {
+            body::before {
+                content: 'SM';
+            }
+        }
+
+        @media (min-width: 768px) {
+            body::before {
+                content: 'MD';
+            }
+        }
+
+        @media (min-width: 992px) {
+            body::before {
+                content: 'LG';
+            }
+        }
+
+        @media (min-width: 1200px) {
+            body::before {
+                content: 'XL';
+            }
+        }
+
+        @media (min-width: 1400px) {
+            body::before {
+                content: 'XXL';
+            }
+        }
     </style>
 </head>
 
