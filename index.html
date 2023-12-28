@@ -3,14 +3,9 @@
 
 <head>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/sql.js/0.3.2/js/sql.js'></script>
-
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
-    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css' />
-    <link rel='stylesheet'
-        href='https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css'>
-
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css'
+        rel='stylesheet'>
     <style>
         /* wrap text */
         .bootstrap-select .dropdown-menu .dropdown-item {
@@ -22,22 +17,23 @@
 <body>
     <div class='bg-light min-vh-100 d-flex flex-column justify-content-between'>
         <!-- Heading -->
-        <div class='container text-center mt-5'>
-            <h1 class='display-3'>2023 Josaa Cutoffs</h1>
-            <p class='lead'>Round 6 Opening and Closing Ranks</p>
+        <div class='text-center mt-5'>
+            <h1 class='display-3 mb-sm-3'>2023 Josaa Cutoffs</h1>
+            <p class='lead d-none d-sm-block'>Round 6 Opening and Closing Ranks</p>
+            <p class='fw-light d-sm-none' style='font-size: large;'>Round 6 Opening and Closing Ranks</p>
         </div>
 
         <!-- Form -->
-        <div class='mx-auto border shadow col-11 col-sm-10 col-md-9 col-xl-7 p-md-5 p-sm-3 py-2 m-5 bg-white container'>
+        <div class='container bg-white mx-auto m-5 border shadow col-xl-7 col-md-9 col-sm-10 col-11 p-md-5 p-sm-3 py-2'>
             <form onsubmit='return false'>
                 <!-- Rank -->
-                <div class='row justify-content-around align-items-center p-sm-3 px-2 py-2'>
+                <div class='row justify-content-around align-items-center p-sm-3 p-2'>
                     <label for='rank' class='col my-auto py-2 form-label'>Rank</label>
                     <div class='col-sm-8'><input type='text' class='form-control' id='rank'></div>
                 </div>
 
                 <!-- Category -->
-                <div class='row justify-content-around align-items-center p-sm-3 px-2 py-2'>
+                <div class='row justify-content-around align-items-center p-sm-3 p-2'>
                     <label class='col my-auto py-2 form-label ' for='category'>Category</label>
                     <div class='col-sm-8'><select class='selectpicker form-control' id='category'>
                             <option value='OPEN' selected>OPEN</option>
@@ -54,7 +50,7 @@
                 </div>
 
                 <!-- Branch -->
-                <div class='row justify-content-around align-items-center p-sm-3 px-2 py-2'>
+                <div class='row justify-content-around align-items-center p-sm-3 p-2'>
                     <label class='col my-auto py-2 form-label ' for='branch'>Branch</label><br>
                     <div class='col-sm-8'><select class='selectpicker form-control' data-live-search='true'
                             data-actions-box='true' data-selected-text-format='count' id='branch' multiple>
@@ -796,7 +792,7 @@
                 </div>
 
                 <!-- State -->
-                <div class='row justify-content-around align-items-center p-sm-3 px-2 py-2'>
+                <div class='row justify-content-around align-items-center p-sm-3 p-2'>
                     <label class='col my-auto py-2 form-label ' for='state'>State</label>
                     <div class='col-sm-8'><select class='form-control' id='state' disabled>
                             <option value='' selected disabled>Select an option</option>
@@ -839,15 +835,15 @@
                 </div>
 
                 <!-- Gender -->
-                <div class='row justify-content-around align-items-center p-sm-3 px-2 py-2'>
-                    <label class='col my-auto py-2 form-label ' for='gender'>Gender</label>
+                <div class='row justify-content-around align-items-center p-sm-3 p-2'>
+                    <label class='col my-auto py-2 form-label' for='gender'>Gender</label>
                     <div class='col-sm-8 d-flex justify-content-between'>
                         <div class='form-check-inline'>
                             <input class='form-check-input' type='radio' id='neutral' name='gender' value='neutral'
                                 checked>
                             <label class='form-check-label ms-sm-4 ms-3' for='neutral'>Neutral</label>
                         </div>
-                        <div class='form-check-inline'>
+                        <div class='form-check-inline m-0'>
                             <input class='form-check-input' type='radio' id='female' name='gender' value='female'>
                             <label class='form-check-label ms-sm-4 ms-3' for='female'>Female</label>
                         </div>
@@ -855,24 +851,25 @@
                 </div>
 
                 <!-- College -->
-                <div class='row justify-content-around align-items-center p-sm-3 px-2 py-2'>
+                <div class='row justify-content-around align-items-center p-sm-3 p-2'>
                     <label class='col my-auto py-2 form-label ' for='college'>College type</label>
-                    <div class='col-sm-8 d-flex justify-content-between'>
-                        <div class='form-check-inline'>
+                    <div class='col-sm-8 d-flex justify-content-between '>
+                        <div class='form-check-inline m-0'>
                             <input class='form-check-input' type='checkbox' id='iit' name='college' value='iit' checked>
                             <label class='form-check-label ms-1' for='iit'>IIT</label>
                         </div>
-                        <div class='form-check-inline'>
-                            <input class='form-check-input' type='checkbox' id='nit' name='college' value='nit' checked>
+                        <div class='form-check-inline m-0'>
+                            <input class='form-check-input ms-2' type='checkbox' id='nit' name='college' value='nit'
+                                checked>
                             <label class='form-check-label ms-1' for='nit'>NIT</label>
                         </div>
-                        <div class='form-check-inline'>
-                            <input class='form-check-input' type='checkbox' id='iiit' name='college' value='iiit'
+                        <div class='form-check-inline m-0'>
+                            <input class='form-check-input ms-2' type='checkbox' id='iiit' name='college' value='iiit'
                                 checked>
                             <label class='form-check-label ms-1' for='iiit'>IIIT</label>
                         </div>
-                        <div class='form-check-inline'>
-                            <input class='form-check-input' type='checkbox' id='gfti' name='college' value='gfti'
+                        <div class='form-check-inline m-0'>
+                            <input class='form-check-input ms-2' type='checkbox' id='gfti' name='college' value='gfti'
                                 checked>
                             <label class='form-check-label ms-1' for='gfti'>GFTI</label>
                         </div>
@@ -880,8 +877,8 @@
                 </div>
 
                 <!-- Submit -->
-                <div class='text-center p-sm-3 px-2 py-2'>
-                    <button id='btn' class='btn btn-lg btn-outline-primary col-12 col-sm-5 mt-25'>GO</button>
+                <div class='text-center p-sm-3 p-2'>
+                    <button id='btn' class='btn btn-lg btn-outline-primary col-12 col-sm-5 mt-2'>GO</button>
                 </div>
             </form>
         </div>
@@ -906,24 +903,25 @@
                 </table>
             </div>
             <div class='text-end mt-2'>
-                <button class="btn btn-secondary text-end" data-bs-toggle="collapse" href="#table2"
-                    id='btn2'>Expand</button>
+                <button class="btn btn-secondary text-end" data-bs-toggle="collapse" href="#table2" id='btn2'>Show
+                    more</button>
             </div>
         </div>
 
         <!-- Footer -->
-        <div class='container-fluid'>
-            <footer class=' bg-black text-secondary row justify-content-between py-sm-0 px-sm-5 py-5 '>
+        <div class='container-fluid '>
+            <footer class='bg-black text-secondary row justify-content-between py-sm-0 px-sm-5 py-5 '>
                 <!-- Hosted with Github -->
-                <div class='col-sm-auto my-auto text-center text-sm-start'>
-                    <p class='my-auto'>Hosted with ❤️ on <a
-                            class='link-underline-warning  link-offset-3-hover link-underline-opacity-0 link-underline-opacity-50-hover'
-                            href='
-            https://github.com/Sbrjt/josaa'>
-                            GitHub</a></p>
+                <div class='col-sm-auto my-auto text-sm-start text-center'>
+                    <p class='my-auto'>Hosted with ❤️ on
+                        <a href='https://github.com/Sbrjt/josaa'
+                            class='link-underline-warning  link-offset-3-hover link-underline-opacity-0 link-underline-opacity-50-hover'>
+                            GitHub
+                        </a>
+                    </p>
                 </div>
                 <!-- Icons -->
-                <div class='col-sm-auto h5 px-sm-0 p-5 text-center my-auto'>
+                <div class='h5 col-sm-auto px-sm-0 p-5 text-center my-auto'>
                     <a href='https://pages.github.com/' class='link-secondary px-md-4 px-2'>
                         <svg style='height: 1em;' fill='currentColor' viewBox='0 0 16 16'>
                             <path
@@ -957,7 +955,7 @@
                         <img src='https://avatars.githubusercontent.com/u/3484250?s=200&amp;v=4'
                             style='height: 1em; filter: grayscale(1) brightness(55%)'></a>
                 </div>
-                <!-- Page up -->
+                <!-- Back to top -->
                 <div class='col-sm-auto h5 my-auto text-center'>
                     <a href='#' class='link-secondary'>
                         <svg style='height: 1em;' fill='currentColor' viewBox='0 0 16 16'>
@@ -970,6 +968,7 @@
         </div>
 
         <script src='script.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/sql.js/0.3.2/js/sql.js'></script>
         <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
         <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
         <script

@@ -7,7 +7,7 @@ async function loadDb() {
 	db = new SQL.Database(new Uint8Array(buffer)) // global var db
 }
 
-async function fetchData() {
+function fetchData() {
 	// variables
 	const tb = document.getElementById('tb')
 	const table1 = document.getElementById('table1')
@@ -43,7 +43,9 @@ async function fetchData() {
 	const result = db.exec(query)[0].values
 
 	// show table
-	tb.classList.remove('d-none')
+	if (tb.classList.contains('d-none')) {
+		tb.classList.remove('d-none')
+	}
 
 	// clear table
 	table1.innerHTML = ''
