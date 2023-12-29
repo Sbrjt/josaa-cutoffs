@@ -8,11 +8,11 @@ This project hosts a website that displays the closing ranks of various colleges
 ## 📲 Functionality
 1. Enter your rank.
 2. Choose your category, state and gender.
-3. Select the desired branches and the institute type.
-4. Find all the prospective college and branches for you.
-5. Click expand table to see more results.
+3. Select the desired branches and institutes.
+4. Find prospective choices for you.
+5. Click expand to see more results.
 
-## ⚙️ Tech
+## ⚙️ Tech used
 - [GitHub Pages](https://pages.github.com/)
 - [SQLite](https://www.sqlite.org/index.html)
 - [Bootstrap](https://getbootstrap.com/)
