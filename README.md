@@ -1,6 +1,4 @@
-<h1 align='center'>
-    <a href='https://sbrjt.github.io/josaa/'><strong>Go to Website</a>➡️
-</h1>
+<h2 align='center'><a href='https://sbrjt.github.io/josaa/'>Go to Website</a>➡️</h2>
 
 # 📝 Overview
 
