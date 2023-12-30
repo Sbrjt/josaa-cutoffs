@@ -25,9 +25,7 @@ The project is hosted on GitHub Pages that offers free hosting for static websit
 
 If you like my project, please gimme a star! ⭐💫
 
-Contributions are welcome!🤝
-
-If you have any suggestion/concern, do [let me know](https://mailhide.io/e/kMGaefEP).
+Contributions are welcome!🤝 If you have any suggestion/concern, do [let me know](https://mailhide.io/e/kMGaefEP).
 
 <!-- ## 📜 License
 
