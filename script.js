@@ -1,8 +1,10 @@
 const btn = document.getElementById('btn') // GO btn
 const btn2 = document.getElementById('btn2') // 'Show more' btn
-let x // row no
-let db // database for loadDb
-let result
+let currentRow // current row no
+let db //  local database for loadDb function
+let result // fetched result from tb
+const table = document.getElementById('table') //table body
+const tb = document.getElementById('tb') //parent table
 
 async function loadDb() {
 	const response = await fetch('data.db')
@@ -11,11 +13,12 @@ async function loadDb() {
 }
 
 function fetchData() {
-	// variables:
+	// get user inputs from form and prepare sql query
 
 	let rank = document.getElementById('rank').value
-	if (rank === '') {
-		rank = 1 // default value
+	if (!/^\d+$/.test(rank)) {
+		// validate rank input (only digits allowed)
+		return
 	}
 
 	const category = document.getElementById('category').value
@@ -38,9 +41,6 @@ function fetchData() {
 		.filter(i => i.checked)
 		.map(i => `'${i.value}'`)
 		.join(', ')
-
-	const tb = document.getElementById('tb') //parent table
-	const table = document.getElementById('table') //table body
 
 	// show table (as it is hidden initially)
 	if (tb.classList.contains('d-none')) {
@@ -67,28 +67,28 @@ function fetchData() {
     order by Closing_rank
 	`
 
-	// fetched data in 2D array
+	// execute query and fetch data in a 2D array
 	result = db.exec(query)[0].values
 
-	x = 0
-	// iterating through result and inserting 10 rows into table (x - row, y - col)
-	for (let i = 0; i < 10 && x < result.length; i++) {
+	currentRow = 0
+	// iterating through result and inserting 10 rows into table (7 cols)
+	for (let i = 0; i < 10 && currentRow < result.length; i++) {
 		let row = table.insertRow()
-		for (let y = 0; y < 7; y++) {
-			row.insertCell(y).innerHTML = result[x][y]
+		for (let j = 0; j < 7; j++) {
+			row.insertCell(j).innerHTML = result[currentRow][j]
 		}
-		x++
+		currentRow++
 	}
 }
 
 function expand() {
-	// insert 10 more records
-	for (let i = 0; i < 10 && x < result.length; i++) {
+	// insert 10 more records into table
+	for (let i = 0; i < 10 && currentRow < result.length; i++) {
 		let row = table.insertRow()
-		for (let y = 0; y < 7; y++) {
-			row.insertCell(y).innerHTML = result[x][y]
+		for (let j = 0; j < 7; j++) {
+			row.insertCell(j).innerHTML = result[currentRow][j]
 		}
-		x++
+		currentRow++
 	}
 }
 

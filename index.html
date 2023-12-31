@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<!--  -->
 
 <head>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
@@ -30,7 +29,12 @@
                 <!-- Rank -->
                 <div class='row justify-content-around align-items-center p-sm-3 p-2'>
                     <label for='rank' class='col my-auto py-2 form-label'>Rank</label>
-                    <div class='col-sm-8'><input type='text' class='form-control' id='rank'></div>
+                    <div class='col-sm-8'>
+                        <input type='text' class='form-control' id='rank' required>
+                    </div>
+                    <div class="invalid-feedback">
+                        Looks good!
+                    </div>
                 </div>
 
                 <!-- Category -->
@@ -713,7 +717,7 @@
                             <option value='Gujarat'>Gujarat</option>
                             <option value='Haryana'>Haryana</option>
                             <option value='Himachal Pradesh'>Himachal Pradesh</option>
-                            <option value='Jammu & Kashmir'>Jammu & Kashmir</option>
+                            <option value='Jammu & Kashmir'>Jammu & Kashmir/Ladakh</option>
                             <option value='Jharkhand'>Jharkhand</option>
                             <option value='Karnataka'>Karnataka</option>
                             <option value='Kerala'>Kerala</option>
