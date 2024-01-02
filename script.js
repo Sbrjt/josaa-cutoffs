@@ -92,6 +92,7 @@ function expand() {
 	}
 }
 
+loadDb()
 btn.addEventListener('click', fetchData)
 btn2.addEventListener('click', expand)
-document.addEventListener('DOMContentLoaded', loadDb)
+// document.addEventListener('DOMContentLoaded', )
