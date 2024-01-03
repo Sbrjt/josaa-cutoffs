@@ -1,10 +1,9 @@
 const btn = document.getElementById('btn') // GO btn
 const btn2 = document.getElementById('btn2') // 'Show more' btn
-let currentRow // current row no
+let i // current row no
 let db //  local database for loadDb function
 let result // fetched result from tb
-const table = document.getElementById('table') //table body
-const tb = document.getElementById('tb') //parent table
+const tableDiv = document.getElementById('tableDiv')
 
 async function loadDb() {
 	const response = await fetch('data.db')
@@ -16,8 +15,8 @@ function fetchData() {
 	// get user inputs from form and prepare sql query
 
 	let rank = document.getElementById('rank').value
+	// validating rank input with regex (only digits allowed)
 	if (!/^\d+$/.test(rank)) {
-		// validate rank input (only digits allowed)
 		return
 	}
 
@@ -43,19 +42,20 @@ function fetchData() {
 		.join(', ')
 
 	// show table (as it is hidden initially)
-	if (tb.classList.contains('d-none')) {
-		tb.classList.remove('d-none')
+	if (tableDiv.classList.contains('d-none')) {
+		tableDiv.classList.remove('d-none')
 	}
 
+	table = $('#table')
 	// clear table contents
-	table.innerHTML = ''
+	table.bootstrapTable('removeAll')
 
 	// sql query
 	const query = `
-	select  Institute, Branch, Quota, Seat_type, Gender, Opening_rank, Closing_rank from tb
-	where Seat_type = '${category}' and
+	select  Institute, State, Branch, Quota, Seat, Gender, Open, Close from tb
+	where Seat = '${category}' and
 	Gender = '${gender}' and
-    Closing_rank >= ${rank} and
+    Close >= ${rank} and
 	Branch in (${branch}) and
 	(
         (Quota in ('HS', 'GO', 'LA', 'JK') and State = '${state}')
@@ -64,34 +64,62 @@ function fetchData() {
 		'${state}' = 'Select an option'
     ) and
 	Institute_type in (${type})
-    order by Closing_rank
+    order by Close
 	`
 
 	// execute query and fetch data in a 2D array
 	result = db.exec(query)[0].values
+	n = result.length
 
-	currentRow = 0
+	i = 0
+
 	// iterating through result and inserting 10 rows into table (7 cols)
-	for (let i = 0; i < 10 && currentRow < result.length; i++) {
-		let row = table.insertRow()
-		for (let j = 0; j < 7; j++) {
-			row.insertCell(j).innerHTML = result[currentRow][j]
-		}
-		currentRow++
+	while (i < 10) {
+		table.bootstrapTable('append', {
+			institute: result[i][0],
+			state: result[i][1],
+			branch: result[i][2],
+			quota: result[i][3],
+			seat: result[i][4],
+			gender: result[i][5],
+			open: result[i][6],
+			close: result[i][7],
+		})
+		i++
 	}
 }
 
 function expand() {
 	// insert 10 more records into table
-	for (let i = 0; i < 10 && currentRow < result.length; i++) {
-		let row = table.insertRow()
-		for (let j = 0; j < 7; j++) {
-			row.insertCell(j).innerHTML = result[currentRow][j]
-		}
-		currentRow++
+	for (let j = 0; j < 10 && i < n; j++) {
+		table.bootstrapTable('append', {
+			institute: result[i][0],
+			state: result[i][1],
+			branch: result[i][2],
+			quota: result[i][3],
+			seat: result[i][4],
+			gender: result[i][5],
+			open: result[i][6],
+			close: result[i][7],
+		})
+		i++
 	}
 }
 
+function setColumnVisibility() {
+	// in mobile view hide unnecessary columns
+	const l = ['quota', 'state', 'seat', 'gender', 'open']
+
+	if (window.matchMedia('(max-width: 576px)').matches) {
+		for (let i of l) {
+			document
+				.querySelector(`th[data-field="${i}"]`)
+				.setAttribute('data-visible', 'false')
+		}
+	}
+}
+
+setColumnVisibility()
 btn.addEventListener('click', fetchData)
 btn2.addEventListener('click', expand)
 document.addEventListener('DOMContentLoaded', loadDb)
