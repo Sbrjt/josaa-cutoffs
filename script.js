@@ -1,9 +1,11 @@
 const btn = document.getElementById('btn') // GO btn
 const btn2 = document.getElementById('btn2') // 'Show more' btn
-let i // current row no
+let row // current row no
 let db //  local database for loadDb function
 let result // fetched result from tb
+let n // size of result
 const tableDiv = document.getElementById('tableDiv')
+// table
 
 async function loadDb() {
 	const response = await fetch('data.db')
@@ -71,38 +73,38 @@ function fetchData() {
 	result = db.exec(query)[0].values
 	n = result.length
 
-	i = 0
+	row = 0
 
-	// iterating through result and inserting 10 rows into table (7 cols)
-	while (i < 10) {
+	// iterating through result and inserting 10 rows into table (8 cols)
+	while (row < 10) {
 		table.bootstrapTable('append', {
-			institute: result[i][0],
-			state: result[i][1],
-			branch: result[i][2],
-			quota: result[i][3],
-			seat: result[i][4],
-			gender: result[i][5],
-			open: result[i][6],
-			close: result[i][7],
+			institute: result[row][0],
+			state: result[row][1],
+			branch: result[row][2],
+			quota: result[row][3],
+			seat: result[row][4],
+			gender: result[row][5],
+			open: result[row][6],
+			close: result[row][7],
 		})
-		i++
+		row++
 	}
 }
 
 function expand() {
 	// insert 10 more records into table
-	for (let j = 0; j < 10 && i < n; j++) {
+	for (let i = 0; i < 10 && row < n; i++) {
 		table.bootstrapTable('append', {
-			institute: result[i][0],
-			state: result[i][1],
-			branch: result[i][2],
-			quota: result[i][3],
-			seat: result[i][4],
-			gender: result[i][5],
-			open: result[i][6],
-			close: result[i][7],
+			institute: result[row][0],
+			state: result[row][1],
+			branch: result[row][2],
+			quota: result[row][3],
+			seat: result[row][4],
+			gender: result[row][5],
+			open: result[row][6],
+			close: result[row][7],
 		})
-		i++
+		row++
 	}
 }
 
@@ -120,6 +122,6 @@ function setColumnVisibility() {
 }
 
 setColumnVisibility()
+document.addEventListener('DOMContentLoaded', loadDb)
 btn.addEventListener('click', fetchData)
 btn2.addEventListener('click', expand)
-document.addEventListener('DOMContentLoaded', loadDb)
