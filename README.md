@@ -1,4 +1,4 @@
-<h3 align='center'><a target="_blank" href='https://sbrjt.github.io/josaa/' >Go to Website</a>➡️</h3>
+<h3 align='center'><a target="_blank" href='https://sbrjt.github.io/josaa-cutoffs' >Go to Website</a>➡️</h3>
 
 ## 📝 Overview
 
