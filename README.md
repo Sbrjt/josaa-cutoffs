@@ -2,7 +2,7 @@
 
 ## 📝 Overview
 
-This project hosts a website that displays the closing ranks of various colleges under JoSAA. It aims to provide an alternative, user-friendly platform to look up JoSSA cutoffs and help simplify college hunt before counselling.🔍🚀
+This project hosts a website that displays the closing ranks of various colleges under JoSAA. It aims to provide an alternative, user-friendly platform to look up JoSSA cutoffs and help simplify college hunt before counselling.🔍🎓
 
 ## 📲 Functionality
 
@@ -17,21 +17,22 @@ This project hosts a website that displays the closing ranks of various colleges
 - [GitHub Pages](https://pages.github.com/)
 - [SQLite](https://www.sqlite.org/index.html)
 - [Bootstrap](https://getbootstrap.com/)
-- [Bootstrap-select](https://developer.snapappointments.com/bootstrap-select/)
+- [Bootstrap-select](https://developer.snapappointments.com/bootstrap-select)
+- [Bootstrap-table]((https://bootstrap-table.com/)
 
-The project is hosted on GitHub Pages that offers free hosting for static websites directly from the repository. Since GitHub Pages does not support any server-side scripting, a local SQLite database has been employed. (The data was scrapped from [JoSAA aspx](https://josaa.admissions.nic.in/Applicant/seatallotmentresult/currentorcr.aspx) using a [browser extension](https://chromewebstore.google.com/detail/html-table-scraper/ncphhmcjgbpglahiijnaaaaneoijlmkj) and the csv files were imported into a database table using python's [sqlite module](https://docs.python.org/3/library/sqlite3.html).) Bootstrap is used for responsive styling, along with bootstrap-select. The site devoid of any server-side code works even when offline.
+The project is hosted on GitHub Pages that offers free hosting for static websites directly from the repository. Since GitHub Pages does not support any server-side scripting, a local SQLite database has been employed. (The data was scrapped from [JoSAA aspx](https://josaa.admissions.nic.in/Applicant/seatallotmentresult/currentorcr.aspx) using a [browser extension](https://chromewebstore.google.com/detail/html-table-scraper/ncphhmcjgbpglahiijnaaaaneoijlmkj) and the csv files were imported into a database table.) Bootstrap is used for responsive styling, along with bootstrap-select and bootstrap-table. The site devoid of any server-side code works even when offline.
 
 #
 
 If you like my project, please gimme a star! ⭐💫
 
-Contributions are welcome!🤝
+Contributions are welcome! 🤝
 
-If you have any suggestion/concern, do [let me know](https://mailhide.io/e/kMGaefEP).
+If you have any suggestion/concern, do [let me know](https://mailhide.io/e/kMGaefEP). 
 
-<!-- ## 📜 License
+🚀
 
-Licensed under the MIT License.
+<!-- 📜 MIT License
 
-© 2023 Shubhrajit Sadhukhan
+© Shubhrajit Sadhukhan
 -->
