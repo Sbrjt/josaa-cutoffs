@@ -8,12 +8,16 @@ const tableDiv = document.getElementById('tableDiv')
 // table
 
 async function loadDb() {
-	const response = await fetch('data.db')
+	const response = await fetch('assets/data.db')
 	const buffer = await response.arrayBuffer()
 	db = new SQL.Database(new Uint8Array(buffer)) // global var db
 }
 
 function fetchData() {
+	table = $('#table')
+	// clear table contents
+	table.bootstrapTable('removeAll')
+
 	// get user inputs from form and prepare sql query
 
 	let rank = document.getElementById('rank').value
@@ -42,15 +46,6 @@ function fetchData() {
 		.filter(i => i.checked)
 		.map(i => `'${i.value}'`)
 		.join(', ')
-
-	// show table (as it is hidden initially)
-	if (tableDiv.classList.contains('d-none')) {
-		tableDiv.classList.remove('d-none')
-	}
-
-	table = $('#table')
-	// clear table contents
-	table.bootstrapTable('removeAll')
 
 	// sql query
 	const query = `
@@ -89,6 +84,11 @@ function fetchData() {
 		})
 		row++
 	}
+
+	// show table (as it is hidden initially)
+	if (tableDiv.classList.contains('d-none')) {
+		tableDiv.classList.remove('d-none')
+	}
 }
 
 function expand() {
@@ -121,7 +121,18 @@ function setColumnVisibility() {
 	}
 }
 
+async function spin() {
+	spinner = document.getElementById('spinner')
+	spinner.classList.remove('d-none')
+	btn.classList.add('d-none')
+	setTimeout(() => {
+		spinner.classList.add('d-none')
+		btn.classList.remove('d-none')
+	}, 1000)
+}
+
 setColumnVisibility()
 document.addEventListener('DOMContentLoaded', loadDb)
+btn.addEventListener('click', spin)
 btn.addEventListener('click', fetchData)
 btn2.addEventListener('click', expand)

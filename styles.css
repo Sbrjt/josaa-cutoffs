@@ -1,0 +1,14 @@
+/* wrap text */
+.bootstrap-select .dropdown-menu .dropdown-item {
+	white-space: normal;
+}
+
+td,
+th {
+	border-right: none;
+	border-left: none;
+}
+
+td {
+	padding-left: 0.75rem !important;
+}
