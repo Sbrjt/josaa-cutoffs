@@ -2,12 +2,9 @@ async function f() {
 	// Fetching and initializing the database
 	const response = await fetch('assets/data.db')
 	const buffer = await response.arrayBuffer()
-	db = new SQL.Database(new Uint8Array(buffer))
+	const db = new SQL.Database(new Uint8Array(buffer))
 	console.log(db)
-}
 
-f()
-document.addEventListener('DOMContentLoaded', async () => {
 	// variables initialization
 	let row // current row no
 	let result // fetched result from database
@@ -99,18 +96,19 @@ document.addEventListener('DOMContentLoaded', async () => {
 			row++
 		}
 	}
+}
 
+f()
+
+document.addEventListener('DOMContentLoaded', () => {
 	// in mobile view hide unnecessary columns
-	function setColumnVisibility() {
-		const l = ['quota', 'state', 'seat', 'gender', 'open']
+	const l = ['quota', 'state', 'seat', 'gender', 'open']
 
-		if (window.matchMedia('(max-width: 576px)').matches) {
-			for (let i of l) {
-				document
-					.querySelector(`th[data-field="${i}"]`)
-					.setAttribute('data-visible', 'false')
-			}
+	if (window.matchMedia('(max-width: 576px)').matches) {
+		for (let i of l) {
+			document
+				.querySelector(`th[data-field="${i}"]`)
+				.setAttribute('data-visible', 'false')
 		}
 	}
-	setColumnVisibility()
 })
