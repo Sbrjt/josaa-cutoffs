@@ -1,34 +1,24 @@
-function setColumnVisibility() {
-	// in mobile view hide unnecessary columns
-	const l = ['quota', 'state', 'seat', 'gender', 'open']
-
-	if (window.matchMedia('(max-width: 576px)').matches) {
-		for (let i of l) {
-			document
-				.querySelector(`th[data-field="${i}"]`)
-				.setAttribute('data-visible', 'false')
-		}
-	}
-}
-
-setColumnVisibility()
-
 document.addEventListener('DOMContentLoaded', async () => {
+	// Fetching and initializing the database
 	const response = await fetch('assets/data.db')
 	const buffer = await response.arrayBuffer()
 	const db = new SQL.Database(new Uint8Array(buffer))
 
-	const btn = document.getElementById('btn') // GO btn
+	// variables initialization
 	let row // current row no
-	let result // fetched result from tb
-	let n // size of result
+	let result // fetched result from database
+	let rowCount // total number of records in result set
+	const table = $('#table') // not working with getElementById 🤷‍♂️
+	const btn = document.getElementById('btn') // GO btn
+	const btn2 = document.getElementById('btn2') // 'Show more' btn
 
-	btn.addEventListener('click', () => {
-		table = $('#table')
-		// clear table contents
-		table.bootstrapTable('removeAll')
+	btn.addEventListener('click', loadInitialData) // insert the first 10 records into table
+	btn2.addEventListener('click', loadData) // insert 10 more records
 
-		// get user inputs from form and prepare sql query
+	function loadInitialData() {
+		table.bootstrapTable('removeAll') // clear table contents
+
+		// get user inputs from form and prepare sql query:
 
 		let rank = document.getElementById('rank').value
 		// validating rank input with regex (only digits allowed)
@@ -49,7 +39,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 			? 'Neutral'
 			: 'Female'
 
-		// get elements with name 'type', convert them to array, filter to get only the checked ones,
+		// get elements with name 'type', convert to array, filter to get only the checked ones,
 		// map them to an array of their values wrapped in single quotes,
 		// join the array into a comma-separated string to prepare SQL query
 		const type = Array.from(document.getElementsByName('type'))
@@ -76,38 +66,21 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 		// execute query and fetch data in a 2D array
 		result = db.exec(query)[0].values
-		n = result.length
+		rowCount = result.length
 
 		row = 0
-
-		// iterating through result and inserting 10 rows into table (8 cols)
-		while (row < 10) {
-			table.bootstrapTable('append', {
-				institute: result[row][0],
-				state: result[row][1],
-				branch: result[row][2],
-				quota: result[row][3],
-				seat: result[row][4],
-				gender: result[row][5],
-				open: result[row][6],
-				close: result[row][7],
-			})
-			row++
-		}
-
-		const tableDiv = document.getElementById('tableDiv')
+		loadData() // Insert initial 10 records into table
 
 		// show table (as it is hidden initially)
+		const tableDiv = document.getElementById('tableDiv')
 		if (tableDiv.classList.contains('d-none')) {
 			tableDiv.classList.remove('d-none')
 		}
-	})
+	}
 
-	const btn2 = document.getElementById('btn2') // 'Show more' btn
-
-	btn2.addEventListener('click', () => {
-		// insert 10 more records into table
-		for (let i = 0; i < 10 && row < n; i++) {
+	function loadData() {
+		// insert 10 records into table
+		for (let i = 0; i < 10 && row < rowCount; i++) {
 			table.bootstrapTable('append', {
 				institute: result[row][0],
 				state: result[row][1],
@@ -120,5 +93,19 @@ document.addEventListener('DOMContentLoaded', async () => {
 			})
 			row++
 		}
-	})
+	}
 })
+
+// in mobile view hide unnecessary columns
+function setColumnVisibility() {
+	const l = ['quota', 'state', 'seat', 'gender', 'open']
+
+	if (window.matchMedia('(max-width: 576px)').matches) {
+		for (let i of l) {
+			document
+				.querySelector(`th[data-field="${i}"]`)
+				.setAttribute('data-visible', 'false')
+		}
+	}
+}
+setColumnVisibility()
