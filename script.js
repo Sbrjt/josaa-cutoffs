@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 	const response = await fetch('assets/data.db')
 	const buffer = await response.arrayBuffer()
 	const db = new SQL.Database(new Uint8Array(buffer))
+	console.log(db)
 
 	// variables initialization
 	let row // current row no
