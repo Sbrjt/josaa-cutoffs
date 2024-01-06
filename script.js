@@ -68,6 +68,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 		// execute query and fetch data in a 2D array
 		result = db.exec(query)[0].values
 		rowCount = result.length
+		console.log(result)
 
 		row = 0
 		loadData() // Insert initial 10 records into table
