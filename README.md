@@ -20,7 +20,7 @@ This project hosts a website that displays the closing ranks of various colleges
 - [Bootstrap-select](https://developer.snapappointments.com/bootstrap-select)
 - [Bootstrap-table](https://bootstrap-table.com/)
 
-The project is hosted on GitHub Pages that offers free hosting for static websites directly from the repository. Since GitHub Pages does not support any server-side scripting, a local SQLite database has been employed. (The data was scrapped from [JoSAA aspx](https://josaa.admissions.nic.in/Applicant/seatallotmentresult/currentorcr.aspx) using a [browser extension](https://chromewebstore.google.com/detail/html-table-scraper/ncphhmcjgbpglahiijnaaaaneoijlmkj) and the csv files were imported into a database table.) Bootstrap is used for responsive styling, along with bootstrap-select and bootstrap-table. The site devoid of any server-side code works even when offline.
+The project is hosted on GitHub Pages that offers free hosting for static websites directly from the repository. Since GitHub Pages does not support any server-side scripting, a local SQLite database has been employed. (The data was scrapped from [JoSAA aspx](https://josaa.admissions.nic.in/Applicant/seatallotmentresult/currentorcr.aspx) using a [browser extension](https://chromewebstore.google.com/detail/html-table-scraper/ncphhmcjgbpglahiijnaaaaneoijlmkj) and the csv files were imported into a database table.) Bootstrap is used for responsive styling, along with bootstrap-select and bootstrap-table. The site devoid of any server-side code works even when offline. 🚀
 
 #
 
@@ -30,9 +30,6 @@ Contributions are welcome! 🤝
 
 If you have any suggestion/concern, do [let me know](https://mailhide.io/e/kMGaefEP).
 
-🚀
-
-<!-- 📜 MIT License
+<!-- 📜 MIT License -->
 
 © Shubhrajit Sadhukhan
--->
