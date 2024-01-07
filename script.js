@@ -15,6 +15,8 @@ async function f() {
 
 	if (btn.disabled === true) {
 		btn.disabled = false
+		document.getElementById('go').classList.remove('d-none')
+		document.getElementById('spinner').classList.add('d-none')
 	}
 	btn.addEventListener('click', loadInitialData) // insert the first 10 records into table
 	btn2.addEventListener('click', loadData) // insert 10 more records
