@@ -13,6 +13,9 @@ async function f() {
 	const btn = document.getElementById('btn') // GO btn
 	const btn2 = document.getElementById('btn2') // 'Show more' btn
 
+	if (btn.disabled === true) {
+		btn.disabled = false
+	}
 	btn.addEventListener('click', loadInitialData) // insert the first 10 records into table
 	btn2.addEventListener('click', loadData) // insert 10 more records
 
