@@ -3,9 +3,8 @@ async function f() {
 	const response = await fetch('assets/data.db')
 	const buffer = await response.arrayBuffer()
 	const db = new SQL.Database(new Uint8Array(buffer))
-	console.log(db)
 
-	// variables initialization
+	// variables initialization:
 	let row // current row no
 	let result // fetched result from database
 	let rowCount // total number of records in result set
@@ -18,10 +17,10 @@ async function f() {
 		document.getElementById('go').classList.remove('d-none')
 		document.getElementById('spinner').classList.add('d-none')
 	}
-	btn.addEventListener('click', loadInitialData) // insert the first 10 records into table
-	btn2.addEventListener('click', loadData) // insert 10 more records
+	btn.addEventListener('click', fetchData) // fetch data and insert the first 10 records into table
+	btn2.addEventListener('click', insertRows) // insert 10 more records
 
-	function loadInitialData() {
+	function fetchData() {
 		table.bootstrapTable('removeAll') // clear table contents
 
 		// get user inputs from form and prepare sql query:
@@ -70,13 +69,19 @@ async function f() {
 		order by Close
 		`
 
-		// execute query and fetch data in a 2D array
-		result = db.exec(query)[0].values
+		// execute query
+		l = db.exec(query)
+
+		if (l.length === 0) {
+			return
+		}
+
+		// storing data in a 2D array
+		result = l[0].values
 		rowCount = result.length
-		console.log(result)
 
 		row = 0
-		loadData() // Insert initial 10 records into table
+		insertRows() // Insert initial 10 records into table
 
 		// show table (as it is hidden initially)
 		const tableDiv = document.getElementById('tableDiv')
@@ -85,7 +90,7 @@ async function f() {
 		}
 	}
 
-	function loadData() {
+	function insertRows() {
 		// insert 10 records into table
 		for (let i = 0; i < 10 && row < rowCount; i++) {
 			table.bootstrapTable('append', {
