@@ -12,3 +12,7 @@ th {
 td {
 	padding-left: 0.75rem !important;
 }
+
+::placeholder {
+	color: silver !important;
+}
