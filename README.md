@@ -34,4 +34,4 @@ If you have any suggestion/concern, do [let me know](https://mailhide.io/e/kMGae
 
 <!-- 📜 MIT License -->
 
-© Shubhrajit Sadhukhan
+© Shubhrajit Sadhukhan :octocat:

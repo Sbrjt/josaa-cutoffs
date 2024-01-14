@@ -1,4 +1,4 @@
-async function f() {
+(async () => {
 	// Fetching and initializing the database
 	const response = await fetch('assets/data.db')
 	const buffer = await response.arrayBuffer()
@@ -106,9 +106,7 @@ async function f() {
 			row++
 		}
 	}
-}
-
-f()
+})()
 
 document.addEventListener('DOMContentLoaded', () => {
 	// in mobile view hide unnecessary columns
