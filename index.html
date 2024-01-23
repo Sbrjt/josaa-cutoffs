@@ -815,10 +815,10 @@
 
                 <!-- Submit -->
                 <div class='text-center p-sm-3 p-2'>
-                    <button id='btn' class='btn btn-lg btn-outline-primary col-12 col-sm-5 mt-2' style='height: 3rem;'
-                        type='submit' disabled>
-                        <div id='go' class='d-none'>GO</div>
-                        <div id='spinner' class='spinner-border ms-2'></div> <!-- Show spinner before db is loaded -->
+                    <button id='btn' class='btn btn-lg btn-outline-primary col-12 col-sm-5 mt-2 rounded-5 shadow-sm  '
+                        style='height: 3rem;' type='submit' disabled>
+                        <div id='go' class='d-none' style='font-weight: 500'>GO</div>
+                        <div id='spinner' class='spinner-border ms-2'></div><!-- Show spinner before db is loaded -->
                     </button>
                 </div>
             </form>
@@ -846,10 +846,18 @@
                         <!-- Table body will be populated dynamically -->
                     </tbody>
                 </table>
-                <div class='text-end mt-2'>
-                    <button class='btn btn-secondary text-end' id='btn2' type='button'>
+            </div>
+            <div class='text-end mt-2'>
+                <div class='btn-group mb-3'>
+                    <button class='btn btn-secondary' id='btn2' type='button'>
                         Show more
                     </button>
+                    <button class="btn btn-secondary dropdown-toggle dropdown-toggle-split" type="button"
+                        data-bs-toggle="dropdown" data-bs-display="static">
+                    </button>
+                    <ul class="dropdown-menu p-0" style='min-width: 100%;'>
+                        <li><button class="dropdown-item btn btn-secondary" id='btn3'>Show all</button></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -873,7 +881,7 @@
                     <hr class='m-5'>
                 </div>
                 <!-- Icons -->
-                <div class='h5 col-md-auto px-md-0 text-center my-auto '>
+                <div class='h5 col-md-auto px-0 text-center my-auto '>
                     <a href='https://pages.github.com/' class='link-secondary px-lg-4 px-3 ' aria-label='GitHub'>
                         <svg style='height: 1em;' fill='currentColor' viewBox='0 0 16 16'>
                             <path
@@ -917,6 +925,9 @@
             </footer>
         </div>
     </div>
+
+    <!-- <a href="#" style='position:fixed; bottom:20px; right:20px; z-index: 1; outline: none; opacity: 50%;'
+        class='btn btn-outline-primary rounded-5 py-0 px-1'><i class="bi bi-arrow-up-short"></i></a> -->
 
     <!-- Scripts -->
     <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>

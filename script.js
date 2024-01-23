@@ -11,6 +11,7 @@
 	const table = $('#table') // not working with getElementById 🤷‍♂️
 	const btn = document.getElementById('btn') // GO btn
 	const btn2 = document.getElementById('btn2') // 'Show more' btn
+	const btn3 = document.getElementById('btn3') // 'Show more' btn
 
 	if (btn.disabled === true) {
 		btn.disabled = false
@@ -18,7 +19,6 @@
 		document.getElementById('spinner').classList.add('d-none')
 	}
 	btn.addEventListener('click', fetchData) // fetch data and insert the first 10 records into table
-	btn2.addEventListener('click', insertRows) // insert 10 more records
 
 	function fetchData() {
 		table.bootstrapTable('removeAll') // clear table contents
@@ -88,22 +88,42 @@
 		if (tableDiv.classList.contains('d-none')) {
 			tableDiv.classList.remove('d-none')
 		}
-	}
 
-	function insertRows() {
-		// insert 10 records into table
-		for (let i = 0; i < 10 && row < rowCount; i++) {
-			table.bootstrapTable('append', {
-				institute: result[row][0],
-				state: result[row][1],
-				branch: result[row][2],
-				quota: result[row][3],
-				seat: result[row][4],
-				gender: result[row][5],
-				open: result[row][6],
-				close: result[row][7],
-			})
-			row++
+		btn2.addEventListener('click', insertRows) // insert 10 more records
+		btn3.addEventListener('click', insertAllRows) // insert all records
+
+		function insertRows() {
+			// insert 10 records into table
+			for (let i = 0; i < 10 && row < rowCount; i++) {
+				table.bootstrapTable('append', {
+					institute: result[row][0],
+					state: result[row][1],
+					branch: result[row][2],
+					quota: result[row][3],
+					seat: result[row][4],
+					gender: result[row][5],
+					open: result[row][6],
+					close: result[row][7],
+				})
+				row++
+			}
+		}
+
+		function insertAllRows() {
+			// insert 10 records into table
+			while (row < rowCount) {
+				table.bootstrapTable('append', {
+					institute: result[row][0],
+					state: result[row][1],
+					branch: result[row][2],
+					quota: result[row][3],
+					seat: result[row][4],
+					gender: result[row][5],
+					open: result[row][6],
+					close: result[row][7],
+				})
+				row++
+			}
 		}
 	}
 })()
