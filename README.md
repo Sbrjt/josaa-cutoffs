@@ -15,7 +15,7 @@ This project hosts a website that displays the closing ranks of various colleges
 ## ⚙️ Tech used
 
 - [GitHub Pages](https://pages.github.com/)
-- [SQLite](https://www.sqlite.org/index.html)
+- [sql.js](https://sql.js.org/)
 - [Bootstrap](https://getbootstrap.com/)
 - [Bootstrap-select](https://developer.snapappointments.com/bootstrap-select)
 - [Bootstrap-table](https://bootstrap-table.com/)
