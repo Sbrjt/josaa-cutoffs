@@ -1,8 +1,9 @@
 (async () => {
 	// Fetching and initializing the database
-	const response = await fetch('assets/data.db')
+	const response = await fetch('data.db')
 	const buffer = await response.arrayBuffer()
 	const db = new SQL.Database(new Uint8Array(buffer))
+	db.prepare('select * from tb') // improves performance by reducing the overhead 
 
 	// variables initialization:
 	let row // current row no
