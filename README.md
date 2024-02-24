@@ -1,5 +1,22 @@
 <h3 align='center'><a target="_blank" href='https://sbrjt.github.io/josaa-cutoffs' >Go to Website</a>➡️</h3>
 
+<div style="text-align: center">
+    <img src="https://img.shields.io/github/stars/sbrjt/josaa-cutoffs?style=flat">
+    <a href="https://www.gnu.org/licenses/agpl-3.0"><img
+            src="https://img.shields.io/badge/License-AGPL_v3-blue.svg"></a>
+    <a href="https://github.com/Sbrjt/josaa-cutoffs/issues"><img
+            src="https://img.shields.io/github/issues/sbrjt/josaa-cutoffs"></a>
+    <img src="https://img.shields.io/github/last-commit/sbrjt/josaa-cutoffs">
+    <img src="https://img.shields.io/github/repo-size/sbrjt/josaa-cutoffs">
+</div>
+
+<!--
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/Sbrjt/josaa-cutoffs/total)
+![GitHub forks](https://img.shields.io/github/forks/sbrjt/josaa-cutoffs?style=flat)
+![Gitea Pull Requests](https://img.shields.io/gitea/pull-requests/all/sbrjt/josaa-cutoffs)
+ -->
+
+
 ## 📝 Overview
 
 This project hosts a website that displays the closing ranks of various colleges under JoSAA. It aims to provide an alternative, user-friendly platform to look up JoSSA cutoffs and help simplify college hunt before counselling. 🔍🎓
@@ -31,7 +48,5 @@ If you like my project, please gimme a star! ⭐💫
 Contributions are welcome! 🤝
 
 If you have any suggestion/concern, do [let me know](https://mailhide.io/e/kMGaefEP).
-
-<!-- 📜 MIT License -->
 
 © Shubhrajit Sadhukhan :octocat:
