@@ -3,8 +3,8 @@
 <div align='center'>
 <img src="https://img.shields.io/github/stars/sbrjt/josaa-cutoffs?style=flat">
 <a href="https://github.com/Sbrjt/josaa-cutoffs/issues"><img src="https://img.shields.io/github/issues/sbrjt/josaa-cutoffs"></a>
-<img src="https://img.shields.io/github/last-commit/sbrjt/josaa-cutoffs">
-<img src="https://img.shields.io/github/repo-size/sbrjt/josaa-cutoffs">
+<a href="https://github.com/Sbrjt/josaa-cutoffs/commits/main/"><img src="https://img.shields.io/github/last-commit/sbrjt/josaa-cutoffs"></a>
+<a href="https://github.com/Sbrjt/josaa-cutoffs/archive/refs/heads/main.zip"><img src="https://img.shields.io/github/repo-size/sbrjt/josaa-cutoffs"></a>
 <a href="https://www.gnu.org/licenses/agpl-3.0"><img src="https://img.shields.io/badge/License-AGPL_v3-blue.svg"></a>
 </div>
 
