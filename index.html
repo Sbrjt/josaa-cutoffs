@@ -8,6 +8,7 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
+
         gtag('config', 'G-Y4BX3G368N');
     </script>
     <meta charset='UTF-8'>
@@ -57,772 +58,748 @@
         <!-- Form -->
         <div
             class='container bg-white mx-auto my-sm-5 my-4 border shadow col-xl-7 col-md-9 col-sm-10 col-11 p-md-5 p-sm-3 py-2'>
-            <form onsubmit='return false'>
-                <!-- Rank -->
-                <div class='row justify-content-around align-items-center p-sm-3 p-2'>
-                    <label for='rank' class='col my-auto py-2 form-label'>Rank</label>
-                    <div class='col-sm-8'>
-                        <input type='text' class='form-control' id='rank'
-                            placeholder='Enter category rank, if applicable' required>
+            <!-- <form onsubmit='return false'> -->
+            <!-- Rank -->
+            <div class='row justify-content-around align-items-center p-sm-3 p-2'>
+                <label for='rank' class='col my-auto py-2 form-label'>Rank</label>
+                <div class='col-sm-8'>
+                    <input type='text' class='form-control' id='rank' placeholder='Enter category rank, if applicable'
+                        required>
+                </div>
+            </div>
+
+            <!-- Category (Seat type) -->
+            <div class='row justify-content-around align-items-center p-sm-3 p-2'>
+                <label class='col my-auto py-2 form-label ' for='category'>Category</label>
+                <div class='col-sm-8'><select class='selectpicker form-control' id='category'>
+                        <option value='OPEN' selected>OPEN</option>
+                        <option value='EWS'>EWS</option>
+                        <option value='OBC-NCL'>OBC-NCL</option>
+                        <option value='SC'>SC</option>
+                        <option value='ST'>ST</option>
+                        <option value='OPEN (PwD)'>OPEN (PwD)</option>
+                        <option value='OBC-NCL (PwD)'>OBC-NCL (PwD)</option>
+                        <option value='EWS (PwD)'>EWS (PwD)</option>
+                        <option value='ST (PwD)'>ST (PwD)</option>
+                        <option value='SC (PwD)'>SC (PwD)</option>
+                    </select></div>
+            </div>
+
+            <!-- Branch -->
+            <div class='row justify-content-around align-items-center p-sm-3 p-2'>
+                <label class='col my-auto py-2 form-label ' for='branch'>Branch</label><br>
+                <div class='col-sm-8'>
+                    <select class='selectpicker form-control' data-live-search='true' data-actions-box='true'
+                        data-selected-text-format='count>1' id='branch' multiple>
+                        <option value='Civil Engineering (4 Years, Bachelor of Technology)' selected>Civil
+                            Engineering (4 Years, Bachelor of Technology)</option>
+                        <option
+                            value='Civil Engineering and M. Tech. in Structural Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Civil Engineering and M. Tech. in Structural Engineering (5 Years, Bachelor and
+                            Master of Technology (Dual Degree))</option>
+                        <option
+                            value='Civil Engineering and M.Tech in Transportation Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Civil Engineering and M.Tech in Transportation Engineering (5 Years, Bachelor
+                            and Master of Technology (Dual Degree))</option>
+                        <option
+                            value='Civil Engineering and M.Tech. in Environmental Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Civil Engineering and M.Tech. in Environmental Engineering (5 Years, Bachelor
+                            and Master of Technology (Dual Degree))</option>
+                        <option value='Computer Science and Engineering (4 Years, Bachelor of Technology)' selected>
+                            Computer Science and Engineering (4 Years, Bachelor of Technology)</option>
+                        <option
+                            value='Computer Science and Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Computer Science and Engineering (5 Years, Bachelor and Master of Technology
+                            (Dual Degree))</option>
+                        <option
+                            value='Electrical Engineering and M.Tech Power Electronics and Drives (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Electrical Engineering and M.Tech Power Electronics and Drives (5 Years,
+                            Bachelor and Master of Technology (Dual Degree))</option>
+                        <option value='Electrical Engineering (4 Years, Bachelor of Technology)' selected>Electrical
+                            Engineering (4 Years, Bachelor of Technology)</option>
+                        <option value='Electronics and Communication Engineering (4 Years, Bachelor of Technology)'
+                            selected>Electronics and Communication Engineering (4 Years, Bachelor of Technology)
+                        </option>
+                        <option value='Mechanical Engineering (4 Years, Bachelor of Technology)' selected>Mechanical
+                            Engineering (4 Years, Bachelor of Technology)</option>
+                        <option
+                            value='Mechanical Engineering and M. Tech. in Mechanical System Design (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Mechanical Engineering and M. Tech. in Mechanical System Design (5 Years,
+                            Bachelor and Master of Technology (Dual Degree))</option>
+                        <option
+                            value='Mechanical Engineering and M. Tech. in Thermal Science & Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Mechanical Engineering and M. Tech. in Thermal Science & Engineering (5 Years,
+                            Bachelor and Master of Technology (Dual Degree))</option>
+                        <option
+                            value='Mechanical Engineering with M.Tech. in Manufacturing Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Mechanical Engineering with M.Tech. in Manufacturing Engineering (5 Years,
+                            Bachelor and Master of Technology (Dual Degree))</option>
+                        <option value='Metallurgical and Materials Engineering (4 Years, Bachelor of Technology)'
+                            selected>Metallurgical and Materials Engineering (4 Years, Bachelor of Technology)
+                        </option>
+                        <option
+                            value='Metallurgical and Materials Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Metallurgical and Materials Engineering (5 Years, Bachelor and Master of
+                            Technology (Dual Degree))</option>
+                        <option value='Aerospace Engineering (4 Years, Bachelor of Technology)' selected>Aerospace
+                            Engineering (4 Years, Bachelor of Technology)</option>
+                        <option value='BS in Mathematics (4 Years, Bachelor of Science)' selected>BS in Mathematics
+                            (4 Years, Bachelor of Science)</option>
+                        <option value='Chemical Engineering (4 Years, Bachelor of Technology)' selected>Chemical
+                            Engineering (4 Years, Bachelor of Technology)</option>
+                        <option value='Chemistry (4 Years, Bachelor of Science)' selected>Chemistry (4 Years,
+                            Bachelor of Science)</option>
+                        <option value='Economics (4 Years, Bachelor of Science)' selected>Economics (4 Years,
+                            Bachelor of Science)</option>
+                        <option
+                            value='Electrical Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Electrical Engineering (5 Years, Bachelor and Master of Technology (Dual
+                            Degree))</option>
+                        <option value='Energy Engineering (4 Years, Bachelor of Technology)' selected>Energy
+                            Engineering (4 Years, Bachelor of Technology)</option>
+                        <option value='Engineering Physics (4 Years, Bachelor of Technology)' selected>Engineering
+                            Physics (4 Years, Bachelor of Technology)</option>
+                        <option value='Environmental Science and Engineering (4 Years, Bachelor of Technology)'
+                            selected>Environmental Science and Engineering (4 Years, Bachelor of Technology)
+                        </option>
+                        <option
+                            value='Metallurgical Engineering and Materials Science (4 Years, Bachelor of Technology)'
+                            selected>Metallurgical Engineering and Materials Science (4 Years, Bachelor of
+                            Technology)</option>
+                        <option value='B.Tech in General Engineering (4 Years, Bachelor of Technology)' selected>
+                            B.Tech in General Engineering (4 Years, Bachelor of Technology)</option>
+                        <option value='B.Tech in Materials Science and Engineering (4 Years, Bachelor of Technology)'
+                            selected>B.Tech in Materials Science and Engineering (4 Years, Bachelor of Technology)
+                        </option>
+                        <option value='B.Tech in Mathematics and Computing (4 Years, Bachelor of Technology)' selected>
+                            B.Tech in Mathematics and Computing (4 Years, Bachelor of Technology)</option>
+                        <option value='B.Tech in Microelectronics & VLSI (4 Years, Bachelor of Technology)' selected>
+                            B.Tech in Microelectronics & VLSI (4 Years, Bachelor of Technology)</option>
+                        <option value='Bio Engineering (4 Years, Bachelor of Technology)' selected>Bio Engineering
+                            (4 Years, Bachelor of Technology)</option>
+                        <option value='BS in Chemical Sciences (4 Years, Bachelor of Science)' selected>BS in
+                            Chemical Sciences (4 Years, Bachelor of Science)</option>
+                        <option value='Data Science and Engineering (4 Years, Bachelor of Technology)' selected>Data
+                            Science and Engineering (4 Years, Bachelor of Technology)</option>
+                        <option value='Biotechnology and Biochemical Engineering (4 Years, Bachelor of Technology)'
+                            selected>Biotechnology and Biochemical Engineering (4 Years, Bachelor of Technology)
+                        </option>
+                        <option value='Chemical Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Chemical Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))
+                        </option>
+                        <option value='Electrical Engineering (Power and Automation) (4 Years, Bachelor of Technology)'
+                            selected>Electrical Engineering (Power and Automation) (4 Years, Bachelor of Technology)
+                        </option>
+                        <option value='Engineering and Computational Mechanics (4 Years, Bachelor of Technology)'
+                            selected>Engineering and Computational Mechanics (4 Years, Bachelor of Technology)
+                        </option>
+                        <option value='Materials Engineering (4 Years, Bachelor of Technology)' selected>Materials
+                            Engineering (4 Years, Bachelor of Technology)</option>
+                        <option value='Mathematics and Computing (4 Years, Bachelor of Technology)' selected>
+                            Mathematics and Computing (4 Years, Bachelor of Technology)</option>
+                        <option
+                            value='Mathematics and Computing (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Mathematics and Computing (5 Years, Bachelor and Master of Technology (Dual
+                            Degree))</option>
+                        <option value='Production and Industrial Engineering (4 Years, Bachelor of Technology)'
+                            selected>Production and Industrial Engineering (4 Years, Bachelor of Technology)
+                        </option>
+                        <option value='Textile Technology (4 Years, Bachelor of Technology)' selected>Textile
+                            Technology (4 Years, Bachelor of Technology)</option>
+                        <option value='Space Sciences and Engineering (4 Years, Bachelor of Technology)' selected>
+                            Space Sciences and Engineering (4 Years, Bachelor of Technology)</option>
+                        <option value='Aerospace Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Aerospace Engineering (5 Years, Bachelor and Master of Technology (Dual
+                            Degree))</option>
+                        <option value='Agricultural and Food Engineering (4 Years, Bachelor of Technology)' selected>
+                            Agricultural and Food Engineering (4 Years, Bachelor of Technology)</option>
+                        <option
+                            value='Agricultural and Food Engineering with M.Tech. in any of the listed specializations (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Agricultural and Food Engineering with M.Tech. in any of the listed
+                            specializations (5 Years, Bachelor and Master of Technology (Dual Degree))</option>
+                        <option value='Applied Geology (4 Years, Bachelor of Science)' selected>Applied Geology (4
+                            Years, Bachelor of Science)</option>
+                        <option value='Architecture (5 Years, Bachelor of Architecture)' selected>Architecture (5
+                            Years, Bachelor of Architecture)</option>
+                        <option
+                            value='Biotechnology and Biochemical Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Biotechnology and Biochemical Engineering (5 Years, Bachelor and Master of
+                            Technology (Dual Degree))</option>
+                        <option
+                            value='Civil Engineering with any of the listed specialization (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Civil Engineering with any of the listed specialization (5 Years, Bachelor and
+                            Master of Technology (Dual Degree))</option>
+                        <option
+                            value='Electrical Engineering with M.Tech. in any of the listed specializations (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Electrical Engineering with M.Tech. in any of the listed specializations (5
+                            Years, Bachelor and Master of Technology (Dual Degree))</option>
+                        <option
+                            value='Electronics and Electrical Communication Engineering (4 Years, Bachelor of Technology)'
+                            selected>Electronics and Electrical Communication Engineering (4 Years, Bachelor of
+                            Technology)</option>
+                        <option
+                            value='Electronics and Electrical Communication Engineering with M.Tech. in any of the listed specializations (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Electronics and Electrical Communication Engineering with M.Tech. in any of the
+                            listed specializations (5 Years, Bachelor and Master of Technology (Dual Degree))
+                        </option>
+                        <option value='Exploration Geophysics (4 Years, Bachelor of Science)' selected>Exploration
+                            Geophysics (4 Years, Bachelor of Science)</option>
+                        <option value='Industrial and Systems Engineering (4 Years, Bachelor of Technology)' selected>
+                            Industrial and Systems Engineering (4 Years, Bachelor of Technology)</option>
+                        <option
+                            value='Industrial and Systems Engineering with M.Tech. in Industrial and Systems Engineering and Management (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Industrial and Systems Engineering with M.Tech. in Industrial and Systems
+                            Engineering and Management (5 Years, Bachelor and Master of Technology (Dual Degree))
+                        </option>
+                        <option value='Instrumentation Engineering (4 Years, Bachelor of Technology)' selected>
+                            Instrumentation Engineering (4 Years, Bachelor of Technology)</option>
+                        <option value='Manufacturing Science and Engineering (4 Years, Bachelor of Technology)'
+                            selected>Manufacturing Science and Engineering (4 Years, Bachelor of Technology)
+                        </option>
+                        <option
+                            value='Manufacturing Science and Engineering with M.Tech. in Industrial and Systems Engineering and Management (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Manufacturing Science and Engineering with M.Tech. in Industrial and Systems
+                            Engineering and Management (5 Years, Bachelor and Master of Technology (Dual Degree))
+                        </option>
+                        <option value='Mathematics and Computing (4 Years, Bachelor of Science)' selected>
+                            Mathematics and Computing (4 Years, Bachelor of Science)</option>
+                        <option
+                            value='Mechanical Engineering with M.Tech. in any of the listed specializations (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Mechanical Engineering with M.Tech. in any of the listed specializations (5
+                            Years, Bachelor and Master of Technology (Dual Degree))</option>
+                        <option value='Mining Engineering (4 Years, Bachelor of Technology)' selected>Mining
+                            Engineering (4 Years, Bachelor of Technology)</option>
+                        <option value='Mining Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Mining Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))
+                        </option>
+                        <option
+                            value='Mining Safety Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Mining Safety Engineering (5 Years, Bachelor and Master of Technology (Dual
+                            Degree))</option>
+                        <option value='Ocean Engineering and Naval Architecture (4 Years, Bachelor of Technology)'
+                            selected>Ocean Engineering and Naval Architecture (4 Years, Bachelor of Technology)
+                        </option>
+                        <option
+                            value='Ocean Engineering and Naval Architecture (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Ocean Engineering and Naval Architecture (5 Years, Bachelor and Master of
+                            Technology (Dual Degree))</option>
+                        <option value='Physics (4 Years, Bachelor of Science)' selected>Physics (4 Years, Bachelor
+                            of Science)</option>
+                        <option value='Artificial Intelligence (4 Years, Bachelor of Technology)' selected>
+                            Artificial Intelligence (4 Years, Bachelor of Technology)</option>
+                        <option value='Biomedical Engineering (4 Years, Bachelor of Technology)' selected>Biomedical
+                            Engineering (4 Years, Bachelor of Technology)</option>
+                        <option value='Biotechnology and Bioinformatics (4 Years, Bachelor of Technology)' selected>
+                            Biotechnology and Bioinformatics (4 Years, Bachelor of Technology)</option>
+                        <option value='Computational Engineering (4 Years, Bachelor of Technology)' selected>
+                            Computational Engineering (4 Years, Bachelor of Technology)</option>
+                        <option
+                            value='Electrical Engineering (IC Design and Technology) (4 Years, Bachelor of Technology)'
+                            selected>Electrical Engineering (IC Design and Technology) (4 Years, Bachelor of
+                            Technology)</option>
+                        <option value='Engineering Science (4 Years, Bachelor of Technology)' selected>Engineering
+                            Science (4 Years, Bachelor of Technology)</option>
+                        <option value='Industrial Chemistry (4 Years, Bachelor of Technology)' selected>Industrial
+                            Chemistry (4 Years, Bachelor of Technology)</option>
+                        <option
+                            value='Materials Science and Metallurgical Engineering (4 Years, Bachelor of Technology)'
+                            selected>Materials Science and Metallurgical Engineering (4 Years, Bachelor of
+                            Technology)</option>
+                        <option value='Artificial Intelligence and Data Science (4 Years, Bachelor of Technology)'
+                            selected>Artificial Intelligence and Data Science (4 Years, Bachelor of Technology)
+                        </option>
+                        <option value='Chemistry with Specialization (4 Years, Bachelor of Science)' selected>
+                            Chemistry with Specialization (4 Years, Bachelor of Science)</option>
+                        <option value='Civil and Infrastructure Engineering (4 Years, Bachelor of Technology)' selected>
+                            Civil and Infrastructure Engineering (4 Years, Bachelor of Technology)</option>
+                        <option value='Physics with Specialization (4 Years, Bachelor of Science)' selected>Physics
+                            with Specialization (4 Years, Bachelor of Science)</option>
+                        <option value='Biological Sciences and Bioengineering (4 Years, Bachelor of Technology)'
+                            selected>Biological Sciences and Bioengineering (4 Years, Bachelor of Technology)
+                        </option>
+                        <option value='Earth Sciences (4 Years, Bachelor of Science)' selected>Earth Sciences (4
+                            Years, Bachelor of Science)</option>
+                        <option value='Materials Science and Engineering (4 Years, Bachelor of Technology)' selected>
+                            Materials Science and Engineering (4 Years, Bachelor of Technology)</option>
+                        <option value='Mathematics and Scientific Computing (4 Years, Bachelor of Science)' selected>
+                            Mathematics and Scientific Computing (4 Years, Bachelor of Science)</option>
+                        <option value='Statistics and Data Science (4 Years, Bachelor of Science)' selected>
+                            Statistics and Data Science (4 Years, Bachelor of Science)</option>
+                        <option value='Biological Engineering (4 Years, Bachelor of Technology)' selected>Biological
+                            Engineering (4 Years, Bachelor of Technology)</option>
+                        <option value='Biological Science (4 Years, Bachelor of Science)' selected>Biological
+                            Science (4 Years, Bachelor of Science)</option>
+                        <option value='Engineering Design (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Engineering Design (5 Years, Bachelor and Master of Technology (Dual Degree))
+                        </option>
+                        <option value='Naval Architecture and Ocean Engineering (4 Years, Bachelor of Technology)'
+                            selected>Naval Architecture and Ocean Engineering (4 Years, Bachelor of Technology)
+                        </option>
+                        <option value='Physics (5 Years, Bachelor of Science and Master of Science (Dual Degree))'
+                            selected>Physics (5 Years, Bachelor of Science and Master of Science (Dual Degree))
+                        </option>
+                        <option
+                            value='Mechanical Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Mechanical Engineering (5 Years, Bachelor and Master of Technology (Dual
+                            Degree))</option>
+                        <option
+                            value='B. Tech in CE. - M. Tech. in Geotechnical Engineering (5 Years, B.Tech. + M.Tech./MS (Dual Degree))'
+                            selected>B. Tech in CE. - M. Tech. in Geotechnical Engineering (5 Years, B.Tech. +
+                            M.Tech./MS (Dual Degree))</option>
+                        <option
+                            value='B. Tech in CE. - M. Tech. in Structural Engineering (5 Years, B.Tech. + M.Tech./MS (Dual Degree))'
+                            selected>B. Tech in CE. - M. Tech. in Structural Engineering (5 Years, B.Tech. +
+                            M.Tech./MS (Dual Degree))</option>
+                        <option value='B. Tech. (CSE) and M.Tech in CSE (5 Years, B.Tech. + M.Tech./MS (Dual Degree))'
+                            selected>B. Tech. (CSE) and M.Tech in CSE (5 Years, B.Tech. + M.Tech./MS (Dual Degree))
+                        </option>
+                        <option value='B. Tech. (ECE) -M. Tech. in VLSI (5 Years, B.Tech. + M.Tech./MS (Dual Degree))'
+                            selected>B. Tech. (ECE) -M. Tech. in VLSI (5 Years, B.Tech. + M.Tech./MS (Dual Degree))
+                        </option>
+                        <option
+                            value='B. Tech. (EEE)-M. Tech. in (Power &. Control) (5 Years, B.Tech. + M.Tech./MS (Dual Degree))'
+                            selected>B. Tech. (EEE)-M. Tech. in (Power &. Control) (5 Years, B.Tech. + M.Tech./MS
+                            (Dual Degree))</option>
+                        <option
+                            value='B. Tech. (Mathematics & Computing) M. Tech. in (Mathematics & Computing) (5 Years, B.Tech. + M.Tech./MS (Dual Degree))'
+                            selected>B. Tech. (Mathematics & Computing) M. Tech. in (Mathematics & Computing) (5
+                            Years, B.Tech. + M.Tech./MS (Dual Degree))</option>
+                        <option
+                            value='B. Tech. (ME) - M. Tech. in Mechatronics (5 Years, B.Tech. + M.Tech./MS (Dual Degree))'
+                            selected>B. Tech. (ME) - M. Tech. in Mechatronics (5 Years, B.Tech. + M.Tech./MS (Dual
+                            Degree))</option>
+                        <option
+                            value='B. Tech. (ME) - MBA (NITIE) (5 Years, Bachelor of Technology and MBA (Dual Degree))'
+                            selected>B. Tech. (ME) - MBA (NITIE) (5 Years, Bachelor of Technology and MBA (Dual
+                            Degree))</option>
+                        <option
+                            value='B.Tech. in Electronics and Communication Engineering and M.Tech. in Communication Systems (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>B.Tech. in Electronics and Communication Engineering and M.Tech. in
+                            Communication Systems (5 Years, Bachelor and Master of Technology (Dual Degree))
+                        </option>
+                        <option value='Chemical Science and Technology (4 Years, Bachelor of Technology)' selected>
+                            Chemical Science and Technology (4 Years, Bachelor of Technology)</option>
+                        <option value='Electrical and Electronics Engineering (4 Years, Bachelor of Technology)'
+                            selected>Electrical and Electronics Engineering (4 Years, Bachelor of Technology)
+                        </option>
+                        <option value='Biosciences and Bioengineering (4 Years, Bachelor of Technology)' selected>
+                            Biosciences and Bioengineering (4 Years, Bachelor of Technology)</option>
+                        <option
+                            value='Chemical Sciences (5 Years, Bachelor of Science and Master of Science (Dual Degree))'
+                            selected>Chemical Sciences (5 Years, Bachelor of Science and Master of Science (Dual
+                            Degree))</option>
+                        <option value='Data Science and Artificial Intelligence (4 Years, Bachelor of Technology)'
+                            selected>Data Science and Artificial Intelligence (4 Years, Bachelor of Technology)
+                        </option>
+                        <option value='Economics (5 Years, Bachelor of Science and Master of Science (Dual Degree))'
+                            selected>Economics (5 Years, Bachelor of Science and Master of Science (Dual Degree))
+                        </option>
+                        <option value='Geological Technology (5 Years, Integrated Master of Technology)' selected>
+                            Geological Technology (5 Years, Integrated Master of Technology)</option>
+                        <option value='Geophysical Technology (5 Years, Integrated Master of Technology)' selected>
+                            Geophysical Technology (5 Years, Integrated Master of Technology)</option>
+                        <option
+                            value='Mathematics & Computing (5 Years, Bachelor of Science and Master of Science (Dual Degree))'
+                            selected>Mathematics & Computing (5 Years, Bachelor of Science and Master of Science
+                            (Dual Degree))</option>
+                        <option value='Applied Geology (5 Years, Integrated Master of Technology)' selected>Applied
+                            Geology (5 Years, Integrated Master of Technology)</option>
+                        <option value='Applied Geophysics (5 Years, Integrated Master of Technology)' selected>
+                            Applied Geophysics (5 Years, Integrated Master of Technology)</option>
+                        <option value='Environmental Engineering (4 Years, Bachelor of Technology)' selected>
+                            Environmental Engineering (4 Years, Bachelor of Technology)</option>
+                        <option value='Mathematics and Computing (5 Years, Integrated Master of Technology)' selected>
+                            Mathematics and Computing (5 Years, Integrated Master of Technology)</option>
+                        <option value='Mineral and Metallurgical Engineering (4 Years, Bachelor of Technology)'
+                            selected>Mineral and Metallurgical Engineering (4 Years, Bachelor of Technology)
+                        </option>
+                        <option value='Mining Machinery Engineering (4 Years, Bachelor of Technology)' selected>
+                            Mining Machinery Engineering (4 Years, Bachelor of Technology)</option>
+                        <option value='Petroleum Engineering (4 Years, Bachelor of Technology)' selected>Petroleum
+                            Engineering (4 Years, Bachelor of Technology)</option>
+                        <option value='Artificial Intelligence and Data Engineering (4 Years, Bachelor of Technology)'
+                            selected>Artificial Intelligence and Data Engineering (4 Years, Bachelor of Technology)
+                        </option>
+                        <option
+                            value='Biochemical Engineering with M.Tech. in Biochemical Engineering and Biotechnology (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Biochemical Engineering with M.Tech. in Biochemical Engineering and
+                            Biotechnology (5 Years, Bachelor and Master of Technology (Dual Degree))</option>
+                        <option
+                            value='Bioengineering with M.Tech in Biomedical Technology (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Bioengineering with M.Tech in Biomedical Technology (5 Years, Bachelor and
+                            Master of Technology (Dual Degree))</option>
+                        <option value='Ceramic Engineering (4 Years, Bachelor of Technology)' selected>Ceramic
+                            Engineering (4 Years, Bachelor of Technology)</option>
+                        <option value='Ceramic Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Ceramic Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))
+                        </option>
+                        <option value='Civil Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Civil Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))
+                        </option>
+                        <option
+                            value='Electrical Engineering with M.Tech. in Power Electronics (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Electrical Engineering with M.Tech. in Power Electronics (5 Years, Bachelor and
+                            Master of Technology (Dual Degree))</option>
+                        <option value='Electronics Engineering (4 Years, Bachelor of Technology)' selected>
+                            Electronics Engineering (4 Years, Bachelor of Technology)</option>
+                        <option value='Engineering Physics (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Engineering Physics (5 Years, Bachelor and Master of Technology (Dual Degree))
+                        </option>
+                        <option value='Industrial Chemistry (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Industrial Chemistry (5 Years, Bachelor and Master of Technology (Dual Degree))
+                        </option>
+                        <option
+                            value='Materials Science and Technology (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Materials Science and Technology (5 Years, Bachelor and Master of Technology
+                            (Dual Degree))</option>
+                        <option value='Metallurgical Engineering (4 Years, Bachelor of Technology)' selected>
+                            Metallurgical Engineering (4 Years, Bachelor of Technology)</option>
+                        <option
+                            value='Metallurgical Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Metallurgical Engineering (5 Years, Bachelor and Master of Technology (Dual
+                            Degree))</option>
+                        <option value='Pharmaceutical Engineering & Technology (4 Years, Bachelor of Technology)'
+                            selected>Pharmaceutical Engineering & Technology (4 Years, Bachelor of Technology)
+                        </option>
+                        <option
+                            value='Pharmaceutical Engineering & Technology (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Pharmaceutical Engineering & Technology (5 Years, Bachelor and Master of
+                            Technology (Dual Degree))</option>
+                        <option value='Electronics and Electrical Engineering (4 Years, Bachelor of Technology)'
+                            selected>Electronics and Electrical Engineering (4 Years, Bachelor of Technology)
+                        </option>
+                        <option value='Mechatronics Engineering (4 Years, Bachelor of Technology)' selected>
+                            Mechatronics Engineering (4 Years, Bachelor of Technology)</option>
+                        <option value='Chemical and Biochemical Engineering (4 Years, Bachelor of Technology)' selected>
+                            Chemical and Biochemical Engineering (4 Years, Bachelor of Technology)</option>
+                        <option
+                            value='Interdisciplinary Sciences (5 Years, Bachelor of Science and Master of Science (Dual Degree))'
+                            selected>Interdisciplinary Sciences (5 Years, Bachelor of Science and Master of Science
+                            (Dual Degree))</option>
+                        <option value='Agricultural Engineering (4 Years, Bachelor of Technology)' selected>
+                            Agricultural Engineering (4 Years, Bachelor of Technology)</option>
+                        <option value='Artificial Intelligence and Machine Learning (4 Years, Bachelor of Technology)'
+                            selected>Artificial Intelligence and Machine Learning (4 Years, Bachelor of Technology)
+                        </option>
+                        <option value='Bio Technology (4 Years, Bachelor of Technology)' selected>Bio Technology (4
+                            Years, Bachelor of Technology)</option>
+                        <option value='Food Engineering and Technology (4 Years, Bachelor of Technology)' selected>
+                            Food Engineering and Technology (4 Years, Bachelor of Technology)</option>
+                        <option value='Mathematics and Computing (5 Years, Integrated Master of Science)' selected>
+                            Mathematics and Computing (5 Years, Integrated Master of Science)</option>
+                        <option value='Physics (5 Years, Integrated Master of Science)' selected>Physics (5 Years,
+                            Integrated Master of Science)</option>
+                        <option value='Quantitative Economics & Data Science (5 Years, Integrated Master of Science)'
+                            selected>Quantitative Economics & Data Science (5 Years, Integrated Master of Science)
+                        </option>
+                        <option value='Carpet and Textile Technology (4 Years, Bachelor of Technology)' selected>
+                            Carpet and Textile Technology (4 Years, Bachelor of Technology)</option>
+                        <option value='Computer Engineering (4 Years, Bachelor of Technology)' selected>Computer
+                            Engineering (4 Years, Bachelor of Technology)</option>
+                        <option value='Industrial and Production Engineering (4 Years, Bachelor of Technology)'
+                            selected>Industrial and Production Engineering (4 Years, Bachelor of Technology)
+                        </option>
+                        <option value='Information Technology (4 Years, Bachelor of Technology)' selected>
+                            Information Technology (4 Years, Bachelor of Technology)</option>
+                        <option value='Electronics System Engineering (4 Years, Bachelor of Technology)' selected>
+                            Electronics System Engineering (4 Years, Bachelor of Technology)</option>
+                        <option value='Metallurgy and Materials Engineering (4 Years, Bachelor of Technology)' selected>
+                            Metallurgy and Materials Engineering (4 Years, Bachelor of Technology)</option>
+                        <option value='Food Technology (4 Years, Bachelor of Technology)' selected>Food Technology
+                            (4 Years, Bachelor of Technology)</option>
+                        <option value='Instrumentation and Control Engineering (4 Years, Bachelor of Technology)'
+                            selected>Instrumentation and Control Engineering (4 Years, Bachelor of Technology)
+                        </option>
+                        <option value='Planning (4 Years, Bachelor of Planning)' selected>Planning (4 Years,
+                            Bachelor of Planning)</option>
+                        <option
+                            value='Computer Science Engineering (Artificial Intelligence) (4 Years, B. Tech / B. Tech (Hons.))'
+                            selected>Computer Science Engineering (Artificial Intelligence) (4 Years, B. Tech / B.
+                            Tech (Hons.))</option>
+                        <option value='Computer Science Engineering (Data Science) (4 Years, B. Tech / B. Tech (Hons.))'
+                            selected>Computer Science Engineering (Data Science) (4 Years, B. Tech / B. Tech
+                            (Hons.))</option>
+                        <option
+                            value='Electronics Engineering (VLSI Design and Technology) (4 Years, Bachelor of Technology)'
+                            selected>Electronics Engineering (VLSI Design and Technology) (4 Years, Bachelor of
+                            Technology)</option>
+                        <option value='Electronics and Telecommunication Engineering (4 Years, Bachelor of Technology)'
+                            selected>Electronics and Telecommunication Engineering (4 Years, Bachelor of Technology)
+                        </option>
+                        <option value='Electronics and Instrumentation Engineering (4 Years, Bachelor of Technology)'
+                            selected>Electronics and Instrumentation Engineering (4 Years, Bachelor of Technology)
+                        </option>
+                        <option value='Civil and Environmental Engineering (4 Years, Bachelor of Technology)' selected>
+                            Civil and Environmental Engineering (4 Years, Bachelor of Technology)</option>
+                        <option
+                            value='Computer Science Engineering (Artificial lntelligence and Machine Learning) (4 Years, Bachelor of Technology)'
+                            selected>Computer Science Engineering (Artificial lntelligence and Machine Learning) (4
+                            Years, Bachelor of Technology)</option>
+                        <option value='Bio Medical Engineering (4 Years, Bachelor of Technology)' selected>Bio
+                            Medical Engineering (4 Years, Bachelor of Technology)</option>
+                        <option value='Food Technology and Management (4 Years, Bachelor of Technology)' selected>
+                            Food Technology and Management (4 Years, Bachelor of Technology)</option>
+                        <option value='Handloom and Textile Technology (4 Years, Bachelor of Technology)' selected>
+                            Handloom and Textile Technology (4 Years, Bachelor of Technology)</option>
+                        <option value='Chemical Engineering (5 Years, Integrated Masters in Technology)' selected>
+                            Chemical Engineering (5 Years, Integrated Masters in Technology)</option>
+                        <option
+                            value='Computer Science and Engineering with specialization in Cyber Security (4 Years, Bachelor of Technology)'
+                            selected>Computer Science and Engineering with specialization in Cyber Security (4
+                            Years, Bachelor of Technology)</option>
+                        <option
+                            value='Electronics and Communication Engineering (Avionics) (4 Years, Bachelor of Technology)'
+                            selected>Electronics and Communication Engineering (Avionics) (4 Years, Bachelor of
+                            Technology)</option>
+                        <option value='Aeronautical Engineering (4 Years, Bachelor of Technology)' selected>
+                            Aeronautical Engineering (4 Years, Bachelor of Technology)</option>
+                        <option value='Dairy Engineering (4 Years, Bachelor of Technology)' selected>Dairy
+                            Engineering (4 Years, Bachelor of Technology)</option>
+                        <option value='Fashion and Apparel Engineering (4 Years, Bachelor of Technology)' selected>
+                            Fashion and Apparel Engineering (4 Years, Bachelor of Technology)</option>
+                        <option value='Printing and Packaging Technology (4 Years, Bachelor of Technology)' selected>
+                            Printing and Packaging Technology (4 Years, Bachelor of Technology)</option>
+                        <option value='Electronics and VLSI Engineering (4 Years, Bachelor of Technology)' selected>
+                            Electronics and VLSI Engineering (4 Years, Bachelor of Technology)</option>
+                        <option
+                            value='Mathematics and Data Science (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Mathematics and Data Science (5 Years, Bachelor and Master of Technology (Dual
+                            Degree))</option>
+                        <option value='Chemistry (5 Years, Bachelor of Science and Master of Science (Dual Degree))'
+                            selected>Chemistry (5 Years, Bachelor of Science and Master of Science (Dual Degree))
+                        </option>
+                        <option
+                            value='Computational Mathematics (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Computational Mathematics (5 Years, Bachelor and Master of Technology (Dual
+                            Degree))</option>
+                        <option value='Production Engineering (4 Years, Bachelor of Technology)' selected>Production
+                            Engineering (4 Years, Bachelor of Technology)</option>
+                        <option value='Biotechnology (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Biotechnology (5 Years, Bachelor and Master of Technology (Dual Degree))
+                        </option>
+                        <option value='Chemistry (5 Years, Integrated Master of Science)' selected>Chemistry (5
+                            Years, Integrated Master of Science)</option>
+                        <option
+                            value='Electronics and Communication Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Electronics and Communication Engineering (5 Years, Bachelor and Master of
+                            Technology (Dual Degree))</option>
+                        <option value='Computational and Data Science (4 Years, Bachelor of Technology)' selected>
+                            Computational and Data Science (4 Years, Bachelor of Technology)</option>
+                        <option value='Chemical Technology (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Chemical Technology (5 Years, Bachelor and Master of Technology (Dual Degree))
+                        </option>
+                        <option
+                            value='Civil Engineering with Specialization in Construction Technology and Management (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Civil Engineering with Specialization in Construction Technology and Management
+                            (5 Years, Bachelor and Master of Technology (Dual Degree))</option>
+                        <option
+                            value='Computer Science and Engineering with Specialization in Cyber Security (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Computer Science and Engineering with Specialization in Cyber Security (5
+                            Years, Bachelor and Master of Technology (Dual Degree))</option>
+                        <option
+                            value='Computer Science and Engineering with Specialization in Data Science (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Computer Science and Engineering with Specialization in Data Science (5 Years,
+                            Bachelor and Master of Technology (Dual Degree))</option>
+                        <option
+                            value='Electrical Engineering with Specialization In Power System Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Electrical Engineering with Specialization In Power System Engineering (5
+                            Years, Bachelor and Master of Technology (Dual Degree))</option>
+                        <option
+                            value='Electronics and Communication Engineering with Specialization in Microelectronics and VLSI System Design (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Electronics and Communication Engineering with Specialization in
+                            Microelectronics and VLSI System Design (5 Years, Bachelor and Master of Technology
+                            (Dual Degree))</option>
+                        <option
+                            value='Material Science and Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Material Science and Engineering (5 Years, Bachelor and Master of Technology
+                            (Dual Degree))</option>
+                        <option
+                            value='Mathematics and Computing Technology (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Mathematics and Computing Technology (5 Years, Bachelor and Master of
+                            Technology (Dual Degree))</option>
+                        <option
+                            value='Mechanical Engineering with Specialization in Manufacturing and Industrial Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Mechanical Engineering with Specialization in Manufacturing and Industrial
+                            Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))</option>
+                        <option value='Industrial Internet of Things (4 Years, Bachelor of Technology)' selected>
+                            Industrial Internet of Things (4 Years, Bachelor of Technology)</option>
+                        <option
+                            value='Ceramic Engineering and M.Tech Industrial Ceramic (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>Ceramic Engineering and M.Tech Industrial Ceramic (5 Years, Bachelor and Master
+                            of Technology (Dual Degree))</option>
+                        <option value='Food Process Engineering (4 Years, Bachelor of Technology)' selected>Food
+                            Process Engineering (4 Years, Bachelor of Technology)</option>
+                        <option value='Industrial Design (4 Years, Bachelor of Technology)' selected>Industrial
+                            Design (4 Years, Bachelor of Technology)</option>
+                        <option value='Life Science (5 Years, Integrated Master of Science)' selected>Life Science
+                            (5 Years, Integrated Master of Science)</option>
+                        <option value='Mathematics (5 Years, Integrated Master of Science)' selected>Mathematics (5
+                            Years, Integrated Master of Science)</option>
+                        <option
+                            value='Electronics and Communication Engineering (VLSI Design and Technology) (4 Years, Bachelor of Technology)'
+                            selected>Electronics and Communication Engineering (VLSI Design and Technology) (4
+                            Years, Bachelor of Technology)</option>
+                        <option
+                            value='Integrated B. Tech.(IT) and M. Tech (IT) (5 Years, Integrated B. Tech. and M. Tech.)'
+                            selected>Integrated B. Tech.(IT) and M. Tech (IT) (5 Years, Integrated B. Tech. and M.
+                            Tech.)</option>
+                        <option value='Integrated B. Tech.(IT) and MBA (5 Years, Integrated B. Tech. and MBA)' selected>
+                            Integrated B. Tech.(IT) and MBA (5 Years, Integrated B. Tech. and MBA)</option>
+                        <option value='Mathematics and Scientific Computing (4 Years, Bachelor of Technology)' selected>
+                            Mathematics and Scientific Computing (4 Years, Bachelor of Technology)</option>
+                        <option value='Information Technology-Business Informatics (4 Years, Bachelor of Technology)'
+                            selected>Information Technology-Business Informatics (4 Years, Bachelor of Technology)
+                        </option>
+                        <option
+                            value='B.Tech. in Electronics and Communication Engineering and M.Tech. in VLSI Design (5 Years, Bachelor and Master of Technology (Dual Degree))'
+                            selected>B.Tech. in Electronics and Communication Engineering and M.Tech. in VLSI Design
+                            (5 Years, Bachelor and Master of Technology (Dual Degree))</option>
+                        <option
+                            value='Computer Science and Engineering with Major in Artificial Intelligence (4 Years, Bachelor of Technology)'
+                            selected>Computer Science and Engineering with Major in Artificial Intelligence (4
+                            Years, Bachelor of Technology)</option>
+                        <option value='Smart Manufacturing (4 Years, Bachelor of Technology)' selected>Smart
+                            Manufacturing (4 Years, Bachelor of Technology)</option>
+                        <option
+                            value='Computer Science and Engineering with specialization in Artificial Intelligence and Data Science (4 Years, Bachelor of Technology)'
+                            selected>Computer Science and Engineering with specialization in Artificial Intelligence
+                            and Data Science (4 Years, Bachelor of Technology)</option>
+                        <option
+                            value='Electronics and Communication Engineering with specialization in VLSI and Embedded Systems (4 Years, Bachelor of Technology)'
+                            selected>Electronics and Communication Engineering with specialization in VLSI and
+                            Embedded Systems (4 Years, Bachelor of Technology)</option>
+                        <option value='Computer Science (4 Years, Bachelor of Technology)' selected>Computer Science
+                            (4 Years, Bachelor of Technology)</option>
+                        <option value='Computer Science and Artificial Intelligence (4 Years, Bachelor of Technology)'
+                            selected>Computer Science and Artificial Intelligence (4 Years, Bachelor of Technology)
+                        </option>
+                        <option value='Computer Science and Business (4 Years, Bachelor of Technology)' selected>
+                            Computer Science and Business (4 Years, Bachelor of Technology)</option>
+                        <option
+                            value='Electronics and Communication Engineering with specialization in Design and Manufacturing (4 Years, Bachelor of Technology)'
+                            selected>Electronics and Communication Engineering with specialization in Design and
+                            Manufacturing (4 Years, Bachelor of Technology)</option>
+                        <option
+                            value='Mechanical Engineering with specialization in Design and Manufacturing (4 Years, Bachelor of Technology)'
+                            selected>Mechanical Engineering with specialization in Design and Manufacturing (4
+                            Years, Bachelor of Technology)</option>
+                        <option
+                            value='Computer Science and Engineering (with Specialization of Data Science and Artificial Intelligence) (4 Years, B. Tech / B. Tech (Hons.))'
+                            selected>Computer Science and Engineering (with Specialization of Data Science and
+                            Artificial Intelligence) (4 Years, B. Tech / B. Tech (Hons.))</option>
+                        <option
+                            value='Electronics and Communication Engineering (with Specialization of Embedded Systems and Internet of Things) (4 Years, B. Tech / B. Tech (Hons.))'
+                            selected>Electronics and Communication Engineering (with Specialization of Embedded
+                            Systems and Internet of Things) (4 Years, B. Tech / B. Tech (Hons.))</option>
+                        <option
+                            value='Computer Science Engineering (Data Science and Analytics) (4 Years, Bachelor of Technology)'
+                            selected>Computer Science Engineering (Data Science and Analytics) (4 Years, Bachelor of
+                            Technology)</option>
+                        <option
+                            value='Computer Science Engineering (Human Computer lnteraction and Gaming Technology) (4 Years, Bachelor of Technology)'
+                            selected>Computer Science Engineering (Human Computer lnteraction and Gaming Technology)
+                            (4 Years, Bachelor of Technology)</option>
+                        <option
+                            value='Electronics and Communication Engineering (Internet of Things) (4 Years, Bachelor of Technology)'
+                            selected>Electronics and Communication Engineering (Internet of Things) (4 Years,
+                            Bachelor of Technology)</option>
+                        <option value='Mechatronics and Automation Engineering (4 Years, Bachelor of Technology)'
+                            selected>Mechatronics and Automation Engineering (4 Years, Bachelor of Technology)
+                        </option>
+
+
+                    </select>
+                </div>
+            </div>
+
+            <!-- State -->
+            <div class='row justify-content-around align-items-center p-sm-3 p-2'>
+                <label class='col my-auto py-2 form-label ' for='state'>Home State</label>
+                <div class='col-sm-8'>
+                    <select class='form-control' id='state'>
+                        <option value='Select an option' selected disabled>Select an option</option>
+                        <option value='Andhra Pradesh'>Andhra Pradesh</option>
+                        <option value='Arunachal Pradesh'>Arunachal Pradesh</option>
+                        <option value='Assam'>Assam</option>
+                        <option value='Bihar'>Bihar</option>
+                        <option value='Chhattisgarh'>Chhattisgarh</option>
+                        <option value='Delhi'>Delhi</option>
+                        <option value='Goa'>Goa</option>
+                        <option value='Gujarat'>Gujarat</option>
+                        <option value='Haryana'>Haryana</option>
+                        <option value='Himachal Pradesh'>Himachal Pradesh</option>
+                        <option value='Jammu & Kashmir'>Jammu & Kashmir/Ladakh</option>
+                        <option value='Jharkhand'>Jharkhand</option>
+                        <option value='Karnataka'>Karnataka</option>
+                        <option value='Kerala'>Kerala</option>
+                        <option value='Madhya Pradesh'>Madhya Pradesh</option>
+                        <option value='Maharashtra'>Maharashtra</option>
+                        <option value='Manipur'>Manipur</option>
+                        <option value='Meghalaya'>Meghalaya</option>
+                        <option value='Mizoram'>Mizoram</option>
+                        <option value='Nagaland'>Nagaland</option>
+                        <option value='Odisha'>Odisha</option>
+                        <option value='Puducherry'>Puducherry</option>
+                        <option value='Punjab'>Punjab</option>
+                        <option value='Rajasthan'>Rajasthan</option>
+                        <option value='Sikkim'>Sikkim</option>
+                        <option value='Tamil Nadu'>Tamil Nadu</option>
+                        <option value='Telangana'>Telangana</option>
+                        <option value='Tripura'>Tripura</option>
+                        <option value='Uttar Pradesh'>Uttar Pradesh</option>
+                        <option value='Uttarakhand'>Uttarakhand</option>
+                        <option value='West Bengal'>West Bengal</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Gender -->
+            <div class='row justify-content-around align-items-center p-sm-3 p-2'>
+                <label class='col my-auto py-2 form-label'>Gender</label>
+                <div class='col-sm-8 d-flex justify-content-between'>
+                    <div class='form-check-inline'>
+                        <input class='form-check-input' type='radio' id='neutral' name='gender' value='Neutral' checked>
+                        <label class='form-check-label ms-sm-4 ms-3' for='neutral'>Neutral</label>
+                    </div>
+                    <div class='form-check-inline m-0'>
+                        <input class='form-check-input' type='radio' id='female' name='gender' value='Female'>
+                        <label class='form-check-label ms-sm-4 ms-3' for='female'>Female</label>
                     </div>
                 </div>
+            </div>
 
-                <!-- Category (Seat type) -->
-                <div class='row justify-content-around align-items-center p-sm-3 p-2'>
-                    <label class='col my-auto py-2 form-label ' for='category'>Category</label>
-                    <div class='col-sm-8'><select class='selectpicker form-control' id='category'>
-                            <option value='OPEN' selected>OPEN</option>
-                            <option value='EWS'>EWS</option>
-                            <option value='OBC-NCL'>OBC-NCL</option>
-                            <option value='SC'>SC</option>
-                            <option value='ST'>ST</option>
-                            <option value='OPEN (PwD)'>OPEN (PwD)</option>
-                            <option value='OBC-NCL (PwD)'>OBC-NCL (PwD)</option>
-                            <option value='EWS (PwD)'>EWS (PwD)</option>
-                            <option value='ST (PwD)'>ST (PwD)</option>
-                            <option value='SC (PwD)'>SC (PwD)</option>
-                        </select></div>
-                </div>
-
-                <!-- Branch -->
-                <div class='row justify-content-around align-items-center p-sm-3 p-2'>
-                    <label class='col my-auto py-2 form-label ' for='branch'>Branch</label><br>
-                    <div class='col-sm-8'>
-                        <select class='selectpicker form-control' data-live-search='true' data-actions-box='true'
-                            data-selected-text-format='count>1' id='branch' multiple>
-                            <option value='Civil Engineering (4 Years, Bachelor of Technology)' selected>Civil
-                                Engineering (4 Years, Bachelor of Technology)</option>
-                            <option
-                                value='Civil Engineering and M. Tech. in Structural Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Civil Engineering and M. Tech. in Structural Engineering (5 Years, Bachelor and
-                                Master of Technology (Dual Degree))</option>
-                            <option
-                                value='Civil Engineering and M.Tech in Transportation Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Civil Engineering and M.Tech in Transportation Engineering (5 Years, Bachelor
-                                and Master of Technology (Dual Degree))</option>
-                            <option
-                                value='Civil Engineering and M.Tech. in Environmental Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Civil Engineering and M.Tech. in Environmental Engineering (5 Years, Bachelor
-                                and Master of Technology (Dual Degree))</option>
-                            <option value='Computer Science and Engineering (4 Years, Bachelor of Technology)' selected>
-                                Computer Science and Engineering (4 Years, Bachelor of Technology)</option>
-                            <option
-                                value='Computer Science and Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Computer Science and Engineering (5 Years, Bachelor and Master of Technology
-                                (Dual Degree))</option>
-                            <option
-                                value='Electrical Engineering and M.Tech Power Electronics and Drives (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Electrical Engineering and M.Tech Power Electronics and Drives (5 Years,
-                                Bachelor and Master of Technology (Dual Degree))</option>
-                            <option value='Electrical Engineering (4 Years, Bachelor of Technology)' selected>Electrical
-                                Engineering (4 Years, Bachelor of Technology)</option>
-                            <option value='Electronics and Communication Engineering (4 Years, Bachelor of Technology)'
-                                selected>Electronics and Communication Engineering (4 Years, Bachelor of Technology)
-                            </option>
-                            <option value='Mechanical Engineering (4 Years, Bachelor of Technology)' selected>Mechanical
-                                Engineering (4 Years, Bachelor of Technology)</option>
-                            <option
-                                value='Mechanical Engineering and M. Tech. in Mechanical System Design (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Mechanical Engineering and M. Tech. in Mechanical System Design (5 Years,
-                                Bachelor and Master of Technology (Dual Degree))</option>
-                            <option
-                                value='Mechanical Engineering and M. Tech. in Thermal Science & Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Mechanical Engineering and M. Tech. in Thermal Science & Engineering (5 Years,
-                                Bachelor and Master of Technology (Dual Degree))</option>
-                            <option
-                                value='Mechanical Engineering with M.Tech. in Manufacturing Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Mechanical Engineering with M.Tech. in Manufacturing Engineering (5 Years,
-                                Bachelor and Master of Technology (Dual Degree))</option>
-                            <option value='Metallurgical and Materials Engineering (4 Years, Bachelor of Technology)'
-                                selected>Metallurgical and Materials Engineering (4 Years, Bachelor of Technology)
-                            </option>
-                            <option
-                                value='Metallurgical and Materials Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Metallurgical and Materials Engineering (5 Years, Bachelor and Master of
-                                Technology (Dual Degree))</option>
-                            <option value='Aerospace Engineering (4 Years, Bachelor of Technology)' selected>Aerospace
-                                Engineering (4 Years, Bachelor of Technology)</option>
-                            <option value='BS in Mathematics (4 Years, Bachelor of Science)' selected>BS in Mathematics
-                                (4 Years, Bachelor of Science)</option>
-                            <option value='Chemical Engineering (4 Years, Bachelor of Technology)' selected>Chemical
-                                Engineering (4 Years, Bachelor of Technology)</option>
-                            <option value='Chemistry (4 Years, Bachelor of Science)' selected>Chemistry (4 Years,
-                                Bachelor of Science)</option>
-                            <option value='Economics (4 Years, Bachelor of Science)' selected>Economics (4 Years,
-                                Bachelor of Science)</option>
-                            <option
-                                value='Electrical Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Electrical Engineering (5 Years, Bachelor and Master of Technology (Dual
-                                Degree))</option>
-                            <option value='Energy Engineering (4 Years, Bachelor of Technology)' selected>Energy
-                                Engineering (4 Years, Bachelor of Technology)</option>
-                            <option value='Engineering Physics (4 Years, Bachelor of Technology)' selected>Engineering
-                                Physics (4 Years, Bachelor of Technology)</option>
-                            <option value='Environmental Science and Engineering (4 Years, Bachelor of Technology)'
-                                selected>Environmental Science and Engineering (4 Years, Bachelor of Technology)
-                            </option>
-                            <option
-                                value='Metallurgical Engineering and Materials Science (4 Years, Bachelor of Technology)'
-                                selected>Metallurgical Engineering and Materials Science (4 Years, Bachelor of
-                                Technology)</option>
-                            <option value='B.Tech in General Engineering (4 Years, Bachelor of Technology)' selected>
-                                B.Tech in General Engineering (4 Years, Bachelor of Technology)</option>
-                            <option
-                                value='B.Tech in Materials Science and Engineering (4 Years, Bachelor of Technology)'
-                                selected>B.Tech in Materials Science and Engineering (4 Years, Bachelor of Technology)
-                            </option>
-                            <option value='B.Tech in Mathematics and Computing (4 Years, Bachelor of Technology)'
-                                selected>B.Tech in Mathematics and Computing (4 Years, Bachelor of Technology)</option>
-                            <option value='B.Tech in Microelectronics & VLSI (4 Years, Bachelor of Technology)'
-                                selected>B.Tech in Microelectronics & VLSI (4 Years, Bachelor of Technology)</option>
-                            <option value='Bio Engineering (4 Years, Bachelor of Technology)' selected>Bio Engineering
-                                (4 Years, Bachelor of Technology)</option>
-                            <option value='BS in Chemical Sciences (4 Years, Bachelor of Science)' selected>BS in
-                                Chemical Sciences (4 Years, Bachelor of Science)</option>
-                            <option value='Data Science and Engineering (4 Years, Bachelor of Technology)' selected>Data
-                                Science and Engineering (4 Years, Bachelor of Technology)</option>
-                            <option value='Biotechnology and Biochemical Engineering (4 Years, Bachelor of Technology)'
-                                selected>Biotechnology and Biochemical Engineering (4 Years, Bachelor of Technology)
-                            </option>
-                            <option
-                                value='Chemical Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Chemical Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))
-                            </option>
-                            <option
-                                value='Electrical Engineering (Power and Automation) (4 Years, Bachelor of Technology)'
-                                selected>Electrical Engineering (Power and Automation) (4 Years, Bachelor of Technology)
-                            </option>
-                            <option value='Engineering and Computational Mechanics (4 Years, Bachelor of Technology)'
-                                selected>Engineering and Computational Mechanics (4 Years, Bachelor of Technology)
-                            </option>
-                            <option value='Materials Engineering (4 Years, Bachelor of Technology)' selected>Materials
-                                Engineering (4 Years, Bachelor of Technology)</option>
-                            <option value='Mathematics and Computing (4 Years, Bachelor of Technology)' selected>
-                                Mathematics and Computing (4 Years, Bachelor of Technology)</option>
-                            <option
-                                value='Mathematics and Computing (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Mathematics and Computing (5 Years, Bachelor and Master of Technology (Dual
-                                Degree))</option>
-                            <option value='Production and Industrial Engineering (4 Years, Bachelor of Technology)'
-                                selected>Production and Industrial Engineering (4 Years, Bachelor of Technology)
-                            </option>
-                            <option value='Textile Technology (4 Years, Bachelor of Technology)' selected>Textile
-                                Technology (4 Years, Bachelor of Technology)</option>
-                            <option value='Space Sciences and Engineering (4 Years, Bachelor of Technology)' selected>
-                                Space Sciences and Engineering (4 Years, Bachelor of Technology)</option>
-                            <option
-                                value='Aerospace Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Aerospace Engineering (5 Years, Bachelor and Master of Technology (Dual
-                                Degree))</option>
-                            <option value='Agricultural and Food Engineering (4 Years, Bachelor of Technology)'
-                                selected>Agricultural and Food Engineering (4 Years, Bachelor of Technology)</option>
-                            <option
-                                value='Agricultural and Food Engineering with M.Tech. in any of the listed specializations (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Agricultural and Food Engineering with M.Tech. in any of the listed
-                                specializations (5 Years, Bachelor and Master of Technology (Dual Degree))</option>
-                            <option value='Applied Geology (4 Years, Bachelor of Science)' selected>Applied Geology (4
-                                Years, Bachelor of Science)</option>
-                            <option value='Architecture (5 Years, Bachelor of Architecture)' selected>Architecture (5
-                                Years, Bachelor of Architecture)</option>
-                            <option
-                                value='Biotechnology and Biochemical Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Biotechnology and Biochemical Engineering (5 Years, Bachelor and Master of
-                                Technology (Dual Degree))</option>
-                            <option
-                                value='Civil Engineering with any of the listed specialization (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Civil Engineering with any of the listed specialization (5 Years, Bachelor and
-                                Master of Technology (Dual Degree))</option>
-                            <option
-                                value='Electrical Engineering with M.Tech. in any of the listed specializations (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Electrical Engineering with M.Tech. in any of the listed specializations (5
-                                Years, Bachelor and Master of Technology (Dual Degree))</option>
-                            <option
-                                value='Electronics and Electrical Communication Engineering (4 Years, Bachelor of Technology)'
-                                selected>Electronics and Electrical Communication Engineering (4 Years, Bachelor of
-                                Technology)</option>
-                            <option
-                                value='Electronics and Electrical Communication Engineering with M.Tech. in any of the listed specializations (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Electronics and Electrical Communication Engineering with M.Tech. in any of the
-                                listed specializations (5 Years, Bachelor and Master of Technology (Dual Degree))
-                            </option>
-                            <option value='Exploration Geophysics (4 Years, Bachelor of Science)' selected>Exploration
-                                Geophysics (4 Years, Bachelor of Science)</option>
-                            <option value='Industrial and Systems Engineering (4 Years, Bachelor of Technology)'
-                                selected>Industrial and Systems Engineering (4 Years, Bachelor of Technology)</option>
-                            <option
-                                value='Industrial and Systems Engineering with M.Tech. in Industrial and Systems Engineering and Management (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Industrial and Systems Engineering with M.Tech. in Industrial and Systems
-                                Engineering and Management (5 Years, Bachelor and Master of Technology (Dual Degree))
-                            </option>
-                            <option value='Instrumentation Engineering (4 Years, Bachelor of Technology)' selected>
-                                Instrumentation Engineering (4 Years, Bachelor of Technology)</option>
-                            <option value='Manufacturing Science and Engineering (4 Years, Bachelor of Technology)'
-                                selected>Manufacturing Science and Engineering (4 Years, Bachelor of Technology)
-                            </option>
-                            <option
-                                value='Manufacturing Science and Engineering with M.Tech. in Industrial and Systems Engineering and Management (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Manufacturing Science and Engineering with M.Tech. in Industrial and Systems
-                                Engineering and Management (5 Years, Bachelor and Master of Technology (Dual Degree))
-                            </option>
-                            <option value='Mathematics and Computing (4 Years, Bachelor of Science)' selected>
-                                Mathematics and Computing (4 Years, Bachelor of Science)</option>
-                            <option
-                                value='Mechanical Engineering with M.Tech. in any of the listed specializations (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Mechanical Engineering with M.Tech. in any of the listed specializations (5
-                                Years, Bachelor and Master of Technology (Dual Degree))</option>
-                            <option value='Mining Engineering (4 Years, Bachelor of Technology)' selected>Mining
-                                Engineering (4 Years, Bachelor of Technology)</option>
-                            <option
-                                value='Mining Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Mining Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))
-                            </option>
-                            <option
-                                value='Mining Safety Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Mining Safety Engineering (5 Years, Bachelor and Master of Technology (Dual
-                                Degree))</option>
-                            <option value='Ocean Engineering and Naval Architecture (4 Years, Bachelor of Technology)'
-                                selected>Ocean Engineering and Naval Architecture (4 Years, Bachelor of Technology)
-                            </option>
-                            <option
-                                value='Ocean Engineering and Naval Architecture (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Ocean Engineering and Naval Architecture (5 Years, Bachelor and Master of
-                                Technology (Dual Degree))</option>
-                            <option value='Physics (4 Years, Bachelor of Science)' selected>Physics (4 Years, Bachelor
-                                of Science)</option>
-                            <option value='Artificial Intelligence (4 Years, Bachelor of Technology)' selected>
-                                Artificial Intelligence (4 Years, Bachelor of Technology)</option>
-                            <option value='Biomedical Engineering (4 Years, Bachelor of Technology)' selected>Biomedical
-                                Engineering (4 Years, Bachelor of Technology)</option>
-                            <option value='Biotechnology and Bioinformatics (4 Years, Bachelor of Technology)' selected>
-                                Biotechnology and Bioinformatics (4 Years, Bachelor of Technology)</option>
-                            <option value='Computational Engineering (4 Years, Bachelor of Technology)' selected>
-                                Computational Engineering (4 Years, Bachelor of Technology)</option>
-                            <option
-                                value='Electrical Engineering (IC Design and Technology) (4 Years, Bachelor of Technology)'
-                                selected>Electrical Engineering (IC Design and Technology) (4 Years, Bachelor of
-                                Technology)</option>
-                            <option value='Engineering Science (4 Years, Bachelor of Technology)' selected>Engineering
-                                Science (4 Years, Bachelor of Technology)</option>
-                            <option value='Industrial Chemistry (4 Years, Bachelor of Technology)' selected>Industrial
-                                Chemistry (4 Years, Bachelor of Technology)</option>
-                            <option
-                                value='Materials Science and Metallurgical Engineering (4 Years, Bachelor of Technology)'
-                                selected>Materials Science and Metallurgical Engineering (4 Years, Bachelor of
-                                Technology)</option>
-                            <option value='Artificial Intelligence and Data Science (4 Years, Bachelor of Technology)'
-                                selected>Artificial Intelligence and Data Science (4 Years, Bachelor of Technology)
-                            </option>
-                            <option value='Chemistry with Specialization (4 Years, Bachelor of Science)' selected>
-                                Chemistry with Specialization (4 Years, Bachelor of Science)</option>
-                            <option value='Civil and Infrastructure Engineering (4 Years, Bachelor of Technology)'
-                                selected>Civil and Infrastructure Engineering (4 Years, Bachelor of Technology)</option>
-                            <option value='Physics with Specialization (4 Years, Bachelor of Science)' selected>Physics
-                                with Specialization (4 Years, Bachelor of Science)</option>
-                            <option value='Biological Sciences and Bioengineering (4 Years, Bachelor of Technology)'
-                                selected>Biological Sciences and Bioengineering (4 Years, Bachelor of Technology)
-                            </option>
-                            <option value='Earth Sciences (4 Years, Bachelor of Science)' selected>Earth Sciences (4
-                                Years, Bachelor of Science)</option>
-                            <option value='Materials Science and Engineering (4 Years, Bachelor of Technology)'
-                                selected>Materials Science and Engineering (4 Years, Bachelor of Technology)</option>
-                            <option value='Mathematics and Scientific Computing (4 Years, Bachelor of Science)'
-                                selected>Mathematics and Scientific Computing (4 Years, Bachelor of Science)</option>
-                            <option value='Statistics and Data Science (4 Years, Bachelor of Science)' selected>
-                                Statistics and Data Science (4 Years, Bachelor of Science)</option>
-                            <option value='Biological Engineering (4 Years, Bachelor of Technology)' selected>Biological
-                                Engineering (4 Years, Bachelor of Technology)</option>
-                            <option value='Biological Science (4 Years, Bachelor of Science)' selected>Biological
-                                Science (4 Years, Bachelor of Science)</option>
-                            <option
-                                value='Engineering Design (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Engineering Design (5 Years, Bachelor and Master of Technology (Dual Degree))
-                            </option>
-                            <option value='Naval Architecture and Ocean Engineering (4 Years, Bachelor of Technology)'
-                                selected>Naval Architecture and Ocean Engineering (4 Years, Bachelor of Technology)
-                            </option>
-                            <option value='Physics (5 Years, Bachelor of Science and Master of Science (Dual Degree))'
-                                selected>Physics (5 Years, Bachelor of Science and Master of Science (Dual Degree))
-                            </option>
-                            <option
-                                value='Mechanical Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Mechanical Engineering (5 Years, Bachelor and Master of Technology (Dual
-                                Degree))</option>
-                            <option
-                                value='B. Tech in CE. - M. Tech. in Geotechnical Engineering (5 Years, B.Tech. + M.Tech./MS (Dual Degree))'
-                                selected>B. Tech in CE. - M. Tech. in Geotechnical Engineering (5 Years, B.Tech. +
-                                M.Tech./MS (Dual Degree))</option>
-                            <option
-                                value='B. Tech in CE. - M. Tech. in Structural Engineering (5 Years, B.Tech. + M.Tech./MS (Dual Degree))'
-                                selected>B. Tech in CE. - M. Tech. in Structural Engineering (5 Years, B.Tech. +
-                                M.Tech./MS (Dual Degree))</option>
-                            <option
-                                value='B. Tech. (CSE) and M.Tech in CSE (5 Years, B.Tech. + M.Tech./MS (Dual Degree))'
-                                selected>B. Tech. (CSE) and M.Tech in CSE (5 Years, B.Tech. + M.Tech./MS (Dual Degree))
-                            </option>
-                            <option
-                                value='B. Tech. (ECE) -M. Tech. in VLSI (5 Years, B.Tech. + M.Tech./MS (Dual Degree))'
-                                selected>B. Tech. (ECE) -M. Tech. in VLSI (5 Years, B.Tech. + M.Tech./MS (Dual Degree))
-                            </option>
-                            <option
-                                value='B. Tech. (EEE)-M. Tech. in (Power &. Control) (5 Years, B.Tech. + M.Tech./MS (Dual Degree))'
-                                selected>B. Tech. (EEE)-M. Tech. in (Power &. Control) (5 Years, B.Tech. + M.Tech./MS
-                                (Dual Degree))</option>
-                            <option
-                                value='B. Tech. (Mathematics & Computing) M. Tech. in (Mathematics & Computing) (5 Years, B.Tech. + M.Tech./MS (Dual Degree))'
-                                selected>B. Tech. (Mathematics & Computing) M. Tech. in (Mathematics & Computing) (5
-                                Years, B.Tech. + M.Tech./MS (Dual Degree))</option>
-                            <option
-                                value='B. Tech. (ME) - M. Tech. in Mechatronics (5 Years, B.Tech. + M.Tech./MS (Dual Degree))'
-                                selected>B. Tech. (ME) - M. Tech. in Mechatronics (5 Years, B.Tech. + M.Tech./MS (Dual
-                                Degree))</option>
-                            <option
-                                value='B. Tech. (ME) - MBA (NITIE) (5 Years, Bachelor of Technology and MBA (Dual Degree))'
-                                selected>B. Tech. (ME) - MBA (NITIE) (5 Years, Bachelor of Technology and MBA (Dual
-                                Degree))</option>
-                            <option
-                                value='B.Tech. in Electronics and Communication Engineering and M.Tech. in Communication Systems (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>B.Tech. in Electronics and Communication Engineering and M.Tech. in
-                                Communication Systems (5 Years, Bachelor and Master of Technology (Dual Degree))
-                            </option>
-                            <option value='Chemical Science and Technology (4 Years, Bachelor of Technology)' selected>
-                                Chemical Science and Technology (4 Years, Bachelor of Technology)</option>
-                            <option value='Electrical and Electronics Engineering (4 Years, Bachelor of Technology)'
-                                selected>Electrical and Electronics Engineering (4 Years, Bachelor of Technology)
-                            </option>
-                            <option value='Biosciences and Bioengineering (4 Years, Bachelor of Technology)' selected>
-                                Biosciences and Bioengineering (4 Years, Bachelor of Technology)</option>
-                            <option
-                                value='Chemical Sciences (5 Years, Bachelor of Science and Master of Science (Dual Degree))'
-                                selected>Chemical Sciences (5 Years, Bachelor of Science and Master of Science (Dual
-                                Degree))</option>
-                            <option value='Data Science and Artificial Intelligence (4 Years, Bachelor of Technology)'
-                                selected>Data Science and Artificial Intelligence (4 Years, Bachelor of Technology)
-                            </option>
-                            <option value='Economics (5 Years, Bachelor of Science and Master of Science (Dual Degree))'
-                                selected>Economics (5 Years, Bachelor of Science and Master of Science (Dual Degree))
-                            </option>
-                            <option value='Geological Technology (5 Years, Integrated Master of Technology)' selected>
-                                Geological Technology (5 Years, Integrated Master of Technology)</option>
-                            <option value='Geophysical Technology (5 Years, Integrated Master of Technology)' selected>
-                                Geophysical Technology (5 Years, Integrated Master of Technology)</option>
-                            <option
-                                value='Mathematics & Computing (5 Years, Bachelor of Science and Master of Science (Dual Degree))'
-                                selected>Mathematics & Computing (5 Years, Bachelor of Science and Master of Science
-                                (Dual Degree))</option>
-                            <option value='Applied Geology (5 Years, Integrated Master of Technology)' selected>Applied
-                                Geology (5 Years, Integrated Master of Technology)</option>
-                            <option value='Applied Geophysics (5 Years, Integrated Master of Technology)' selected>
-                                Applied Geophysics (5 Years, Integrated Master of Technology)</option>
-                            <option value='Environmental Engineering (4 Years, Bachelor of Technology)' selected>
-                                Environmental Engineering (4 Years, Bachelor of Technology)</option>
-                            <option value='Mathematics and Computing (5 Years, Integrated Master of Technology)'
-                                selected>Mathematics and Computing (5 Years, Integrated Master of Technology)</option>
-                            <option value='Mineral and Metallurgical Engineering (4 Years, Bachelor of Technology)'
-                                selected>Mineral and Metallurgical Engineering (4 Years, Bachelor of Technology)
-                            </option>
-                            <option value='Mining Machinery Engineering (4 Years, Bachelor of Technology)' selected>
-                                Mining Machinery Engineering (4 Years, Bachelor of Technology)</option>
-                            <option value='Petroleum Engineering (4 Years, Bachelor of Technology)' selected>Petroleum
-                                Engineering (4 Years, Bachelor of Technology)</option>
-                            <option
-                                value='Artificial Intelligence and Data Engineering (4 Years, Bachelor of Technology)'
-                                selected>Artificial Intelligence and Data Engineering (4 Years, Bachelor of Technology)
-                            </option>
-                            <option
-                                value='Biochemical Engineering with M.Tech. in Biochemical Engineering and Biotechnology (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Biochemical Engineering with M.Tech. in Biochemical Engineering and
-                                Biotechnology (5 Years, Bachelor and Master of Technology (Dual Degree))</option>
-                            <option
-                                value='Bioengineering with M.Tech in Biomedical Technology (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Bioengineering with M.Tech in Biomedical Technology (5 Years, Bachelor and
-                                Master of Technology (Dual Degree))</option>
-                            <option value='Ceramic Engineering (4 Years, Bachelor of Technology)' selected>Ceramic
-                                Engineering (4 Years, Bachelor of Technology)</option>
-                            <option
-                                value='Ceramic Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Ceramic Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))
-                            </option>
-                            <option value='Civil Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Civil Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))
-                            </option>
-                            <option
-                                value='Electrical Engineering with M.Tech. in Power Electronics (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Electrical Engineering with M.Tech. in Power Electronics (5 Years, Bachelor and
-                                Master of Technology (Dual Degree))</option>
-                            <option value='Electronics Engineering (4 Years, Bachelor of Technology)' selected>
-                                Electronics Engineering (4 Years, Bachelor of Technology)</option>
-                            <option
-                                value='Engineering Physics (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Engineering Physics (5 Years, Bachelor and Master of Technology (Dual Degree))
-                            </option>
-                            <option
-                                value='Industrial Chemistry (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Industrial Chemistry (5 Years, Bachelor and Master of Technology (Dual Degree))
-                            </option>
-                            <option
-                                value='Materials Science and Technology (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Materials Science and Technology (5 Years, Bachelor and Master of Technology
-                                (Dual Degree))</option>
-                            <option value='Metallurgical Engineering (4 Years, Bachelor of Technology)' selected>
-                                Metallurgical Engineering (4 Years, Bachelor of Technology)</option>
-                            <option
-                                value='Metallurgical Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Metallurgical Engineering (5 Years, Bachelor and Master of Technology (Dual
-                                Degree))</option>
-                            <option value='Pharmaceutical Engineering & Technology (4 Years, Bachelor of Technology)'
-                                selected>Pharmaceutical Engineering & Technology (4 Years, Bachelor of Technology)
-                            </option>
-                            <option
-                                value='Pharmaceutical Engineering & Technology (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Pharmaceutical Engineering & Technology (5 Years, Bachelor and Master of
-                                Technology (Dual Degree))</option>
-                            <option value='Electronics and Electrical Engineering (4 Years, Bachelor of Technology)'
-                                selected>Electronics and Electrical Engineering (4 Years, Bachelor of Technology)
-                            </option>
-                            <option value='Mechatronics Engineering (4 Years, Bachelor of Technology)' selected>
-                                Mechatronics Engineering (4 Years, Bachelor of Technology)</option>
-                            <option value='Chemical and Biochemical Engineering (4 Years, Bachelor of Technology)'
-                                selected>Chemical and Biochemical Engineering (4 Years, Bachelor of Technology)</option>
-                            <option
-                                value='Interdisciplinary Sciences (5 Years, Bachelor of Science and Master of Science (Dual Degree))'
-                                selected>Interdisciplinary Sciences (5 Years, Bachelor of Science and Master of Science
-                                (Dual Degree))</option>
-                            <option value='Agricultural Engineering (4 Years, Bachelor of Technology)' selected>
-                                Agricultural Engineering (4 Years, Bachelor of Technology)</option>
-                            <option
-                                value='Artificial Intelligence and Machine Learning (4 Years, Bachelor of Technology)'
-                                selected>Artificial Intelligence and Machine Learning (4 Years, Bachelor of Technology)
-                            </option>
-                            <option value='Bio Technology (4 Years, Bachelor of Technology)' selected>Bio Technology (4
-                                Years, Bachelor of Technology)</option>
-                            <option value='Food Engineering and Technology (4 Years, Bachelor of Technology)' selected>
-                                Food Engineering and Technology (4 Years, Bachelor of Technology)</option>
-                            <option value='Mathematics and Computing (5 Years, Integrated Master of Science)' selected>
-                                Mathematics and Computing (5 Years, Integrated Master of Science)</option>
-                            <option value='Physics (5 Years, Integrated Master of Science)' selected>Physics (5 Years,
-                                Integrated Master of Science)</option>
-                            <option
-                                value='Quantitative Economics & Data Science (5 Years, Integrated Master of Science)'
-                                selected>Quantitative Economics & Data Science (5 Years, Integrated Master of Science)
-                            </option>
-                            <option value='Carpet and Textile Technology (4 Years, Bachelor of Technology)' selected>
-                                Carpet and Textile Technology (4 Years, Bachelor of Technology)</option>
-                            <option value='Computer Engineering (4 Years, Bachelor of Technology)' selected>Computer
-                                Engineering (4 Years, Bachelor of Technology)</option>
-                            <option value='Industrial and Production Engineering (4 Years, Bachelor of Technology)'
-                                selected>Industrial and Production Engineering (4 Years, Bachelor of Technology)
-                            </option>
-                            <option value='Information Technology (4 Years, Bachelor of Technology)' selected>
-                                Information Technology (4 Years, Bachelor of Technology)</option>
-                            <option value='Electronics System Engineering (4 Years, Bachelor of Technology)' selected>
-                                Electronics System Engineering (4 Years, Bachelor of Technology)</option>
-                            <option value='Metallurgy and Materials Engineering (4 Years, Bachelor of Technology)'
-                                selected>Metallurgy and Materials Engineering (4 Years, Bachelor of Technology)</option>
-                            <option value='Food Technology (4 Years, Bachelor of Technology)' selected>Food Technology
-                                (4 Years, Bachelor of Technology)</option>
-                            <option value='Instrumentation and Control Engineering (4 Years, Bachelor of Technology)'
-                                selected>Instrumentation and Control Engineering (4 Years, Bachelor of Technology)
-                            </option>
-                            <option value='Planning (4 Years, Bachelor of Planning)' selected>Planning (4 Years,
-                                Bachelor of Planning)</option>
-                            <option
-                                value='Computer Science Engineering (Artificial Intelligence) (4 Years, B. Tech / B. Tech (Hons.))'
-                                selected>Computer Science Engineering (Artificial Intelligence) (4 Years, B. Tech / B.
-                                Tech (Hons.))</option>
-                            <option
-                                value='Computer Science Engineering (Data Science) (4 Years, B. Tech / B. Tech (Hons.))'
-                                selected>Computer Science Engineering (Data Science) (4 Years, B. Tech / B. Tech
-                                (Hons.))</option>
-                            <option
-                                value='Electronics Engineering (VLSI Design and Technology) (4 Years, Bachelor of Technology)'
-                                selected>Electronics Engineering (VLSI Design and Technology) (4 Years, Bachelor of
-                                Technology)</option>
-                            <option
-                                value='Electronics and Telecommunication Engineering (4 Years, Bachelor of Technology)'
-                                selected>Electronics and Telecommunication Engineering (4 Years, Bachelor of Technology)
-                            </option>
-                            <option
-                                value='Electronics and Instrumentation Engineering (4 Years, Bachelor of Technology)'
-                                selected>Electronics and Instrumentation Engineering (4 Years, Bachelor of Technology)
-                            </option>
-                            <option value='Civil and Environmental Engineering (4 Years, Bachelor of Technology)'
-                                selected>Civil and Environmental Engineering (4 Years, Bachelor of Technology)</option>
-                            <option
-                                value='Computer Science Engineering (Artificial lntelligence and Machine Learning) (4 Years, Bachelor of Technology)'
-                                selected>Computer Science Engineering (Artificial lntelligence and Machine Learning) (4
-                                Years, Bachelor of Technology)</option>
-                            <option value='Bio Medical Engineering (4 Years, Bachelor of Technology)' selected>Bio
-                                Medical Engineering (4 Years, Bachelor of Technology)</option>
-                            <option value='Food Technology and Management (4 Years, Bachelor of Technology)' selected>
-                                Food Technology and Management (4 Years, Bachelor of Technology)</option>
-                            <option value='Handloom and Textile Technology (4 Years, Bachelor of Technology)' selected>
-                                Handloom and Textile Technology (4 Years, Bachelor of Technology)</option>
-                            <option value='Chemical Engineering (5 Years, Integrated Masters in Technology)' selected>
-                                Chemical Engineering (5 Years, Integrated Masters in Technology)</option>
-                            <option
-                                value='Computer Science and Engineering with specialization in Cyber Security (4 Years, Bachelor of Technology)'
-                                selected>Computer Science and Engineering with specialization in Cyber Security (4
-                                Years, Bachelor of Technology)</option>
-                            <option
-                                value='Electronics and Communication Engineering (Avionics) (4 Years, Bachelor of Technology)'
-                                selected>Electronics and Communication Engineering (Avionics) (4 Years, Bachelor of
-                                Technology)</option>
-                            <option value='Aeronautical Engineering (4 Years, Bachelor of Technology)' selected>
-                                Aeronautical Engineering (4 Years, Bachelor of Technology)</option>
-                            <option value='Dairy Engineering (4 Years, Bachelor of Technology)' selected>Dairy
-                                Engineering (4 Years, Bachelor of Technology)</option>
-                            <option value='Fashion and Apparel Engineering (4 Years, Bachelor of Technology)' selected>
-                                Fashion and Apparel Engineering (4 Years, Bachelor of Technology)</option>
-                            <option value='Printing and Packaging Technology (4 Years, Bachelor of Technology)'
-                                selected>Printing and Packaging Technology (4 Years, Bachelor of Technology)</option>
-                            <option value='Electronics and VLSI Engineering (4 Years, Bachelor of Technology)' selected>
-                                Electronics and VLSI Engineering (4 Years, Bachelor of Technology)</option>
-                            <option
-                                value='Mathematics and Data Science (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Mathematics and Data Science (5 Years, Bachelor and Master of Technology (Dual
-                                Degree))</option>
-                            <option value='Chemistry (5 Years, Bachelor of Science and Master of Science (Dual Degree))'
-                                selected>Chemistry (5 Years, Bachelor of Science and Master of Science (Dual Degree))
-                            </option>
-                            <option
-                                value='Computational Mathematics (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Computational Mathematics (5 Years, Bachelor and Master of Technology (Dual
-                                Degree))</option>
-                            <option value='Production Engineering (4 Years, Bachelor of Technology)' selected>Production
-                                Engineering (4 Years, Bachelor of Technology)</option>
-                            <option value='Biotechnology (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Biotechnology (5 Years, Bachelor and Master of Technology (Dual Degree))
-                            </option>
-                            <option value='Chemistry (5 Years, Integrated Master of Science)' selected>Chemistry (5
-                                Years, Integrated Master of Science)</option>
-                            <option
-                                value='Electronics and Communication Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Electronics and Communication Engineering (5 Years, Bachelor and Master of
-                                Technology (Dual Degree))</option>
-                            <option value='Computational and Data Science (4 Years, Bachelor of Technology)' selected>
-                                Computational and Data Science (4 Years, Bachelor of Technology)</option>
-                            <option
-                                value='Chemical Technology (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Chemical Technology (5 Years, Bachelor and Master of Technology (Dual Degree))
-                            </option>
-                            <option
-                                value='Civil Engineering with Specialization in Construction Technology and Management (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Civil Engineering with Specialization in Construction Technology and Management
-                                (5 Years, Bachelor and Master of Technology (Dual Degree))</option>
-                            <option
-                                value='Computer Science and Engineering with Specialization in Cyber Security (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Computer Science and Engineering with Specialization in Cyber Security (5
-                                Years, Bachelor and Master of Technology (Dual Degree))</option>
-                            <option
-                                value='Computer Science and Engineering with Specialization in Data Science (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Computer Science and Engineering with Specialization in Data Science (5 Years,
-                                Bachelor and Master of Technology (Dual Degree))</option>
-                            <option
-                                value='Electrical Engineering with Specialization In Power System Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Electrical Engineering with Specialization In Power System Engineering (5
-                                Years, Bachelor and Master of Technology (Dual Degree))</option>
-                            <option
-                                value='Electronics and Communication Engineering with Specialization in Microelectronics and VLSI System Design (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Electronics and Communication Engineering with Specialization in
-                                Microelectronics and VLSI System Design (5 Years, Bachelor and Master of Technology
-                                (Dual Degree))</option>
-                            <option
-                                value='Material Science and Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Material Science and Engineering (5 Years, Bachelor and Master of Technology
-                                (Dual Degree))</option>
-                            <option
-                                value='Mathematics and Computing Technology (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Mathematics and Computing Technology (5 Years, Bachelor and Master of
-                                Technology (Dual Degree))</option>
-                            <option
-                                value='Mechanical Engineering with Specialization in Manufacturing and Industrial Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Mechanical Engineering with Specialization in Manufacturing and Industrial
-                                Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))</option>
-                            <option value='Industrial Internet of Things (4 Years, Bachelor of Technology)' selected>
-                                Industrial Internet of Things (4 Years, Bachelor of Technology)</option>
-                            <option
-                                value='Ceramic Engineering and M.Tech Industrial Ceramic (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>Ceramic Engineering and M.Tech Industrial Ceramic (5 Years, Bachelor and Master
-                                of Technology (Dual Degree))</option>
-                            <option value='Food Process Engineering (4 Years, Bachelor of Technology)' selected>Food
-                                Process Engineering (4 Years, Bachelor of Technology)</option>
-                            <option value='Industrial Design (4 Years, Bachelor of Technology)' selected>Industrial
-                                Design (4 Years, Bachelor of Technology)</option>
-                            <option value='Life Science (5 Years, Integrated Master of Science)' selected>Life Science
-                                (5 Years, Integrated Master of Science)</option>
-                            <option value='Mathematics (5 Years, Integrated Master of Science)' selected>Mathematics (5
-                                Years, Integrated Master of Science)</option>
-                            <option
-                                value='Electronics and Communication Engineering (VLSI Design and Technology) (4 Years, Bachelor of Technology)'
-                                selected>Electronics and Communication Engineering (VLSI Design and Technology) (4
-                                Years, Bachelor of Technology)</option>
-                            <option
-                                value='Integrated B. Tech.(IT) and M. Tech (IT) (5 Years, Integrated B. Tech. and M. Tech.)'
-                                selected>Integrated B. Tech.(IT) and M. Tech (IT) (5 Years, Integrated B. Tech. and M.
-                                Tech.)</option>
-                            <option value='Integrated B. Tech.(IT) and MBA (5 Years, Integrated B. Tech. and MBA)'
-                                selected>Integrated B. Tech.(IT) and MBA (5 Years, Integrated B. Tech. and MBA)</option>
-                            <option value='Mathematics and Scientific Computing (4 Years, Bachelor of Technology)'
-                                selected>Mathematics and Scientific Computing (4 Years, Bachelor of Technology)</option>
-                            <option
-                                value='Information Technology-Business Informatics (4 Years, Bachelor of Technology)'
-                                selected>Information Technology-Business Informatics (4 Years, Bachelor of Technology)
-                            </option>
-                            <option
-                                value='B.Tech. in Electronics and Communication Engineering and M.Tech. in VLSI Design (5 Years, Bachelor and Master of Technology (Dual Degree))'
-                                selected>B.Tech. in Electronics and Communication Engineering and M.Tech. in VLSI Design
-                                (5 Years, Bachelor and Master of Technology (Dual Degree))</option>
-                            <option
-                                value='Computer Science and Engineering with Major in Artificial Intelligence (4 Years, Bachelor of Technology)'
-                                selected>Computer Science and Engineering with Major in Artificial Intelligence (4
-                                Years, Bachelor of Technology)</option>
-                            <option value='Smart Manufacturing (4 Years, Bachelor of Technology)' selected>Smart
-                                Manufacturing (4 Years, Bachelor of Technology)</option>
-                            <option
-                                value='Computer Science and Engineering with specialization in Artificial Intelligence and Data Science (4 Years, Bachelor of Technology)'
-                                selected>Computer Science and Engineering with specialization in Artificial Intelligence
-                                and Data Science (4 Years, Bachelor of Technology)</option>
-                            <option
-                                value='Electronics and Communication Engineering with specialization in VLSI and Embedded Systems (4 Years, Bachelor of Technology)'
-                                selected>Electronics and Communication Engineering with specialization in VLSI and
-                                Embedded Systems (4 Years, Bachelor of Technology)</option>
-                            <option value='Computer Science (4 Years, Bachelor of Technology)' selected>Computer Science
-                                (4 Years, Bachelor of Technology)</option>
-                            <option
-                                value='Computer Science and Artificial Intelligence (4 Years, Bachelor of Technology)'
-                                selected>Computer Science and Artificial Intelligence (4 Years, Bachelor of Technology)
-                            </option>
-                            <option value='Computer Science and Business (4 Years, Bachelor of Technology)' selected>
-                                Computer Science and Business (4 Years, Bachelor of Technology)</option>
-                            <option
-                                value='Electronics and Communication Engineering with specialization in Design and Manufacturing (4 Years, Bachelor of Technology)'
-                                selected>Electronics and Communication Engineering with specialization in Design and
-                                Manufacturing (4 Years, Bachelor of Technology)</option>
-                            <option
-                                value='Mechanical Engineering with specialization in Design and Manufacturing (4 Years, Bachelor of Technology)'
-                                selected>Mechanical Engineering with specialization in Design and Manufacturing (4
-                                Years, Bachelor of Technology)</option>
-                            <option
-                                value='Computer Science and Engineering (with Specialization of Data Science and Artificial Intelligence) (4 Years, B. Tech / B. Tech (Hons.))'
-                                selected>Computer Science and Engineering (with Specialization of Data Science and
-                                Artificial Intelligence) (4 Years, B. Tech / B. Tech (Hons.))</option>
-                            <option
-                                value='Electronics and Communication Engineering (with Specialization of Embedded Systems and Internet of Things) (4 Years, B. Tech / B. Tech (Hons.))'
-                                selected>Electronics and Communication Engineering (with Specialization of Embedded
-                                Systems and Internet of Things) (4 Years, B. Tech / B. Tech (Hons.))</option>
-                            <option
-                                value='Computer Science Engineering (Data Science and Analytics) (4 Years, Bachelor of Technology)'
-                                selected>Computer Science Engineering (Data Science and Analytics) (4 Years, Bachelor of
-                                Technology)</option>
-                            <option
-                                value='Computer Science Engineering (Human Computer lnteraction and Gaming Technology) (4 Years, Bachelor of Technology)'
-                                selected>Computer Science Engineering (Human Computer lnteraction and Gaming Technology)
-                                (4 Years, Bachelor of Technology)</option>
-                            <option
-                                value='Electronics and Communication Engineering (Internet of Things) (4 Years, Bachelor of Technology)'
-                                selected>Electronics and Communication Engineering (Internet of Things) (4 Years,
-                                Bachelor of Technology)</option>
-                            <option value='Mechatronics and Automation Engineering (4 Years, Bachelor of Technology)'
-                                selected>Mechatronics and Automation Engineering (4 Years, Bachelor of Technology)
-                            </option>
-
-
-                        </select>
+            <!-- College Type -->
+            <div class='row justify-content-around align-items-center p-sm-3 p-2'>
+                <label class='col my-auto py-2 form-label '>College type</label>
+                <div class='col-sm-8 d-flex justify-content-between '>
+                    <div class='form-check-inline m-0'>
+                        <input class='form-check-input' type='checkbox' id='iit' name='type' value='iit' checked>
+                        <label class='form-check-label ms-1' for='iit'>IIT</label>
+                    </div>
+                    <div class='form-check-inline m-0'>
+                        <input class='form-check-input ms-2' type='checkbox' id='nit' name='type' value='nit' checked>
+                        <label class='form-check-label ms-1' for='nit'>NIT</label>
+                    </div>
+                    <div class='form-check-inline m-0'>
+                        <input class='form-check-input ms-2' type='checkbox' id='iiit' name='type' value='iiit' checked>
+                        <label class='form-check-label ms-1' for='iiit'>IIIT</label>
+                    </div>
+                    <div class='form-check-inline m-0'>
+                        <input class='form-check-input ms-2' type='checkbox' id='gfti' name='type' value='gfti' checked>
+                        <label class='form-check-label ms-1' for='gfti'>GFTI</label>
                     </div>
                 </div>
+            </div>
 
-                <!-- State -->
-                <div class='row justify-content-around align-items-center p-sm-3 p-2'>
-                    <label class='col my-auto py-2 form-label ' for='state'>Home State</label>
-                    <div class='col-sm-8'>
-                        <select class='form-control' id='state'>
-                            <option value='Select an option' selected disabled>Select an option</option>
-                            <option value='Andhra Pradesh'>Andhra Pradesh</option>
-                            <option value='Arunachal Pradesh'>Arunachal Pradesh</option>
-                            <option value='Assam'>Assam</option>
-                            <option value='Bihar'>Bihar</option>
-                            <option value='Chhattisgarh'>Chhattisgarh</option>
-                            <option value='Delhi'>Delhi</option>
-                            <option value='Goa'>Goa</option>
-                            <option value='Gujarat'>Gujarat</option>
-                            <option value='Haryana'>Haryana</option>
-                            <option value='Himachal Pradesh'>Himachal Pradesh</option>
-                            <option value='Jammu & Kashmir'>Jammu & Kashmir/Ladakh</option>
-                            <option value='Jharkhand'>Jharkhand</option>
-                            <option value='Karnataka'>Karnataka</option>
-                            <option value='Kerala'>Kerala</option>
-                            <option value='Madhya Pradesh'>Madhya Pradesh</option>
-                            <option value='Maharashtra'>Maharashtra</option>
-                            <option value='Manipur'>Manipur</option>
-                            <option value='Meghalaya'>Meghalaya</option>
-                            <option value='Mizoram'>Mizoram</option>
-                            <option value='Nagaland'>Nagaland</option>
-                            <option value='Odisha'>Odisha</option>
-                            <option value='Puducherry'>Puducherry</option>
-                            <option value='Punjab'>Punjab</option>
-                            <option value='Rajasthan'>Rajasthan</option>
-                            <option value='Sikkim'>Sikkim</option>
-                            <option value='Tamil Nadu'>Tamil Nadu</option>
-                            <option value='Telangana'>Telangana</option>
-                            <option value='Tripura'>Tripura</option>
-                            <option value='Uttar Pradesh'>Uttar Pradesh</option>
-                            <option value='Uttarakhand'>Uttarakhand</option>
-                            <option value='West Bengal'>West Bengal</option>
-                        </select>
-                    </div>
-                </div>
-
-                <!-- Gender -->
-                <div class='row justify-content-around align-items-center p-sm-3 p-2'>
-                    <label class='col my-auto py-2 form-label'>Gender</label>
-                    <div class='col-sm-8 d-flex justify-content-between'>
-                        <div class='form-check-inline'>
-                            <input class='form-check-input' type='radio' id='neutral' name='gender' value='Neutral'
-                                checked>
-                            <label class='form-check-label ms-sm-4 ms-3' for='neutral'>Neutral</label>
-                        </div>
-                        <div class='form-check-inline m-0'>
-                            <input class='form-check-input' type='radio' id='female' name='gender' value='Female'>
-                            <label class='form-check-label ms-sm-4 ms-3' for='female'>Female</label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- College Type -->
-                <div class='row justify-content-around align-items-center p-sm-3 p-2'>
-                    <label class='col my-auto py-2 form-label '>College type</label>
-                    <div class='col-sm-8 d-flex justify-content-between '>
-                        <div class='form-check-inline m-0'>
-                            <input class='form-check-input' type='checkbox' id='iit' name='type' value='iit' checked>
-                            <label class='form-check-label ms-1' for='iit'>IIT</label>
-                        </div>
-                        <div class='form-check-inline m-0'>
-                            <input class='form-check-input ms-2' type='checkbox' id='nit' name='type' value='nit'
-                                checked>
-                            <label class='form-check-label ms-1' for='nit'>NIT</label>
-                        </div>
-                        <div class='form-check-inline m-0'>
-                            <input class='form-check-input ms-2' type='checkbox' id='iiit' name='type' value='iiit'
-                                checked>
-                            <label class='form-check-label ms-1' for='iiit'>IIIT</label>
-                        </div>
-                        <div class='form-check-inline m-0'>
-                            <input class='form-check-input ms-2' type='checkbox' id='gfti' name='type' value='gfti'
-                                checked>
-                            <label class='form-check-label ms-1' for='gfti'>GFTI</label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Submit -->
-                <div class='text-center p-sm-3 p-2'>
-                    <button id='btn' class='btn btn-lg btn-outline-primary col-12 col-sm-5 mt-2 rounded-5 shadow-sm  '
-                        style='height: 3rem;' type='submit' disabled>
-                        <div id='go' class='d-none' style='font-weight: 500'>GO</div>
-                        <div id='spinner' class='spinner-border ms-2'></div><!-- Show spinner before db is loaded -->
-                    </button>
-                </div>
-            </form>
+            <!-- Submit -->
+            <div class='text-center p-sm-3 p-2'>
+                <button id='btn' class='btn btn-lg btn-outline-primary col-12 col-sm-5 my-2 rounded-5 shadow-sm  '
+                    style='height: 3rem;' type='submit' disabled>
+                    <div id='go' class='d-none' style='font-weight: 500'>GO</div>
+                    <div id='spinner' class='spinner-border ms-2'></div><!-- Show spinner before db is loaded -->
+                </button>
+            </div>
+            <!-- </form> -->
         </div>
 
         <!-- Table -->
