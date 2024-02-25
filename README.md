@@ -1,4 +1,19 @@
-<h3 align='center'><a target="_blank" href='https://sbrjt.github.io/josaa-cutoffs' >Go to Website</a>➡️</h3>
+<h3 align='center' style='font-size: 100'><a target="_blank" href='https://sbrjt.github.io/josaa-cutoffs' >Go to Website</a>➡️</h3>
+
+<div align='center'>
+<img src="https://img.shields.io/github/stars/sbrjt/josaa-cutoffs?style=flat">
+<a href="https://github.com/Sbrjt/josaa-cutoffs/issues"><img src="https://img.shields.io/github/issues/sbrjt/josaa-cutoffs"></a>
+<a href="https://github.com/Sbrjt/josaa-cutoffs/commits/main/"><img src="https://img.shields.io/github/last-commit/sbrjt/josaa-cutoffs"></a>
+<a href="https://github.com/Sbrjt/josaa-cutoffs/archive/refs/heads/main.zip"><img src="https://img.shields.io/github/repo-size/sbrjt/josaa-cutoffs"></a>
+<a href="https://www.gnu.org/licenses/agpl-3.0"><img src="https://img.shields.io/badge/License-AGPL_v3-blue.svg"></a>
+</div>
+
+<!--
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/Sbrjt/josaa-cutoffs/total)
+![GitHub forks](https://img.shields.io/github/forks/sbrjt/josaa-cutoffs?style=flat)
+![Gitea Pull Requests](https://img.shields.io/gitea/pull-requests/all/sbrjt/josaa-cutoffs)
+ -->
+
 
 ## 📝 Overview
 
@@ -15,7 +30,7 @@ This project hosts a website that displays the closing ranks of various colleges
 ## ⚙️ Tech used
 
 - [GitHub Pages](https://pages.github.com/)
-- [SQLite](https://www.sqlite.org/index.html)
+- [sql.js](https://sql.js.org/)
 - [Bootstrap](https://getbootstrap.com/)
 - [Bootstrap-select](https://developer.snapappointments.com/bootstrap-select)
 - [Bootstrap-table](https://bootstrap-table.com/)
@@ -31,7 +46,5 @@ If you like my project, please gimme a star! ⭐💫
 Contributions are welcome! 🤝
 
 If you have any suggestion/concern, do [let me know](https://mailhide.io/e/kMGaefEP).
-
-<!-- 📜 MIT License -->
 
 © Shubhrajit Sadhukhan :octocat:
