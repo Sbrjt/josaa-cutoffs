@@ -9,10 +9,13 @@
 </div>
 
 <!--
-![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/Sbrjt/josaa-cutoffs/total)
-![GitHub forks](https://img.shields.io/github/forks/sbrjt/josaa-cutoffs?style=flat)
-![Gitea Pull Requests](https://img.shields.io/gitea/pull-requests/all/sbrjt/josaa-cutoffs)
+![](https://img.shields.io/github/contributors/Sbrjt/josaa-cutoffs)
+![](https://img.shields.io/github/downloads/Sbrjt/josaa-cutoffs/total)
+![](https://img.shields.io/github/forks/sbrjt/josaa-cutoffs?style=flat)
+![](https://img.shields.io/github/issues-pr/sbrjt/josaa-cutoffs)
+![](https://img.shields.io/github/languages/code-size/sbrjt/josaa-cutoffs)
  -->
+
 
 
 ## 📝 Overview
