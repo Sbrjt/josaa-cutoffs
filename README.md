@@ -1,10 +1,10 @@
-<h3 align='center' style='font-size: 100'><a target="_blank" href='https://sbrjt.github.io/josaa-cutoffs' >Go to Website</a>➡️</h3>
+<p align='center' style='font-size: 25px; font-weight: bold;'><a target="_blank" href='https://sbrjt.github.io/josaa-cutoffs' >Go to Website</a>➡️</p>
 
 <div align='center'>
-<img src="https://img.shields.io/github/stars/sbrjt/josaa-cutoffs?style=flat">
+<picture><img src="https://img.shields.io/github/stars/sbrjt/josaa-cutoffs?style=flat"></picture>
 <a href="https://github.com/Sbrjt/josaa-cutoffs/issues"><img src="https://img.shields.io/github/issues/sbrjt/josaa-cutoffs"></a>
 <a href="https://github.com/Sbrjt/josaa-cutoffs/commits/main/"><img src="https://img.shields.io/github/last-commit/sbrjt/josaa-cutoffs"></a>
-<a href="https://github.com/Sbrjt/josaa-cutoffs/archive/refs/heads/main.zip"><img src="https://img.shields.io/github/repo-size/sbrjt/josaa-cutoffs"></a>
+<picture><img src="https://img.shields.io/github/languages/code-size/sbrjt/josaa-cutoffs"></picture>
 <a href="https://www.gnu.org/licenses/agpl-3.0"><img src="https://img.shields.io/badge/License-AGPL_v3-blue.svg"></a>
 </div>
 
@@ -12,10 +12,9 @@
 ![](https://img.shields.io/github/contributors/Sbrjt/josaa-cutoffs)
 ![](https://img.shields.io/github/downloads/Sbrjt/josaa-cutoffs/total)
 ![](https://img.shields.io/github/forks/sbrjt/josaa-cutoffs?style=flat)
+![](https://img.shields.io/github/repo-size/sbrjt/josaa-cutoffs)
 ![](https://img.shields.io/github/issues-pr/sbrjt/josaa-cutoffs)
-![](https://img.shields.io/github/languages/code-size/sbrjt/josaa-cutoffs)
  -->
-
 
 
 ## 📝 Overview
