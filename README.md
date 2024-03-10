@@ -1,5 +1,4 @@
-<p align='center' style='font-size: 25px; font-weight: bold;'><a target="_blank" href='https://sbrjt.github.io/josaa-cutoffs' >Go to Website</a>➡️</p>
-
+<h1 align='center'><a target="_blank" href='https://sbrjt.github.io/josaa-cutoffs' >Go to Website</a>➡️</h1>
 <div align='center'>
 <picture><img src="https://img.shields.io/github/stars/sbrjt/josaa-cutoffs?style=flat"></picture>
 <a href="https://github.com/Sbrjt/josaa-cutoffs/issues"><img src="https://img.shields.io/github/issues/sbrjt/josaa-cutoffs"></a>
