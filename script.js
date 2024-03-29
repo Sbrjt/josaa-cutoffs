@@ -146,7 +146,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 	// in mobile view hide unnecessary columns
-	(function hide_cols_in_mobile() {
+	;(function hide_cols_in_mobile() {
 		const l = ['quota', 'state', 'seat', 'gender', 'open']
 
 		if (window.matchMedia('(max-width: 576px)').matches) {
@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	})()
 
 	// load form inputs from local storage
-	(function load_local() {
+	;(function load_local() {
 		if (localStorage.getItem('rank') !== null) {
 			document.getElementById('rank').value = localStorage.getItem('rank')
 			document.getElementById('category').value =	localStorage.getItem('category')
@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	})()
 
 	// make sure atleast one checkbox is checked
-	(function check_type() {
+	;(function check_type() {
 		let type = document.getElementsByName('type')
 
 		for (let i of type) {
@@ -211,11 +211,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	})()
 
 	// make sure atleast one radio is checked
-	(function check_gender() {
-		neu_check = document.getElementById('Neutral')
-		fem_check = document.getElementById('Female')
-		neu_radio = document.getElementById('neu-radio')
-		fem_radio = document.getElementById('fem-radio')
+	;(function check_gender() {
+		const neu_check = document.getElementById('Neutral')
+		const fem_check = document.getElementById('Female')
+		const neu_radio = document.getElementById('neu-radio')
+		const fem_radio = document.getElementById('fem-radio')
 
 		neu_check.addEventListener('change', () => {
 			if (!fem_check.checked) {
