@@ -42,7 +42,7 @@
     <link rel='stylesheet' href='styles.css'>
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/sql.js/0.3.2/js/sql.js'></script>
-    <script src='script.js'></script>
+    <script src='script.js' async></script>
 
 </head>
 
@@ -67,11 +67,26 @@
                             placeholder='Enter category rank, if applicable' required>
                     </div>
                 </div>
+                <!-- rank buffer -->
+                <!-- <div class='row justify-content-around align-items-center p-sm-3 p-2'>
+                    <label for='rank' class='col my-auto py-2 form-label'>Rank</label>
+                    <div class='col-sm-8 input-group dropup'>
+                        <input type='text' class='form-control' id='rank'
+                            placeholder='Enter category rank, if applicable' required>
+                        <button type='button' data-bs-toggle='dropdown' class='btn btn-light  
+                        dropdown-toggle dropdown-toggle-split '>
+                        </button>
+                        <ul class='dropdown-menu p-0 dropdown-menu-end w-25'>
+                            <li><input type='text' class='form-control ' id='rank' placeholder='Buffer'></li>
+                        </ul>
+                    </div>
+                </div> -->
 
                 <!-- Category (Seat type) -->
                 <div class='row justify-content-around align-items-center p-sm-3 p-2'>
                     <label class='col my-auto py-2 form-label ' for='category'>Category</label>
-                    <div class='col-sm-8'><select class='selectpicker form-control' id='category'>
+                    <div class='col-sm-8'>
+                        <select class='selectpicker form-control' id='category'>
                             <option value='OPEN' selected>OPEN</option>
                             <option value='EWS'>EWS</option>
                             <option value='OBC-NCL'>OBC-NCL</option>
@@ -82,7 +97,8 @@
                             <option value='EWS (PwD)'>EWS (PwD)</option>
                             <option value='ST (PwD)'>ST (PwD)</option>
                             <option value='SC (PwD)'>SC (PwD)</option>
-                        </select></div>
+                        </select>
+                    </div>
                 </div>
 
                 <!-- Branch -->
@@ -90,7 +106,7 @@
                     <label class='col my-auto py-2 form-label ' for='branch'>Branch</label><br>
                     <div class='col-sm-8'>
                         <select class='selectpicker form-control' data-live-search='true' data-actions-box='true'
-                            data-selected-text-format='count>1' id='branch' multiple>
+                            data-selected-text-format='count>0' id='branch' multiple required>
                             <option value='Civil Engineering (4 Years, Bachelor of Technology)' selected>Civil
                                 Engineering (4 Years, Bachelor of Technology)</option>
                             <option
@@ -777,14 +793,18 @@
                 <div class='row justify-content-around align-items-center p-sm-3 p-2'>
                     <label class='col my-auto py-2 form-label'>Gender</label>
                     <div class='col-sm-8 d-flex justify-content-between'>
+                        <!-- hidden checkboxes that sync with the radios -->
                         <div class='form-check-inline'>
-                            <input class='form-check-input' type='radio' id='neutral' name='gender' value='Neutral'
-                                checked>
-                            <label class='form-check-label ms-sm-4 ms-3' for='neutral'>Neutral</label>
+                            <input class='form-check-input' type='radio' id='neu-radio' value='Neutral'>
+                            <input class='form-check-input d-none' type='checkbox' id='Neutral' name='gender'
+                                value='Neutral' checked>
+                            <label class='form-check-label ms-sm-4 ms-3' for='Neutral'>Neutral</label>
                         </div>
                         <div class='form-check-inline m-0'>
-                            <input class='form-check-input' type='radio' id='female' name='gender' value='Female'>
-                            <label class='form-check-label ms-sm-4 ms-3' for='female'>Female</label>
+                            <input class='form-check-input' type='radio' id='fem-radio' value='Female'>
+                            <input class='form-check-input d-none' type='checkbox' id='Female' name='gender'
+                                value='Female'>
+                            <label class='form-check-label ms-sm-4 ms-3' for='Female'>Female</label>
                         </div>
                     </div>
                 </div>
@@ -817,7 +837,7 @@
 
                 <!-- Submit -->
                 <div class='text-center p-sm-3 p-2'>
-                    <button id='btn' class='btn btn-lg btn-outline-primary col-12 col-sm-5 my-2 rounded-5 shadow-sm  '
+                    <button id='btn-1' class='btn btn-lg btn-outline-primary col-12 col-sm-5 my-2 rounded-5 shadow-sm  '
                         style='height: 3rem;' type='submit' disabled>
                         <div id='go' class='d-none' style='font-weight: 500'>GO</div>
                         <div id='spinner' class='spinner-border ms-2'></div><!-- Show spinner before db is loaded -->
@@ -828,6 +848,7 @@
 
         <!-- Table -->
         <div class='col-sm-10 col-11 mx-auto mt-sm-5 mt-4 d-none' id='tableDiv'>
+            <!-- table -->
             <div class='table-responsive'>
                 <table id='table' class='table ' data-toggle='table' data-search='true' data-show-columns='true'
                     data-show-columns-toggle-all='true'>
@@ -849,16 +870,17 @@
                     </tbody>
                 </table>
             </div>
+            <!-- buttons -->
             <div class='text-end mt-2'>
                 <div class='btn-group mb-3'>
-                    <button class='btn btn-secondary' id='btn2' type='button'>
+                    <button class='btn btn-secondary' id='btn-2' type='button'>
                         Show more
                     </button>
                     <button class="btn btn-secondary dropdown-toggle dropdown-toggle-split" type="button"
                         data-bs-toggle="dropdown" data-bs-display="static">
                     </button>
                     <ul class="dropdown-menu p-0" style='min-width: 100%;'>
-                        <li><button class="dropdown-item btn btn-secondary" id='btn3'>Show all</button></li>
+                        <li><button class="dropdown-item btn btn-secondary" id='btn-3'>Show all</button></li>
                     </ul>
                 </div>
             </div>
