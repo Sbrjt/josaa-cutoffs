@@ -1,4 +1,4 @@
-(async () => {
+;(async () => {
 	// initializing the database
 	// This takes time, so the script tag is put in head
 	const response = await fetch('data.db')
@@ -136,7 +136,7 @@
 		if (rowCount !== undefined && rowCount !== 0) {
 			localStorage.setItem('rank', rank)
 			localStorage.setItem('category', category)
-			localStorage.setItem('branch', branch)
+			// localStorage.setItem('branch', branch)
 			localStorage.setItem('state', state)
 			localStorage.setItem('gender', gender)
 			localStorage.setItem('type', type)
@@ -151,9 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		if (window.matchMedia('(max-width: 576px)').matches) {
 			for (let i of l) {
-				document
-					.querySelector(`th[data-field="${i}"]`)
-					.setAttribute('data-visible', 'false')
+				document.querySelector(`th[data-field="${i}"]`).setAttribute('data-visible', 'false')
 			}
 		}
 	})()
@@ -162,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	;(function load_local() {
 		if (localStorage.getItem('rank') !== null) {
 			document.getElementById('rank').value = localStorage.getItem('rank')
-			document.getElementById('category').value =	localStorage.getItem('category')
+			document.getElementById('category').value = localStorage.getItem('category')
 			document.getElementById('state').value = localStorage.getItem('state')
 
 			const g = localStorage.getItem('gender').slice(1, -1).split("', '")
@@ -176,18 +174,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			const type = localStorage.getItem('type').slice(1, -1).split("', '")
 			for (let i of Array.from(document.getElementsByName('type'))) {
-				if (!type.includes(i.id)) {
-					i.checked = false
-				}
+				i.checked = type.includes(i.id)
 			}
 
-			const branches = localStorage.getItem('branch').slice(1, -1).split("', '")
+			// const branches = localStorage.getItem('branch').slice(1, -1).split("', '")
 
-			const selectElement = document.getElementById('branch')
+			// const selectElement = document.getElementById('branch')
 
-			for (let option of selectElement.options) {
-				option.selected = branches.includes(option.value)
-			}
+			// for (let option of selectElement.options) {
+			// 	option.selected = branches.includes(option.value)
+			// }
 		}
 	})()
 
