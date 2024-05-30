@@ -144,95 +144,93 @@
 	})
 })()
 
-document.addEventListener('DOMContentLoaded', () => {
-	// in mobile view hide unnecessary columns
-	;(function hide_cols_in_mobile() {
-		const l = ['quota', 'state', 'seat', 'gender', 'open']
+// load form inputs from local storage
+;(function load_local() {
+	if (localStorage.getItem('rank') !== null) {
+		document.getElementById('rank').value = localStorage.getItem('rank')
+		document.getElementById('category').value = localStorage.getItem('category')
+		document.getElementById('state').value = localStorage.getItem('state')
 
-		if (window.matchMedia('(max-width: 576px)').matches) {
-			for (let i of l) {
-				document.querySelector(`th[data-field="${i}"]`).setAttribute('data-visible', 'false')
-			}
+		const g = localStorage.getItem('gender').slice(1, -1).split("', '")
+
+		for (let i of Array.from(document.getElementsByName('gender'))) {
+			i.checked = g.includes(i.id)
 		}
-	})()
 
-	// load form inputs from local storage
-	;(function load_local() {
-		if (localStorage.getItem('rank') !== null) {
-			document.getElementById('rank').value = localStorage.getItem('rank')
-			document.getElementById('category').value = localStorage.getItem('category')
-			document.getElementById('state').value = localStorage.getItem('state')
+		document.getElementById('neu-radio').checked = document.getElementById('Neutral').checked
+		document.getElementById('fem-radio').checked = document.getElementById('Female').checked
 
-			const g = localStorage.getItem('gender').slice(1, -1).split("', '")
-
-			for (let i of Array.from(document.getElementsByName('gender'))) {
-				i.checked = g.includes(i.id)
-			}
-
-			document.getElementById('neu-radio').checked = document.getElementById('Neutral').checked
-			document.getElementById('fem-radio').checked = document.getElementById('Female').checked
-
-			const type = localStorage.getItem('type').slice(1, -1).split("', '")
-			for (let i of Array.from(document.getElementsByName('type'))) {
-				i.checked = type.includes(i.id)
-			}
-
-			// const branches = localStorage.getItem('branch').slice(1, -1).split("', '")
-
-			// const selectElement = document.getElementById('branch')
-
-			// for (let option of selectElement.options) {
-			// 	option.selected = branches.includes(option.value)
-			// }
+		const type = localStorage.getItem('type').slice(1, -1).split("', '")
+		for (let i of Array.from(document.getElementsByName('type'))) {
+			i.checked = type.includes(i.id)
 		}
-	})()
 
-	// make sure atleast one checkbox is checked
-	;(function check_type() {
-		let type = document.getElementsByName('type')
+		// const branches = localStorage.getItem('branch').slice(1, -1).split("', '")
 
-		for (let i of type) {
-			i.addEventListener('change', () => {
-				let count = 0
-				for (let j of Array.from(type)) {
-					if (j.checked) {
-						count++
-					}
+		// const selectElement = document.getElementById('branch')
+
+		// for (let option of selectElement.options) {
+		// 	option.selected = branches.includes(option.value)
+		// }
+	}
+})()
+
+// in mobile view hide unnecessary columns
+;(function hide_cols_in_mobile() {
+	const l = ['quota', 'state', 'seat', 'gender', 'open']
+
+	if (window.matchMedia('(max-width: 576px)').matches) {
+		for (let i of l) {
+			document.querySelector(`th[data-field="${i}"]`).setAttribute('data-visible', 'false')
+		}
+	}
+})()
+
+// make sure atleast one checkbox is checked
+;(function check_type() {
+	let type = document.getElementsByName('type')
+
+	for (let i of type) {
+		i.addEventListener('change', () => {
+			let count = 0
+			for (let j of Array.from(type)) {
+				if (j.checked) {
+					count++
 				}
-				if (count === 0) {
-					i.checked = true
-				}
-			})
+			}
+			if (count === 0) {
+				i.checked = true
+			}
+		})
+	}
+})()
+
+// make sure atleast one radio is checked
+;(function check_gender() {
+	const neu_check = document.getElementById('Neutral')
+	const fem_check = document.getElementById('Female')
+	const neu_radio = document.getElementById('neu-radio')
+	const fem_radio = document.getElementById('fem-radio')
+
+	neu_check.addEventListener('change', () => {
+		if (!fem_check.checked) {
+			neu_check.checked = true
 		}
-	})()
+		neu_radio.checked = neu_check.checked
+	})
 
-	// make sure atleast one radio is checked
-	;(function check_gender() {
-		const neu_check = document.getElementById('Neutral')
-		const fem_check = document.getElementById('Female')
-		const neu_radio = document.getElementById('neu-radio')
-		const fem_radio = document.getElementById('fem-radio')
+	neu_radio.addEventListener('change', () => {
+		neu_check.checked = neu_radio.checked
+	})
 
-		neu_check.addEventListener('change', () => {
-			if (!fem_check.checked) {
-				neu_check.checked = true
-			}
-			neu_radio.checked = neu_check.checked
-		})
+	fem_check.addEventListener('change', () => {
+		if (!neu_check.checked) {
+			fem_check.checked = true
+		}
+		fem_radio.checked = fem_check.checked
+	})
 
-		neu_radio.addEventListener('change', () => {
-			neu_check.checked = neu_radio.checked
-		})
-
-		fem_check.addEventListener('change', () => {
-			if (!neu_check.checked) {
-				fem_check.checked = true
-			}
-			fem_radio.checked = fem_check.checked
-		})
-
-		fem_radio.addEventListener('change', () => {
-			fem_check.checked = fem_radio.checked
-		})
-	})()
-})
+	fem_radio.addEventListener('change', () => {
+		fem_check.checked = fem_radio.checked
+	})
+})()
