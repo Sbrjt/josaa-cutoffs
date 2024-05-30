@@ -186,20 +186,27 @@
 	}
 })()
 
-// make sure atleast one checkbox is checked
+// iit and (nit, iiit, gfti) form separate groups
 ;(function check_type() {
-	let type = document.getElementsByName('type')
+	const iit = document.getElementById('iit')
+	const nit = document.getElementById('nit')
+	const iiit = document.getElementById('iiit')
+	const gfti = document.getElementById('gfti')
 
-	for (let i of type) {
-		i.addEventListener('change', () => {
-			let count = 0
-			for (let j of Array.from(type)) {
-				if (j.checked) {
-					count++
-				}
+	const l = [nit, iiit, gfti]
+
+	iit.addEventListener('change', () => {
+		if (iit.checked) {
+			for (let i of l) {
+				i.checked = false
 			}
-			if (count === 0) {
-				i.checked = true
+		}
+	})
+
+	for (let i of l) {
+		i.addEventListener('change', () => {
+			if (i.checked) {
+				iit.checked = false
 			}
 		})
 	}
