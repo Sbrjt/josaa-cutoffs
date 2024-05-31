@@ -1,9 +1,10 @@
 ;(async () => {
 	// initializing the database
 	// This takes time, so the script tag is put in head
-	const response = await fetch('data.db')
+	const response = await fetch('data.db.gz')
 	const buffer = await response.arrayBuffer()
-	const db = new SQL.Database(new Uint8Array(buffer))
+	const decompressedBuffer = await pako.inflate(buffer)
+	const db = new SQL.Database(new Uint8Array(decompressedBuffer))
 	db.prepare('select * from tb') // improves performance by reducing the overhead
 
 	const btn1 = document.getElementById('btn-1')
