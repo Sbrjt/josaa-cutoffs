@@ -42,6 +42,8 @@ On first visit the site takes a while to download the database into local storag
 
 #
 
+Google console data: https://analytics.google.com/analytics/web/#/p422344766/reports/reportinghub?params=_u..nav%3Dmaui
+
 If you like my project, please gimme a star! ⭐💫
 
 Contributions are welcome! 🤝
