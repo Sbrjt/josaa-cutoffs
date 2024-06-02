@@ -47,12 +47,12 @@ On first visit the site takes a while to download the database into local storag
 
 #
 
-Google console data: https://analytics.google.com/analytics/web/#/p422344766/reports/reportinghub?params=_u..nav%3Dmaui
+[Google console data](https://lookerstudio.google.com/embed/reporting/712fda06-9be5-4dbd-a7ef-75c5f0022977/page/kIV1C)
+
+[Reddit post](https://www.reddit.com/r/JEENEETards/comments/1d2nhzg/gawd_is_here/)
 
 If you like my project, please gimme a star! ⭐💫
 
 Contributions are welcome! 🤝
-
-If you have any suggestion/concern, do [let me know](https://mailhide.io/e/kMGaefEP).
 
 © Shubhrajit Sadhukhan :octocat:
