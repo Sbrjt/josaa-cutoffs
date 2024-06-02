@@ -20,6 +20,11 @@
 
 This project hosts a website that displays the closing ranks of various colleges under JoSAA. It aims to provide an alternative, user-friendly platform to look up JoSSA cutoffs and help simplify college hunt before counselling. 🔍🎓
 
+<div align='center'>
+<img src="https://github.com/Sbrjt/josaa-cutoffs/assets/83166133/eafa2450-d4ae-4ad6-aa38-2be320fd2681" height="300"></img>
+<img src="https://github.com/Sbrjt/josaa-cutoffs/assets/83166133/6dbf589c-d7fe-47f5-99a3-0324cc48c8ad" height="300"></img>
+</div>
+
 ## 📲 Functionality
 
 1. Enter your rank.
