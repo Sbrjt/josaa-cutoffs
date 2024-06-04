@@ -1,6 +1,5 @@
 ;(async () => {
 	// initializing the database
-	// This takes time, so the script tag is put in head
 	const response = await fetch('data.db.gz')
 	const buffer = await response.arrayBuffer()
 	const decompressedBuffer = await pako.inflate(buffer)
