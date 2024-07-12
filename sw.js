@@ -14,9 +14,9 @@ const {
 registerRoute(
 	({ request, url }) =>
 		request.mode === 'navigate' ||
-		url.pathname === '/script.js' ||
-		url.pathname === '/styles.css' ||
-		url.pathname === '/data.db.gz',
+		url.pathname === '/josaa-cutoffs/script.js' ||
+		url.pathname === '/josaa-cutoffs/styles.css' ||
+		url.pathname === '/josaa-cutoffs/data.db.gz',
 	new StaleWhileRevalidate({
 		cacheName: 'stale-while-revalidate',
 		plugins: [
