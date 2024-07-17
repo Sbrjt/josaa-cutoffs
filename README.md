@@ -47,10 +47,17 @@ On first visit the site takes a while to download the database into local storag
 
 #
 
-[Google console data](https://lookerstudio.google.com/embed/reporting/712fda06-9be5-4dbd-a7ef-75c5f0022977/page/kIV1C)
+[Google analytics data](https://lookerstudio.google.com/embed/reporting/712fda06-9be5-4dbd-a7ef-75c5f0022977/page/kIV1C)
 
 [Reddit post](https://www.reddit.com/r/JEENEETards/comments/1d2nhzg/gawd_is_here/)
 
+<!--
+![](https://repobeats.axiom.co/api/embed/b71a10a735d4949bf6f6667dcd92ff2ef4829010.svg "Repobeats analytics image")
+<a href="https://github.com/Sbrjt/josaa-cutoffs/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Sbrjt/josaa-cutoffs" />
+</a>
+ -->
+ 
 If you like my project, please gimme a star! ⭐💫
 
 Contributions are welcome! 🤝
