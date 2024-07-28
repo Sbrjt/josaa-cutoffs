@@ -60,6 +60,7 @@ On first visit the site takes a while to download the database into local storag
  
 If you like my project, please gimme a star! ⭐💫
 
-Contributions are welcome! 🤝
+<picture><img src="https://img.shields.io/badge/PRs-welcome-green.svg"></picture>
+[![](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://www.reddit.com/user/sbrjt/)
 
 © Shubhrajit Sadhukhan :octocat:
