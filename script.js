@@ -10,14 +10,14 @@
 	const db = new SQL.Database(new Uint8Array(decompressedBuffer))
 	db.prepare('select * from tb') // improves performance by reducing the overhead
 
-	const btn1 = document.getElementById('btn-1')
-	const btn2 = document.getElementById('btn-2') // 'Show more' btn
-	const btn3 = document.getElementById('btn-3') // 'Show all' btn
+	const goBtn = document.getElementById('btn-1')
+	const showMoreBtn = document.getElementById('btn-2')
+	const showAllBtn = document.getElementById('btn-3')
 	const table = $('#table') // not working with getElementById 🤷‍♂️
-	const tableDiv = document.getElementById('tableDiv')
+	const tableDiv = document.getElementById('table-div')
 
-	if (btn1.disabled === true) {
-		btn1.disabled = false
+	if (goBtn.disabled === true) {
+		goBtn.disabled = false
 		document.getElementById('go').classList.remove('d-none')
 		document.getElementById('spinner').classList.add('d-none')
 	}
@@ -25,7 +25,7 @@
 	let rank, category, branch, state, gender, type, result, rowCount, row
 
 	// fetch data and insert the first 10 records into table on clicking btn
-	btn1.addEventListener('click', () => {
+	goBtn.addEventListener('click', () => {
 		// show table (as it is hidden initially)
 		if (tableDiv.classList.contains('d-none')) {
 			tableDiv.classList.remove('d-none')
@@ -82,15 +82,15 @@
 		`
 
 		// execute query
-		l = db.exec(query)
+		const queryResult = db.exec(query)
 
-		if (l.length === 0) {
+		if (queryResult.length === 0) {
 			result = []
 			return
 		}
 
 		// storing data in a 2D array
-		result = l[0].values
+		result = queryResult[0].values
 
 		rowCount = result.length // total number of records in result set
 
@@ -98,8 +98,8 @@
 		insertRows() // Insert initial 10 records into table
 	})
 
-	btn2.addEventListener('click', insertRows) // insert 10 more records
-	btn3.addEventListener('click', insertAllRows) // insert all records
+	showMoreBtn.addEventListener('click', insertRows) // insert 10 more records
+	showAllBtn.addEventListener('click', insertAllRows) // insert all records
 
 	function insertRows() {
 		// insert 10 records into table
@@ -248,4 +248,33 @@
 	fem_radio.addEventListener('change', () => {
 		fem_check.checked = fem_radio.checked
 	})
+})()
+
+// calculate rank
+;(function find_rank() {
+	const btn = document.getElementById('btn-4')
+
+	btn.addEventListener('click', () => {
+		const percentile_inp = document.getElementById('percentile')
+		const rank_inp = document.getElementById('rank')
+		const percentile = Number(percentile_inp.value)
+
+		if (isNaN(percentile) || percentile < 0 || percentile > 100) {
+			percentile_inp.value = ''
+			return
+		}
+
+		const rank = Math.round((100 - percentile) * 17000) // assuming 17 lakh students
+		rank_inp.value = rank
+	})
+})()
+
+// enable tooltip
+;(function tooltip() {
+	const tooltipTriggerList = document.querySelectorAll(
+		'[data-bs-toggle="tooltip"]'
+	)
+	const tooltipList = [...tooltipTriggerList].map(
+		(tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+	)
 })()
