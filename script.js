@@ -253,9 +253,9 @@
 // calculate rank
 ;(function find_rank() {
 	const btn = document.getElementById('btn-4')
+	const percentile_inp = document.getElementById('percentile')
 
-	btn.addEventListener('click', () => {
-		const percentile_inp = document.getElementById('percentile')
+	percentile_inp.addEventListener('focusout', () => {
 		const rank_inp = document.getElementById('rank')
 		const percentile = Number(percentile_inp.value)
 
