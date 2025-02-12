@@ -259,7 +259,7 @@
 		const rank_inp = document.getElementById('rank')
 		const percentile = Number(percentile_inp.value)
 
-		if (isNaN(percentile) || percentile < 0 || percentile > 100) {
+		if (isNaN(percentile) || percentile <= 0 || percentile > 100) {
 			percentile_inp.value = ''
 			return
 		}
