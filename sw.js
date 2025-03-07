@@ -12,7 +12,7 @@ const {
 	precaching: { matchPrecache, precacheAndRoute },
 } = workbox
 
-// Cache html, script.js
+// Cache html, script.js, data.db etc using stale-while-revalidate
 registerRoute(
 	({ request, url }) =>
 		request.mode === 'navigate' ||
@@ -29,12 +29,9 @@ registerRoute(
 	})
 )
 
-// Cache cdns and the rest
+// Cache cdns and the rest using cache-first
 registerRoute(
-	({ request }) =>
-		['script', 'style', 'manifest', 'worker', 'image', 'wasm'].includes(
-			request.destination
-		),
+	() => true,
 	new CacheFirst({
 		cacheName: 'static-assets',
 		plugins: [
@@ -43,7 +40,7 @@ registerRoute(
 			}),
 			new ExpirationPlugin({
 				maxEntries: 32,
-				maxAgeSeconds: 24 * 60 * 60 * 7, // 1 week
+				maxAgeSeconds: 24 * 60 * 60 * 30, // 1 month
 			}),
 		],
 	})
