@@ -25,7 +25,7 @@
 	let rank, category, branch, state, gender, type, result, rowCount, row
 
 	// fetch data and insert the first 10 records into table on clicking btn
-	goBtn.addEventListener('click', () => {
+	goBtn.addEventListener('click', async () => {
 		// show table (as it is hidden initially)
 		if (tableDiv.classList.contains('d-none')) {
 			tableDiv.classList.remove('d-none')
@@ -82,7 +82,7 @@
 		`
 
 		// execute query
-		const queryResult = db.exec(query)
+		const queryResult = await db.exec(query)
 
 		if (queryResult.length === 0) {
 			result = []
