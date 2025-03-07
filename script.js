@@ -4,6 +4,8 @@
 			`https://cdn.jsdelivr.net/npm/sql.js/dist/sql-wasm.wasm`,
 	})
 
+	// TODO: how to use: https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.12.0/sql-wasm.min.js
+
 	const response = await fetch('data.db.gz')
 	const buffer = await response.arrayBuffer()
 	const decompressedBuffer = await pako.inflate(buffer)

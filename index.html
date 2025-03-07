@@ -2,14 +2,21 @@
 <html lang='en'>
 
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y4BX3G368N"></script>
+    <!-- Enable Partytown -->
     <script>
+        window.partytown = { debug: true };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@builder.io/partytown@0.10.3/lib/partytown-sw.min.js"></script>
+
+    <!-- Load Google Analytics in a Web Worker -->
+    <script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-Y4BX3G368N"></script>
+    <script type="text/partytown">
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+        function gtag(){ dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-Y4BX3G368N');
     </script>
+
     <meta name='google-site-verification' content='xlUTCUMRvEa8sgN7C4hDnxgR_f2yoeUouYWNG6qlhv4' />
 
     <meta charset='UTF-8'>
@@ -68,7 +75,7 @@
     </script>
 
     <!-- adsense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7149799351566746" crossorigin="anonymous"></script>
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7149799351566746" crossorigin="anonymous"></script> -->
 </head>
 
 <body>
@@ -90,7 +97,7 @@
                         <input type='text' style='width: 90%' class='form-control ' id='rank' placeholder='Enter category rank, if applicable' required>
 
                         <!-- Percentile -->
-                        <button type='button' class='btn btn btn-light dropdown-toggle dropdown-toggle-split' data-bs-toggle='dropdown'>
+                        <button type='button' class='btn btn btn-light dropdown-toggle dropdown-toggle-split' data-bs-toggle='dropdown' aria-label="Percentile">
                         </button>
                         <ul class='dropdown-menu p-0 dropdown-menu-end mb-1'>
                             <li>
@@ -413,12 +420,12 @@
                 <div class='col-sm-8 d-flex justify-content-between'>
                     <!-- hidden checkboxes that sync with the radios -->
                     <div class='form-check-inline'>
-                        <input class='form-check-input' type='radio' id='neu-radio' value='Neutral' checked>
+                        <input class='form-check-input' type='radio' id='neu-radio' value='Neutral' aria-label='Neutral' aria-labelledby='gender' checked>
                         <input class='form-check-input d-none' type='checkbox' id='Neutral' name='gender' value='Neutral' checked>
                         <label class='form-check-label ms-sm-4 ms-3' for='Neutral'>Neutral</label>
                     </div>
                     <div class='form-check-inline m-0'>
-                        <input class='form-check-input' type='radio' id='fem-radio' value='Female'>
+                        <input class='form-check-input' type='radio' id='fem-radio' value='Female' aria-label='Female' aria-labelledby='gender'>
                         <input class='form-check-input d-none' type='checkbox' id='Female' name='gender' value='Female'>
                         <label class='form-check-label ms-sm-4 ms-3' for='Female'>Female</label>
                     </div>
