@@ -136,7 +136,7 @@
 	}
 
 	// save values to local storage
-	window.addEventListener('beforeunload', () => {
+	window.addEventListener('pagehide', () => {
 		if (rowCount !== undefined && rowCount !== 0) {
 			localStorage.setItem('rank', rank)
 			localStorage.setItem('category', category)
