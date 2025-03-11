@@ -1,7 +1,7 @@
 ;(async () => {
 	const SQL = await initSqlJs({
-		locateFile: (filename) =>
-			`https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.12.0/${filename}`,
+		locateFile: () =>
+			`https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.12.0/sql-wasm.wasm`,
 	})
 
 	const response = await fetch('data.db.gz')
@@ -22,7 +22,7 @@
 		document.getElementById('spinner').classList.add('d-none')
 	}
 
-	let rank, category, branch, state, gender, type, result, rowCount, row
+	let rank, category, branch, state, gender, type, result, totalRows, row
 
 	// fetch data and insert the first 10 records into table on clicking btn
 	goBtn.addEventListener('click', async () => {
@@ -92,7 +92,7 @@
 		// storing data in a 2D array
 		result = queryResult[0].values
 
-		rowCount = result.length // total number of records in result set
+		totalRows = result.length // total number of records in result set
 
 		row = 0 // current row no
 		insertRows() // Insert initial 10 records into table
@@ -103,41 +103,47 @@
 
 	function insertRows() {
 		// insert 10 records into table
-		for (let i = 0; i < 10 && row < rowCount; i++) {
-			table.bootstrapTable('append', {
-				institute: result[row][0],
-				state: result[row][1],
-				branch: result[row][2],
-				quota: result[row][3],
-				seat: result[row][4],
-				gender: result[row][5],
-				open: result[row][6],
-				close: result[row][7],
-			})
-			row++
+		for (let i = 0; i < Math.min(10, totalRows - row); i++) {
+			setTimeout(() => {
+				table.bootstrapTable('append', {
+					institute: result[row][0],
+					state: result[row][1],
+					branch: result[row][2],
+					quota: result[row][3],
+					seat: result[row][4],
+					gender: result[row][5],
+					open: result[row][6],
+					close: result[row][7],
+				})
+				row++
+			}, 200 * i)
 		}
 	}
 
 	function insertAllRows() {
+		const lim = totalRows - row
+
 		// insert all records into table
-		while (row < rowCount) {
-			table.bootstrapTable('append', {
-				institute: result[row][0],
-				state: result[row][1],
-				branch: result[row][2],
-				quota: result[row][3],
-				seat: result[row][4],
-				gender: result[row][5],
-				open: result[row][6],
-				close: result[row][7],
-			})
-			row++
+		for (let i = 0; i < lim; i++) {
+			setTimeout(() => {
+				table.bootstrapTable('append', {
+					institute: result[row][0],
+					state: result[row][1],
+					branch: result[row][2],
+					quota: result[row][3],
+					seat: result[row][4],
+					gender: result[row][5],
+					open: result[row][6],
+					close: result[row][7],
+				})
+				row++
+			}, 200 * i)
 		}
 	}
 
 	// save values to local storage
 	window.addEventListener('pagehide', () => {
-		if (rowCount !== undefined && rowCount !== 0) {
+		if (totalRows !== undefined && totalRows !== 0) {
 			localStorage.setItem('rank', rank)
 			localStorage.setItem('category', category)
 			// localStorage.setItem('branch', branch)

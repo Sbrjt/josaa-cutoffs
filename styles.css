@@ -16,3 +16,16 @@ td {
 ::placeholder {
 	color: silver !important;
 }
+tr:last-child {
+	animation: fadeIn 1s;
+	/* TODO: animate height and padding */
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
