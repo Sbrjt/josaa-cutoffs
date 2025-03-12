@@ -37,7 +37,7 @@ tbody tr:last-child {
 }
 
 tbody tr:last-child td {
-	animation: pad 0.5s linear;
+	animation: pad 0.2s linear;
 	will-change: padding;
 }
 
