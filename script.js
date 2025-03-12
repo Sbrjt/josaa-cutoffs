@@ -104,19 +104,19 @@
 	function insertRows() {
 		// insert 10 records into table
 		for (let i = 0; i < Math.min(10, totalRows - row); i++) {
-			setTimeout(() => {
-				table.bootstrapTable('append', {
-					institute: result[row][0],
-					state: result[row][1],
-					branch: result[row][2],
-					quota: result[row][3],
-					seat: result[row][4],
-					gender: result[row][5],
-					open: result[row][6],
-					close: result[row][7],
-				})
-				row++
-			}, 200 * i)
+			// setTimeout(() => {
+			table.bootstrapTable('append', {
+				institute: result[row][0],
+				state: result[row][1],
+				branch: result[row][2],
+				quota: result[row][3],
+				seat: result[row][4],
+				gender: result[row][5],
+				open: result[row][6],
+				close: result[row][7],
+			})
+			row++
+			// }, 500 * i)
 		}
 	}
 
@@ -137,7 +137,7 @@
 					close: result[row][7],
 				})
 				row++
-			}, 200 * i)
+			}, 500 * i)
 		}
 	}
 
