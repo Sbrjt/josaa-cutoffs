@@ -257,23 +257,23 @@
 })()
 
 // calculate rank
-;(function find_rank() {
-	const btn = document.getElementById('btn-4')
-	const percentile_inp = document.getElementById('percentile')
+// ;(function find_rank() {
+// 	const btn = document.getElementById('btn-4')
+// 	const percentile_inp = document.getElementById('percentile')
 
-	percentile_inp.addEventListener('focusout', () => {
-		const rank_inp = document.getElementById('rank')
-		const percentile = Number(percentile_inp.value)
+// 	percentile_inp.addEventListener('focusout', () => {
+// 		const rank_inp = document.getElementById('rank')
+// 		const percentile = Number(percentile_inp.value)
 
-		if (isNaN(percentile) || percentile <= 0 || percentile > 100) {
-			percentile_inp.value = ''
-			return
-		}
+// 		if (isNaN(percentile) || percentile <= 0 || percentile > 100) {
+// 			percentile_inp.value = ''
+// 			return
+// 		}
 
-		const rank = Math.round((100 - percentile) * 17000) // assuming 17 lakh students
-		rank_inp.value = rank
-	})
-})()
+// 		const rank = Math.round((100 - percentile) * 17000) // assuming 17 lakh students
+// 		rank_inp.value = rank
+// 	})
+// })()
 
 // enable tooltip
 ;(function tooltip() {
