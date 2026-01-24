@@ -4,7 +4,7 @@
 			`https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.12.0/sql-wasm.wasm`,
 	})
 
-	const response = await fetch('data.db.gz')
+	const response = await fetch('cutoffs.db.gz')
 	const buffer = await response.arrayBuffer()
 	const decompressedBuffer = await pako.inflate(buffer)
 	const db = new SQL.Database(new Uint8Array(decompressedBuffer))
@@ -26,6 +26,13 @@
 
 	// fetch data and insert the first 10 records into table on clicking btn
 	goBtn.addEventListener('click', async () => {
+		rank = document.getElementById('rank').value
+		// validating rank input with regex (only digits allowed)
+		if (!/^\d+$/.test(rank)) {
+			result = []
+			return
+		}
+
 		// show table (as it is hidden initially)
 		if (tableDiv.classList.contains('d-none')) {
 			tableDiv.classList.remove('d-none')
@@ -34,13 +41,6 @@
 		table.bootstrapTable('removeAll') // clear table contents
 
 		// get user inputs from form and prepare sql query:
-
-		rank = document.getElementById('rank').value
-		// validating rank input with regex (only digits allowed)
-		if (!/^\d+$/.test(rank)) {
-			result = []
-			return
-		}
 
 		category = document.getElementById('category').value
 
@@ -278,9 +278,9 @@
 // enable tooltip
 ;(function tooltip() {
 	const tooltipTriggerList = document.querySelectorAll(
-		'[data-bs-toggle="tooltip"]'
+		'[data-bs-toggle="tooltip"]',
 	)
 	const tooltipList = [...tooltipTriggerList].map(
-		(tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+		(tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl),
 	)
 })()

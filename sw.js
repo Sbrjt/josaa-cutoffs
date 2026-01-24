@@ -1,5 +1,5 @@
 importScripts(
-	'https://storage.googleapis.com/workbox-cdn/releases/6.2.0/workbox-sw.js'
+	'https://storage.googleapis.com/workbox-cdn/releases/6.2.0/workbox-sw.js',
 )
 
 // workbox.setConfig({ debug: true })
@@ -18,7 +18,7 @@ registerRoute(
 		request.mode === 'navigate' ||
 		url.pathname === '/josaa-cutoffs/script.js' ||
 		url.pathname === '/josaa-cutoffs/styles.css' ||
-		url.pathname === '/josaa-cutoffs/data.db.gz',
+		url.pathname === '/josaa-cutoffs/cutoffs.db.gz',
 	new StaleWhileRevalidate({
 		cacheName: 'stale-while-revalidate',
 		plugins: [
@@ -26,7 +26,7 @@ registerRoute(
 				statuses: [200],
 			}),
 		],
-	})
+	}),
 )
 
 // Cache cdns and the rest using cache-first
@@ -43,5 +43,5 @@ registerRoute(
 				maxAgeSeconds: 24 * 60 * 60 * 30, // 1 month
 			}),
 		],
-	})
+	}),
 )
