@@ -1,0 +1,36 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "js",
+  "steps": [
+    {
+      "file": "script.js",
+      "description": "This is an IIFE\r\n\r\nThis block of code is run immediately just after the html is loaded to make sure the sqlite db is downloaded ",
+      "line": 1
+    },
+    {
+      "file": "script.js",
+      "description": "The db is initially compressed\r\n\r\nSo it's decompressed with pako",
+      "line": 7
+    },
+    {
+      "file": "script.js",
+      "description": "This is the SQL query used \r\n\r\nValues like rank, branch etc. are obtained from html",
+      "line": 69
+    },
+    {
+      "file": "script.js",
+      "description": "the fetched data is stored in result ",
+      "line": 93
+    },
+    {
+      "file": "script.js",
+      "description": "On clicking submit btn1 the data fetching starts\r\n",
+      "line": 28
+    },
+    {
+      "file": "script.js",
+      "description": "This function is used to show the first 10 rows",
+      "line": 104
+    }
+  ]
+}

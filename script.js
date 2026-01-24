@@ -1,27 +1,31 @@
 ;(async () => {
-	// initializing the database
+	const SQL = await initSqlJs({
+		locateFile: () =>
+			`https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.12.0/sql-wasm.wasm`,
+	})
+
 	const response = await fetch('data.db.gz')
 	const buffer = await response.arrayBuffer()
 	const decompressedBuffer = await pako.inflate(buffer)
 	const db = new SQL.Database(new Uint8Array(decompressedBuffer))
 	db.prepare('select * from tb') // improves performance by reducing the overhead
 
-	const btn1 = document.getElementById('btn-1')
-	const btn2 = document.getElementById('btn-2') // 'Show more' btn
-	const btn3 = document.getElementById('btn-3') // 'Show all' btn
+	const goBtn = document.getElementById('btn-1')
+	const showMoreBtn = document.getElementById('btn-2')
+	const showAllBtn = document.getElementById('btn-3')
 	const table = $('#table') // not working with getElementById 🤷‍♂️
-	const tableDiv = document.getElementById('tableDiv')
+	const tableDiv = document.getElementById('table-div')
 
-	if (btn1.disabled === true) {
-		btn1.disabled = false
+	if (goBtn.disabled === true) {
+		goBtn.disabled = false
 		document.getElementById('go').classList.remove('d-none')
 		document.getElementById('spinner').classList.add('d-none')
 	}
 
-	let rank, category, branch, state, gender, type, result, rowCount, row
+	let rank, category, branch, state, gender, type, result, totalRows, row
 
 	// fetch data and insert the first 10 records into table on clicking btn
-	btn1.addEventListener('click', () => {
+	goBtn.addEventListener('click', async () => {
 		// show table (as it is hidden initially)
 		if (tableDiv.classList.contains('d-none')) {
 			tableDiv.classList.remove('d-none')
@@ -78,28 +82,29 @@
 		`
 
 		// execute query
-		l = db.exec(query)
+		const queryResult = await db.exec(query)
 
-		if (l.length === 0) {
+		if (queryResult.length === 0) {
 			result = []
 			return
 		}
 
 		// storing data in a 2D array
-		result = l[0].values
+		result = queryResult[0].values
 
-		rowCount = result.length // total number of records in result set
+		totalRows = result.length // total number of records in result set
 
 		row = 0 // current row no
 		insertRows() // Insert initial 10 records into table
 	})
 
-	btn2.addEventListener('click', insertRows) // insert 10 more records
-	btn3.addEventListener('click', insertAllRows) // insert all records
+	showMoreBtn.addEventListener('click', insertRows) // insert 10 more records
+	showAllBtn.addEventListener('click', insertAllRows) // insert all records
 
 	function insertRows() {
 		// insert 10 records into table
-		for (let i = 0; i < 10 && row < rowCount; i++) {
+		for (let i = 0; i < Math.min(10, totalRows - row); i++) {
+			// setTimeout(() => {
 			table.bootstrapTable('append', {
 				institute: result[row][0],
 				state: result[row][1],
@@ -111,29 +116,34 @@
 				close: result[row][7],
 			})
 			row++
+			// }, 200 * i)
 		}
 	}
 
 	function insertAllRows() {
-		// insert 10 records into table
-		while (row < rowCount) {
-			table.bootstrapTable('append', {
-				institute: result[row][0],
-				state: result[row][1],
-				branch: result[row][2],
-				quota: result[row][3],
-				seat: result[row][4],
-				gender: result[row][5],
-				open: result[row][6],
-				close: result[row][7],
-			})
-			row++
+		const lim = totalRows - row
+
+		// insert all records into table
+		for (let i = 0; i < lim; i++) {
+			setTimeout(() => {
+				table.bootstrapTable('append', {
+					institute: result[row][0],
+					state: result[row][1],
+					branch: result[row][2],
+					quota: result[row][3],
+					seat: result[row][4],
+					gender: result[row][5],
+					open: result[row][6],
+					close: result[row][7],
+				})
+				row++
+			}, 200 * i)
 		}
 	}
 
 	// save values to local storage
-	window.addEventListener('beforeunload', () => {
-		if (rowCount !== undefined && rowCount !== 0) {
+	window.addEventListener('pagehide', () => {
+		if (totalRows !== undefined && totalRows !== 0) {
 			localStorage.setItem('rank', rank)
 			localStorage.setItem('category', category)
 			// localStorage.setItem('branch', branch)
@@ -157,8 +167,10 @@
 			i.checked = g.includes(i.id)
 		}
 
-		document.getElementById('neu-radio').checked = document.getElementById('Neutral').checked
-		document.getElementById('fem-radio').checked = document.getElementById('Female').checked
+		document.getElementById('neu-radio').checked =
+			document.getElementById('Neutral').checked
+		document.getElementById('fem-radio').checked =
+			document.getElementById('Female').checked
 
 		const type = localStorage.getItem('type').slice(1, -1).split("', '")
 		for (let i of Array.from(document.getElementsByName('type'))) {
@@ -181,7 +193,9 @@
 
 	if (window.matchMedia('(max-width: 576px)').matches) {
 		for (let i of l) {
-			document.querySelector(`th[data-field="${i}"]`).setAttribute('data-visible', 'false')
+			document
+				.querySelector(`th[data-field="${i}"]`)
+				.setAttribute('data-visible', 'false')
 		}
 	}
 })()
@@ -240,4 +254,33 @@
 	fem_radio.addEventListener('change', () => {
 		fem_check.checked = fem_radio.checked
 	})
+})()
+
+// calculate rank
+// ;(function find_rank() {
+// 	const btn = document.getElementById('btn-4')
+// 	const percentile_inp = document.getElementById('percentile')
+
+// 	percentile_inp.addEventListener('focusout', () => {
+// 		const rank_inp = document.getElementById('rank')
+// 		const percentile = Number(percentile_inp.value)
+
+// 		if (isNaN(percentile) || percentile <= 0 || percentile > 100) {
+// 			percentile_inp.value = ''
+// 			return
+// 		}
+
+// 		const rank = Math.round((100 - percentile) * 17000) // assuming 17 lakh students
+// 		rank_inp.value = rank
+// 	})
+// })()
+
+// enable tooltip
+;(function tooltip() {
+	const tooltipTriggerList = document.querySelectorAll(
+		'[data-bs-toggle="tooltip"]'
+	)
+	const tooltipList = [...tooltipTriggerList].map(
+		(tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+	)
 })()

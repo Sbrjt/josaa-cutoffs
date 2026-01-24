@@ -1,0 +1,31 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "html",
+  "steps": [
+    {
+      "file": "index.html",
+      "description": "This is the submit button in the form (btn1)",
+      "line": 453
+    },
+    {
+      "file": "index.html",
+      "description": "The table is populated dynamically from script.js\r\n\r\nIt is styled with bootstrap-table",
+      "line": 480
+    },
+    {
+      "file": "index.html",
+      "description": "CDNs for bootstrap and other bs components\r\n\r\nBootstrap-select is used for styling branches",
+      "line": 47
+    },
+    {
+      "file": "index.html",
+      "description": "CDNs for bootstrap, sqlite, pako",
+      "line": 56
+    },
+    {
+      "file": "index.html",
+      "description": "sw.js is a service working for caching resources (uses workbox)",
+      "line": 66
+    }
+  ]
+}
