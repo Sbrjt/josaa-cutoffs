@@ -51,3 +51,12 @@ tbody tr:last-child td {
 		height: auto;
 	}
 }
+
+.chevron {
+	transition: transform 0.25s ease;
+}
+
+/* rotate chevron icon */
+.btn:not(.collapsed) .chevron {
+	transform: rotate(90deg);
+}

@@ -284,3 +284,12 @@
 		(tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl),
 	)
 })()
+
+// load disqus
+;(async function () {
+	var d = document,
+		s = d.createElement('script')
+	s.src = 'https://josaa-1.disqus.com/embed.js'
+	s.setAttribute('data-timestamp', +new Date())
+	;(d.head || d.body).appendChild(s)
+})()
