@@ -102,9 +102,10 @@
 	showAllBtn.addEventListener('click', insertAllRows) // insert all records
 
 	function insertRows() {
+		const limit = Math.min(10, totalRows - row)
+
 		// insert 10 records into table
-		for (let i = 0; i < Math.min(10, totalRows - row); i++) {
-			// setTimeout(() => {
+		for (let i = 0; i < limit; i++) {
 			table.bootstrapTable('append', {
 				institute: result[row][0],
 				state: result[row][1],
@@ -116,7 +117,6 @@
 				close: result[row][7],
 			})
 			row++
-			// }, 200 * i)
 		}
 	}
 
