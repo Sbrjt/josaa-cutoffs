@@ -17,6 +17,7 @@ td {
 	color: silver !important;
 }
 
+/* animate newly added table row */
 tbody tr:last-child {
 	pointer-events: none;
 	animation: fadeIn 1s;
@@ -59,4 +60,31 @@ tbody tr:last-child td {
 /* rotate chevron icon */
 .btn:not(.collapsed) .chevron {
 	transform: rotate(90deg);
+}
+
+/* animate underline from right→left on hover */
+.underline-effect::after,
+.mt-4:has(#disqus.show) .underline-effect::after {
+	content: '';
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	height: 0.2rem;
+	width: 90%;
+	background-color: #c1c1c1;
+	transform: translateX(-50%) scaleX(0);
+	transform-origin: right;
+	transition:
+		transform 0.5s ease,
+		background-color 0.5s ease;
+}
+
+.underline-effect:hover::after {
+	transform: translateX(-50%) scaleX(1);
+	transform-origin: left;
+}
+
+/* hide disqus ads */
+#disqus_thread iframe[src*='ads-iframe'] {
+	display: none;
 }
