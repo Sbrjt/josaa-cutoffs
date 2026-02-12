@@ -1,4 +1,4 @@
-/* wrap text */
+/* wrap text in select dropdown*/
 .bootstrap-select .dropdown-menu .dropdown-item {
 	white-space: normal;
 }
@@ -17,13 +17,12 @@ td {
 	color: silver !important;
 }
 
-/* animate newly added table row */
+/* animate newly added table row (BUG) */
 tbody tr:last-child {
 	pointer-events: none;
 	animation: fadeIn 1s;
 	will-change: opacity, transform, border-color;
 }
-
 @keyframes fadeIn {
 	from {
 		opacity: 0;
@@ -36,12 +35,10 @@ tbody tr:last-child {
 		border-color: inherit;
 	}
 }
-
 tbody tr:last-child td {
 	animation: pad 0.2s linear;
 	will-change: padding;
 }
-
 @keyframes pad {
 	from {
 		padding: 0;
@@ -53,16 +50,15 @@ tbody tr:last-child td {
 	}
 }
 
-.chevron {
-	transition: transform 0.25s ease;
-}
-
 /* rotate chevron icon */
 .btn:not(.collapsed) .chevron {
 	transform: rotate(90deg);
 }
+.chevron {
+	transition: transform 0.25s ease;
+}
 
-/* animate underline from right→left on hover */
+/* animate underline from left to right on hover */
 .underline-effect::after,
 .mt-4:has(#disqus.show) .underline-effect::after {
 	content: '';
@@ -71,14 +67,13 @@ tbody tr:last-child td {
 	bottom: 0;
 	height: 0.2rem;
 	width: 90%;
-	background-color: #c1c1c1;
+	background-color: var(--bs-tertiary-color);
 	transform: translateX(-50%) scaleX(0);
 	transform-origin: right;
 	transition:
 		transform 0.5s ease,
 		background-color 0.5s ease;
 }
-
 .underline-effect:hover::after {
 	transform: translateX(-50%) scaleX(1);
 	transform-origin: left;
@@ -87,4 +82,35 @@ tbody tr:last-child td {
 /* hide disqus ads */
 #disqus_thread iframe[src*='ads-iframe'] {
 	display: none;
+}
+
+/* for dark mode */
+[data-bs-theme='dark'] body {
+	background-color: var(--bs-dark) !important;
+}
+[data-bs-theme='dark'] #form {
+	background-color: var(--bs-dark-bg-subtle) !important;
+}
+[data-bs-theme='dark'] table {
+	--bs-table-bg: var(--bs-dark-bg-subtle);
+}
+[data-bs-theme='dark'] #disqus,
+[data-bs-theme='dark'] #disqus_thread {
+	background-color: var(--bs-dark-bg-subtle) !important;
+}
+html:not([data-bs-theme='dark']) .bi-moon-fill {
+	display: none;
+}
+[data-bs-theme='dark'] .bi-sun-fill {
+	display: none;
+}
+.bootstrap-select .btn-light {
+	--bs-btn-bg: transparent;
+	--bs-btn-border-color: var(--bs-border-color);
+	--bs-btn-color: var(--bs-body-color);
+}
+body {
+	transition:
+		background-color 0.25s ease,
+		color 0.25s ease;
 }

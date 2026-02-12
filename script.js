@@ -293,3 +293,23 @@
 	s.setAttribute('data-timestamp', +new Date())
 	;(d.head || d.body).appendChild(s)
 })()
+
+// dark mode toggle
+function toggleTheme() {
+	let theme =
+		localStorage.getItem('theme') ||
+		(window.matchMedia('(prefers-color-scheme: dark)').matches
+			? 'dark'
+			: 'light')
+
+	if (theme === 'dark') {
+		document.documentElement.removeAttribute('data-bs-theme')
+		theme = 'light'
+	} else {
+		document.documentElement.setAttribute('data-bs-theme', 'dark')
+		theme = 'dark'
+	}
+
+	localStorage.setItem('theme', theme)
+	DISQUS.reset({ reload: true })
+}
