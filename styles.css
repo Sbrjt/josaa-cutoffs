@@ -1,4 +1,4 @@
-/* wrap text in select dropdown*/
+/* wrap text in select dropdown */
 .bootstrap-select .dropdown-menu .dropdown-item {
 	white-space: normal;
 }
@@ -15,6 +15,14 @@ td {
 
 ::placeholder {
 	color: silver !important;
+}
+
+/* hide up/down for number input */
+input[type='number']::-webkit-inner-spin-button {
+	display: none;
+}
+input[type='number'] {
+	appearance: textfield;
 }
 
 /* animate newly added table row (BUG) */
@@ -90,6 +98,9 @@ tbody tr:last-child td {
 }
 [data-bs-theme='dark'] #form {
 	background-color: var(--bs-dark-bg-subtle) !important;
+}
+[data-bs-theme='dark'] #rank + .dropdown-toggle-split {
+	background-color: var(--bs-dark) !important;
 }
 [data-bs-theme='dark'] table {
 	--bs-table-bg: var(--bs-dark-bg-subtle);

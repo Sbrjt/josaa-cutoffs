@@ -14,6 +14,7 @@
     <meta name='google-site-verification' content='xlUTCUMRvEa8sgN7C4hDnxgR_f2yoeUouYWNG6qlhv4' />
 
     <meta charset='UTF-8'>
+    <meta name="color-scheme" content="light dark">
 
     <!-- search engine look -->
     <title>JoSAA Cutoffs</title>
@@ -56,12 +57,21 @@
 
     <!-- Scripts -->
 
+    <!-- Sentry -->
+    <script src="https://browser.sentry-cdn.com/7.77.0/bundle.min.js"></script>
     <script>
-        const theme = localStorage.getItem('theme') ||
+        Sentry.init({
+            dsn: 'https://f9e662d68385485f78dc95e6cfd4cd6d@o4509026790277120.ingest.de.sentry.io/4509026793422928',
+            sendDefaultPii: true,
+            allowUrls: ["sbrjt.github.io"],
+        })
+    </script>
+
+    <script>
+        const theme = JSON.parse(localStorage.getItem('theme')) ||
             (window.matchMedia('(prefers-color-scheme: dark)').matches
                 ? 'dark' : 'light'
             )
-
 
         if (theme === 'dark') {
             document.documentElement.setAttribute('data-bs-theme', 'dark')
@@ -71,18 +81,23 @@
     <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' defer></script>
     <script src='https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js' defer></script>
 
-    <script src='https://cdn.jsdelivr.net/npm/bootstrap-table@1.26.0/dist/bootstrap-table.min.js' defer></script>
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap-table@1.27.0/dist/bootstrap-table.min.js' defer></script>
     <script src="https://cdn.jsdelivr.net/npm/tableexport.jquery.plugin@1.10.21/tableExport.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.26.0/dist/extensions/export/bootstrap-table-export.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.27.0/dist/extensions/export/bootstrap-table-export.min.js" defer></script>
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako_inflate.min.js' defer></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.12.0/sql-wasm.min.js' defer></script>
-    <script src='script.js' defer></script>
+    <script type='module' src='scripts/main.js' defer></script>
 
     <!-- Service worker -->
     <script type='module' defer>
-        if ("serviceWorker" in navigator)
-            await navigator.serviceWorker.register('sw.js', { scope: '/josaa-cutoffs/' })
+        if ("serviceWorker" in navigator) {
+            try {
+                await navigator.serviceWorker.register('sw.js', { scope: '/josaa-cutoffs/' });
+            } catch (e) {
+                Sentry.captureException(e)
+            }
+        }
     </script>
 
     <!-- adsense -->
@@ -90,7 +105,7 @@
 </head>
 
 <body class='bg-light'>
-    <button onclick='toggleTheme()' class='btn btn-outline-secondary position-absolute top-0 end-0 m-4 rounded-circle d-none fs-4 d-sm-flex align-items-center justify-content-center' style='width: 2.5rem; height: 2.5rem;' aria-label='Toggle theme'>
+    <button id='theme-btn' class='btn btn-outline-secondary position-absolute top-0 end-0 m-4 rounded-circle d-none fs-4 d-sm-flex align-items-center justify-content-center' style='width: 2.5rem; height: 2.5rem;' aria-label='Toggle theme'>
         <i class='bi bi-sun-fill'></i>
         <i class='bi bi-moon-fill'></i>
     </button>
@@ -111,19 +126,19 @@
                     <label for='rank' class='col my-auto py-2 form-label'>Rank</label>
                     <div class='col-sm-8 '>
                         <div class='input-group btn-group dropup'>
-                            <input type='text' style='width: 90%' class='form-control ' id='rank' placeholder='Enter category rank, if applicable' required>
+                            <input type='number' min='0' pattern="[0-9]*" style='width: 90%' class='form-control ' id='rank' placeholder='Enter category rank, if applicable' required>
 
                             <!-- Percentile -->
-                            <!-- <button type='button' class='btn btn btn-light dropdown-toggle dropdown-toggle-split' data-bs-toggle='dropdown' aria-label="Percentile">
-                        </button>
-                        <ul class='dropdown-menu p-0 dropdown-menu-end mb-1'>
-                            <li>
-                                <div class="input-group">
-                                    <input type='text' class='form-control shadow-none' id='percentile' style='field-sizing: content;' placeholder='Estimate with percentile' data-bs-toggle="tooltip" data-bs-title="Assuming 17 lakh candidates">
-                                    <button class="btn btn-secondary fs-6 px-1 px-md-2" type="button" id='btn-4'>OK</button>
-                                </div>
-                            </li>
-                        </ul> -->
+                            <button type='button' class='btn btn-light dropdown-toggle dropdown-toggle-split' data-bs-toggle='dropdown' aria-label="Percentile">
+                            </button>
+                            <ul class='dropdown-menu p-0 dropdown-menu-end mb-1'>
+                                <li>
+                                    <div class="input-group">
+                                        <input type='text' class='form-control shadow-none' id='percentile' style='field-sizing: content;' placeholder='Estimate with percentile' data-bs-toggle="tooltip" data-bs-title="Assuming 16 lakh candidates">
+                                        <button class="btn btn-secondary fs-6 px-1 px-md-2" type="button">OK</button>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -414,6 +429,7 @@
                     <label class='col my-auto py-2 form-label ' for='state'>Home State</label>
                     <div class='col-sm-8'>
                         <select class='form-control' id='state'>
+                            <option value='Select an option' selected disabled>Select an option</option>
                             <option value='Andhra Pradesh'>Andhra Pradesh</option>
                             <option value='Arunachal Pradesh'>Arunachal Pradesh</option>
                             <option value='Assam'>Assam</option>
@@ -494,7 +510,7 @@
 
                 <!-- Submit -->
                 <div class='text-center pt-sm-3 p-2'>
-                    <button id='btn-1' class='btn btn-lg btn-outline-primary col-12 col-sm-5 my-2 rounded-5 shadow-sm  ' style='height: 3rem;' type='submit' disabled>
+                    <button id='go-btn' class='btn btn-lg btn-outline-primary col-12 col-sm-5 my-2 rounded-5 shadow-sm  ' style='height: 3rem;' type='submit' disabled>
                         <div id='go' class='d-none' style='font-weight: 500'>GO</div>
                         <div id='spinner' class='spinner-border ms-2'></div><!-- Show spinner before db is loaded -->
                     </button>
@@ -506,7 +522,7 @@
         <div class='col-sm-10 col-11 mx-auto mt-sm-5 mt-4 d-none' id='table-div'>
             <!-- table -->
             <div class='table-responsive'>
-                <table id='table' class='table' data-toggle='table' data-search='true' data-show-columns='true' data-show-columns-toggle-all='true' data-show-export='true' data-export-types='["csv"]'>
+                <table id='table' class='table' data-toggle='table' data-search='true' data-show-columns='true' data-show-columns-toggle-all='true'>
                     <thead>
                         <tr>
                             <th data-field='institute' data-switchable='false'>
@@ -526,15 +542,18 @@
                 </table>
             </div>
             <!-- buttons -->
-            <div class='text-end mt-2'>
-                <div class='btn-group mb-3'>
-                    <button class='btn btn-secondary' id='btn-2' type='button'>
+            <div class='mt-2 mb-3 d-flex justify-content-end gap-2'>
+                <button class='btn btn-secondary' id='export-btn' type='button'>
+                    <i class="bi bi-download"></i>
+                </button>
+                <div class='btn-group'>
+                    <button class='btn btn-secondary' id='show-more-btn' type='button'>
                         Show more
                     </button>
                     <button class="btn btn-secondary dropdown-toggle dropdown-toggle-split" type="button" data-bs-toggle="dropdown" data-bs-display="static">
                     </button>
                     <ul class="dropdown-menu p-0" style='min-width: 100%;'>
-                        <li><button class="dropdown-item btn btn-secondary" id='btn-3'>Show all</button></li>
+                        <li><button class="dropdown-item btn btn-secondary" id='show-all-btn'>Show all</button></li>
                     </ul>
                 </div>
             </div>
