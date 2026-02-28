@@ -1,3 +1,4 @@
+/* global Sentry */
 import { store } from './data-store.js'
 
 class TableController {
@@ -8,8 +9,12 @@ class TableController {
 	constructor(table, tableDiv) {
 		this.#table = table
 		this.#tableDiv = tableDiv
+
+		if (!$.fn.bootstrapTable)
+			Sentry.captureMessage('Bootstrap Table not loaded', 'error')
 	}
 
+	// TODO: add multiple rows in one go
 	#appendRow(rowData) {
 		this.#table.bootstrapTable('append', {
 			institute: rowData[0],

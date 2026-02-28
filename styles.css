@@ -100,7 +100,8 @@ tbody tr:last-child td {
 	background-color: var(--bs-dark-bg-subtle) !important;
 }
 [data-bs-theme='dark'] #rank + .dropdown-toggle-split {
-	background-color: var(--bs-dark) !important;
+	background-color: var(--bs-dark);
+	color: var(--bs-body-color);
 }
 [data-bs-theme='dark'] table {
 	--bs-table-bg: var(--bs-dark-bg-subtle);
@@ -124,4 +125,17 @@ body {
 	transition:
 		background-color 0.25s ease,
 		color 0.25s ease;
+}
+
+/* match selectpicker style with bootstrap */
+.selectpicker + button:focus,
+.selectpicker + button:active,
+.selectpicker + button:hover,
+.selectpicker + .btn.show {
+	background-color: var(--bs-form-select-bg) !important;
+	color: var(--bs-form-select-color) !important;
+	outline: 2px solid var(--bs-focus-ring-color);
+}
+.selectpicker + button:focus {
+	box-shadow: 0 0 0 0.25rem var(--bs-focus-ring-color);
 }

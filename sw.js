@@ -1,6 +1,6 @@
 /* global workbox */
 
-// this service worker is used for caching assets so improve load time
+// this service worker is used for caching assets to improve load time and for offline support
 
 importScripts(
 	'https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js',
@@ -18,7 +18,7 @@ const {
 
 // Cache all site resources (html, scripts, stylesheet, etc.) using stale-while-revalidate
 registerRoute(
-	({ url }) => url.pathname.includes('josaa-cutoffs'),
+	({ url }) => url.origin === self.location.origin,
 	new StaleWhileRevalidate({
 		cacheName: 'stale-while-revalidate',
 		plugins: [
@@ -33,13 +33,12 @@ registerRoute(
 registerRoute(
 	() => true,
 	new CacheFirst({
-		cacheName: 'static-assets',
+		cacheName: 'cache-first',
 		plugins: [
 			new CacheableResponsePlugin({
 				statuses: [0, 200],
 			}),
 			new ExpirationPlugin({
-				maxEntries: 32,
 				maxAgeSeconds: 24 * 60 * 60 * 30, // 1 month
 			}),
 		],
