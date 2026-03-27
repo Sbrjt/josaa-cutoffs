@@ -1,6 +1,13 @@
-importScripts(
-	'https://storage.googleapis.com/workbox-cdn/releases/6.2.0/workbox-sw.js'
-)
+try {
+	importScripts(
+		'https://storage.googleapis.com/workbox-cdn/releases/6.2.0/workbox-sw.js'
+	)
+} catch (e) {
+	// If the Workbox CDN fails to load, skip service worker caching setup
+	console.error('Failed to load Workbox:', e)
+}
+
+if (typeof workbox !== 'undefined') {
 
 // workbox.setConfig({ debug: true })
 
@@ -45,3 +52,5 @@ registerRoute(
 		],
 	})
 )
+
+}
