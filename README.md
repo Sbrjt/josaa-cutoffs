@@ -1,6 +1,6 @@
 <h1 align='center'><a target="_blank" href='https://sbrjt.github.io/josaa-cutoffs' >Go to Website</a>➡️</h1>
 <div align='center'>
-<picture><img src="https://img.shields.io/github/stars/sbrjt/josaa-cutoffs?style=flat"></picture>
+<a href='https://www.star-history.com/?repos=Sbrjt%2Fjosaa-cutoffs'><img src="https://img.shields.io/github/stars/sbrjt/josaa-cutoffs?style=flat"></a>
 <a href="https://github.com/Sbrjt/josaa-cutoffs/issues"><img src="https://img.shields.io/github/issues/sbrjt/josaa-cutoffs"></a>
 <a href="https://github.com/Sbrjt/josaa-cutoffs/commits/main/"><img src="https://img.shields.io/github/last-commit/sbrjt/josaa-cutoffs"></a>
 <picture><img src="https://img.shields.io/github/languages/code-size/sbrjt/josaa-cutoffs"></picture>
