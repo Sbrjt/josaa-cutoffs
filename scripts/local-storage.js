@@ -42,8 +42,12 @@ export async function getStoredFilters() {
 			item.checked = types.includes(item.id)
 		}
 	} catch {
-		// delete corrupted data from previous version
-		localStorage.clear()
+		try {
+			// delete corrupted data from previous version
+			localStorage.clear()
+		} catch {
+			// localStorage not available, nothing we can do
+		}
 	}
 }
 
