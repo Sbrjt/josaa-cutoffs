@@ -65,6 +65,8 @@
             dsn: 'https://f9e662d68385485f78dc95e6cfd4cd6d@o4509026790277120.ingest.de.sentry.io/4509026793422928',
             sendDefaultPii: true,
             allowUrls: ["sbrjt.github.io"],
+            integrations: [Sentry.browserTracingIntegration()],
+            tracesSampleRate: 1.0,
         })
     </script>
 
@@ -92,12 +94,10 @@
 
     <!-- Service worker -->
     <script type='module' defer>
-        if ("serviceWorker" in navigator) {
-            try {
-                await navigator.serviceWorker.register('sw.js', { scope: '/josaa-cutoffs/' });
-            } catch (e) {
-                Sentry.captureException(e)
-            }
+        try {
+            await navigator.serviceWorker.register('sw.js', { scope: '/josaa-cutoffs/' });
+        } catch (e) {
+            console.error('Failed to load service worker :(');
         }
     </script>
 
